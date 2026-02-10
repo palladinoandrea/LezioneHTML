@@ -1,25 +1,285 @@
+<!-- ===================== -->
+<!-- DOCTYPE               -->
+<!-- ===================== -->
+<!-- Il DOCTYPE indica al browser che il documento è scritto in HTML5.
+     Serve a garantire che la pagina venga interpretata in modalità standard
+     e non in modalità di compatibilità con versioni HTML obsolete. -->
+
 <!DOCTYPE html>
+
+<!-- ===================== -->
+<!-- TAG <html>            -->
+<!-- ===================== -->
+<!-- Il tag <html> è l’elemento radice del documento HTML.
+     Contiene tutti gli altri elementi della pagina.
+     L’attributo lang specifica la lingua principale del contenuto,
+     utile per accessibilità e motori di ricerca. -->
+
 <html lang="en">
+
+<!-- ===================== -->
+<!-- TAG <head>            -->
+<!-- ===================== -->
+<!-- Il <head> contiene informazioni e istruzioni che il browser
+     legge prima di visualizzare il contenuto del <body>.
+     Include metadati, collegamenti a risorse esterne,
+     impostazioni di visualizzazione e regole di comportamento.
+     Nessun contenuto del <head> viene mostrato direttamente nella pagina. -->
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-  <meta name="viewport" content="
-  width=device-width        <!-- Imposta la larghezza della pagina uguale a quella del dispositivo -->
-  , initial-scale=1.0       <!-- Imposta lo zoom iniziale al 100% -->
-  , minimum-scale=1.0       <!-- Imposta il livello minimo di zoom consentito -->
-  , maximum-scale=5.0       <!-- Imposta il livello massimo di zoom consentito -->
-  , user-scalable=yes       <!-- Permette all’utente di ingrandire o ridurre la pagina -->
-">
-  <!-- Adatta la pagina alle dimensioni del dispositivo e imposta lo zoom iniziale -->
+
+  <!-- ===================== -->
+  <!-- TAG <title>           -->
+  <!-- ===================== -->
+  <!-- Il tag <title> definisce il titolo del documento.
+       Il titolo viene mostrato nella scheda del browser,
+       nei preferiti e nei risultati dei motori di ricerca.
+       È un elemento obbligatorio all’interno del <head>. -->
+  <title>Elementi di meta</title>
+
+  <!-- ===================== -->
+  <!-- TAG <base>            -->
+  <!-- ===================== -->
+  <!-- Il tag <base> definisce un riferimento globale per la pagina.
+       Imposta l’URL di base e/o il target predefinito che il browser
+       applica a tutti i link relativi presenti nel body del documento.
+       Viene dichiarato nel <head> e può essere presente una sola volta. -->
+
+  <base href="https://www.example.com/" target="_blank">
+
+  <!--
+    Attributi del tag <base>:
+
+    - href:
+      specifica l’URL di base per tutti i link relativi della pagina
+
+    - target:
+      specifica dove verranno aperti i link relativi
+
+      Valori possibili del target:
+      - _blank  → apre il link in una nuova scheda o finestra
+      - _parent → apre il link nel frame genitore
+      - _self   → apre il link nella stessa finestra (default)
+      - _top    → apre il link nella finestra principale, ignorando i frame
+  -->
 
 
 
 
 
 
+  <!-- ===================== -->
+  <!-- TAG <link>  -->
+  <!-- ===================== -->
+  <!-- Questa sezione contiene i tag <link>, che vengono letti dal browser
+       durante l’analisi del <head>.
+       I <link> servono a:
+       - collegare risorse esterne (come fogli di stile CSS e icone)
+       - fornire informazioni aggiuntive al browser e ai motori di ricerca
+       - migliorare le prestazioni di caricamento della pagina
+       Non producono contenuto visibile nel body e non contengono altri tag.
+       La loro importanza e frequenza d’uso varia in base al valore dell’attributo rel. -->
 
-  <meta name="description" content="Descrizione della pagina"> <!-- Usato ancora oggi per la decerizione nei risultati google -->
+
+  <!-- ===================== -->
+  <!-- MOLTO USATI (fondamentali) -->
+  <!-- ===================== -->
+
+  <!-- Fogli di stile CSS
+       Collegano uno o più file CSS esterni alla pagina HTML -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mystyle.css">
+
+  <!-- Icona del sito (favicon)
+       Rappresenta visivamente il sito nel browser -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="32x32">
+
+
+  <!-- ===================== -->
+  <!-- USATI IN CASI SPECIFICI -->
+  <!-- ===================== -->
+
+  <!-- Versioni alternative del documento (lingue, RSS, stampa) -->
+  <link rel="alternate" href="pagina-en.html" hreflang="en">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">
+  <link rel="alternate" href="pagina-print.html" media="print">
+
+  <!-- Foglio di stile per la stampa -->
+  <link rel="stylesheet" href="print.css" media="print">
+
+  <!-- Tema alternativo (poco usato oggi) -->
+  <link rel="alternate stylesheet" href="dark.css" title="Tema scuro">
+
+
+  <!-- ===================== -->
+  <!-- POCO USATI / QUASI SOLO TEORICI -->
+  <!-- ===================== -->
+
+  <!-- Informazioni sull’autore del documento -->
+  <link rel="author" href="autore.html">
+
+  <!-- Informazioni sulla licenza del contenuto -->
+  <link rel="license" href="license.html">
+
+  <!-- Pagina di aiuto -->
+  <link rel="help" href="help.html">
+
+  <!-- Pagina di ricerca del sito -->
+  <link rel="search" href="search.html">
+
+
+  <!-- ===================== -->
+  <!-- LINK DI PRESTAZIONE -->
+  <!-- ===================== -->
+  <!-- Migliorano velocità, fluidità ed esperienza utente -->
+
+
+  <!-- MOLTO USATI OGGI -->
+
+  <!-- Apre in anticipo la connessione verso una risorsa esterna -->
+  <link rel="preconnect" href="https://cdn.example.com">
+
+  <!-- Scarica subito una risorsa fondamentale -->
+  <link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  <!-- USATI -->
+
+  <!-- Risolve in anticipo il DNS di un dominio esterno -->
+  <link rel="dns-prefetch" href="//cdn.example.com">
+
+  <!-- Scarica in anticipo una risorsa che potrebbe servire dopo -->
+  <link rel="prefetch" href="pagina2.html">
+
+
+  <!-- POCO USATO / QUASI OBSOLETO -->
+
+  <!-- Carica un’intera pagina in background -->
+  <link rel="prerender" href="pagina2.html">
+
+
+
+  <!-- ===================== -->
+  <!-- TAG <meta>            -->
+  <!-- ===================== -->
+  <!-- Il tag <meta> fornisce metadati sul documento HTML.
+       I metadati sono informazioni che descrivono la pagina,
+       ma non vengono visualizzate direttamente nel browser.
+       Il browser legge i tag <meta> durante l’analisi del <head> per:
+       - interpretare correttamente il contenuto (es. codifica dei caratteri)
+       - fornire informazioni ai motori di ricerca (SEO)
+       - definire comportamenti e regole della pagina
+       Il tag <meta> è un tag vuoto (non ha contenuto). -->
+
+  <!-- Definisce la codifica dei caratteri del documento -->
+  <meta charset="UTF-8">
+
+  <!-- Specifica il tipo di contenuto e la codifica
+       (equivalente a un header HTTP, oggi poco usato) -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+  <!-- ===================== -->
+  <!-- META INFORMATIVI      -->
+  <!-- ===================== -->
+  <!-- Forniscono informazioni descrittive sul documento.
+       Sono usati da browser, motori di ricerca e strumenti automatici. -->
+
+  <!-- MOLTO USATO (importante per SEO)
+       Fornisce una descrizione della pagina -->
+  <meta name="description" content="Descrizione della pagina">
+
+  <!-- USATO
+       Indica l'autore del documento -->
+  <meta name="author" content="Nome Cognome">
+
+  <!-- USATO
+       Specifica il nome dell'applicazione o del sito -->
+  <meta name="application-name" content="Nome del sito">
+
+  <!-- USATO POCO / FACOLTATIVO
+       Indica il software utilizzato per creare la pagina -->
+  <meta name="generator" content="Visual Studio Code">
+
+  <!-- POCO USATO / QUASI OBSOLETO
+       Elenco di parole chiave associate alla pagina -->
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+
+
+  <!-- ===================== -->
+  <!-- META HTTP-EQUIV       -->
+  <!-- ===================== -->
+  <!-- Simulano header HTTP e forniscono istruzioni al browser -->
+
+  <!-- MOLTO USATO (sicurezza)
+       Imposta le regole di sicurezza per il caricamento delle risorse -->
+  <meta http-equiv="content-security-policy" content="default-src 'self'">
+
+  <!-- USATI (solo in casi specifici) -->
+
+  <!-- Aggiorna automaticamente la pagina dopo 30 secondi -->
+  <meta http-equiv="refresh" content="30">
+
+  <!-- Refresh con reindirizzamento verso un’altra pagina -->
+  <meta http-equiv="refresh" content="5; url=https://www.example.com">
+
+  <!-- POCO USATO / QUASI OBSOLETO -->
+
+  <!-- Indica quale foglio di stile usare come predefinito -->
+  <meta http-equiv="default-style" content="stile-principale">
+
+
+  <!-- ===================== -->
+  <!-- VIEWPORT              -->
+  <!-- ===================== -->
+  <!-- Il viewport è l’area visibile della pagina nel browser.
+       Il meta tag viewport controlla come la pagina viene visualizzata
+       sui dispositivi mobili, adattando larghezza e livello di zoom. -->
+
+  <meta name="viewport"
+        content="width=device-width,
+               initial-scale=1.0,
+               minimum-scale=1.0,
+               maximum-scale=3.0,
+               user-scalable=yes">
+  <!--
+    Attributi possibili del meta viewport:
+    - width=device-width → larghezza uguale a quella del dispositivo
+    - initial-scale=1.0 → zoom iniziale al 100%
+    - minimum-scale → livello minimo di zoom
+    - maximum-scale → livello massimo di zoom
+    - user-scalable → abilita o disabilita lo zoom dell’utente
+  -->
+
+
+
+  <!-- ===================== -->
+  <!-- TAG <script>          -->
+  <!-- ===================== -->
+  <!-- Il tag <script> serve a inserire o collegare codice JavaScript.
+       Il JavaScript consente di rendere la pagina interattiva
+       e di manipolare dinamicamente il contenuto HTML.
+       Quando è nel <head>, viene caricato prima del <body>. -->
+  <script>
+    // Esempio W3Schools:
+    // function myFunction() {
+    //   document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    // }
+  </script>
+  <!-- STYLE: CSS interno (vale solo per questa pagina) -->
+
+  <!-- ===================== -->
+  <!-- TAG <style>           -->
+  <!-- ===================== -->
+  <!-- Il tag <style> permette di inserire regole CSS interne al documento.
+       Gli stili definiti qui valgono solo per questa pagina.
+       Viene letto dal browser prima del rendering del contenuto. -->
+
+  <style>
+    body { background-color: powderblue; }
+  </style>
 </head>
+
+
 <body>
 
 </body>
