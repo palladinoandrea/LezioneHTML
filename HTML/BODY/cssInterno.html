@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Stili predefiniti per tutte le intestazioni */
+        h1 {
+            color: blue;
+            display: block;
+
+            font-size: 2em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: blue;
+
+            display: block;
+            font-size: 1.5em;
+            margin-top: 0.83em;
+            margin-bottom: 0.83em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+
+        h3 {
+            color: blue;
+            display: block;
+            font-size: 1.17em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+
+        h4 {
+            color: blue;
+            display: block;
+            font-size: 1em;
+            margin-top: 1.33em;
+            margin-bottom: 1.33em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+
+        h5 {
+            color: blue;
+            display: block;
+            font-size: .83em;
+            margin-top: 1.67em;
+            margin-bottom: 1.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+
+        h6 {
+            color: blue;
+            display: block;
+            font-size: .67em;
+            margin-top: 2.33em;
+            margin-bottom: 2.33em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+        p{
+            color: blue;
+            display: block;
+            font-size: 1.17em;
+            margin-top: 2.33em;
+            margin-bottom: 2.33em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            font-style: italic;
+
+        }
+
+        hr {
+            display: block;
+            color: blue;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+        }
+
+        .testo_evidenziato{
+            color: green;
+            display: block;
+            font-size: 1.17em;
+            margin-top: 2.33em;
+            margin-bottom: 2.33em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+            font-style: italic;
+        }
+        abbr {
+            display: inline;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<!-- ===================== -->
+<!-- TAG <h1> – <h6>       -->
+<!-- ===================== -->
+<!-- I tag di intestazione <h1>–<h6> definiscono titoli e sottotitoli.
+     Servono a strutturare il contenuto in modo gerarchico.
+     Sono elementi di tipo block e usano attributi globali.
+     <h1> è il più importante, <h6> il meno importante.
+     La loro proprietà sta impostata nella sezione <style></style>
+ -->
+<h1>This is heading 1</h1>
+<h2>This is heading 2</h2>
+<h3>This is heading 3</h3>
+<h4>This is heading 4</h4>
+<h5>This is heading 5</h5>
+<h6>This is heading 6</h6>
+<!-- ===================== -->
+<!-- TAG <p>               -->
+<!-- ===================== -->
+<!-- Il tag <p> definisce un paragrafo di testo.
+     Serve a racchiudere blocchi di contenuto testuale.
+     È un elemento di tipo block e va automaticamente a capo.
+     Può contenere solo testo ed elementi inline. -->
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+</p>
+<!-- ===================== -->
+<!-- TAG <hr>              -->
+<!-- ===================== -->
+<!-- Il tag <hr> rappresenta una separazione tematica tra contenuti.
+     Indica un cambio di argomento o di sezione.
+     È un tag vuoto (non ha chiusura) ed è un elemento di tipo block.
+     L’aspetto grafico può essere modificato con CSS. -->
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+
+<hr>
+
+<p>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+
+<hr>
+
+<p>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+
+<hr>
+
+<p>
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<!-- ===================== -->
+<!-- TAG <p> con class     -->
+<!-- ===================== -->
+<!-- Questo paragrafo utilizza l’attributo globale class.
+     La classe permette di applicare stili CSS riutilizzabili
+     definiti in un foglio di stile interno o esterno. -->
+<p class="testo_evidenziato">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+</p>
+
+
+</body>
+
+</html>

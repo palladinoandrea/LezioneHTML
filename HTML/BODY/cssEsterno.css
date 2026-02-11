@@ -1,0 +1,65 @@
+/*
+Sintassi del tag h
+<hN attributi_globali>contenuto</hN>
+<!-- Identificatore univoco dell’elemento nella pagina.
+     Deve essere unico.
+     Usato da CSS, JavaScript e link interni. -->
+     <h1 id="titolo-principale">
+*/
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+    color: orange;
+    font-weight: bold;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Dimensioni e margini specifici */
+h1 { font-size: 2em; margin: 0.67em 0; }
+h2 { font-size: 1.5em; margin: 0.83em 0; }
+h3 { font-size: 1.17em; margin: 1em 0; }
+h4 { font-size: 1em; margin: 1.33em 0; }
+h5 { font-size: 0.83em; margin: 1.67em 0; }
+h6 { font-size: 0.67em; margin: 2.33em 0; }
+
+p{
+    p{
+        color: orange;
+        display: block;
+        font-size: 1.17em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        font-style: italic;
+
+    }
+
+    hr {
+        color: purple;
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: inset;
+        border-width: 1px;
+    }
+}
+
+.testo_evidenziato{
+    color: green;
+    display: block;
+    font-size: 1.17em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-style: italic;
+}
+

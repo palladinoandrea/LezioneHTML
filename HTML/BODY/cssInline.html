@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS INLINE</title>
+</head>
+<body>
+<!-- ===================== -->
+<!-- ATTRIBUTI GLOBALI     -->
+<!-- ===================== -->
+<!--
+    id="titolo-principale"
+    identificatore univoco dell’elemento nella pagina.
+    Usato da CSS, JavaScript e link interni.
+
+    class="main-title evidenziato"
+    assegna una o più classi all’elemento.
+    Serve per applicare stili CSS e selezioni multiple.
+
+    style="color:red; text-align:center;"
+    applica regole CSS inline all’elemento.
+    Contiene solo proprietà CSS.
+
+    title="Titolo principale della pagina"
+    mostra un testo informativo (tooltip)
+    al passaggio del mouse.
+
+    lang="it"
+    specifica la lingua del contenuto.
+    Utile per accessibilità e motori di ricerca.
+
+    dir="ltr"
+    definisce la direzione del testo
+    (ltr = sinistra→destra, rtl = destra→sinistra).
+
+    tabindex="0"
+    definisce l’ordine di navigazione tramite tastiera (TAB).
+
+    contenteditable="false"
+    permette o blocca la modifica del contenuto da parte dell’utente.
+
+    draggable="false"
+    indica se l’elemento può essere trascinato (drag & drop).
+
+    spellcheck="true"
+    abilita o disabilita il controllo ortografico.
+
+    translate="no"
+    indica se il contenuto deve essere tradotto automaticamente.
+
+    data-sezione="home"
+    attributi personalizzati definiti dallo sviluppatore,
+    usati spesso con JavaScript.
+
+    aria-label="Titolo principale"
+    etichetta testuale per screen reader
+    e tecnologie assistive.
+-->
+
+<!-- ===================== -->
+<!-- TAG <h1> – <h6>       -->
+<!-- ===================== -->
+<!-- I tag di intestazione <h1>–<h6> definiscono i titoli e i sottotitoli
+     del contenuto nel <body>.
+     Servono a strutturare il testo in modo gerarchico e logico.
+     Sono importanti per:
+     - organizzazione del contenuto
+     - accessibilità (screen reader)
+     - SEO (motori di ricerca)
+     <h1> rappresenta il titolo più importante,
+     <h6> il meno importante.
+-->
+
+<h1
+        id="titolo-principale"
+        class="title h1-title"
+        style="text-align:left; color:red;"
+        title="Titolo principale della pagina"
+>
+    This is heading 1
+</h1>
+
+<h2
+        id="sottotitolo-1"
+        class="title h2-title"
+        style="text-align:left; color:red;"
+        title="Sottotitolo di primo livello"
+>
+    This is heading 2
+</h2>
+
+<h3
+        id="sottotitolo-2"
+        class="title h3-title"
+        style="text-align:left; color:red;"
+        title="Sottotitolo di secondo livello"
+>
+    This is heading 3
+</h3>
+
+<h4
+        id="sezione-1"
+        class="title h4-title"
+        style="text-align:left; color:red;"
+        title="Titolo di sezione"
+>
+    This is heading 4
+</h4>
+
+<h5
+        id="sezione-2"
+        class="title h5-title"
+        style="text-align:left; color:red;"
+        title="Titolo secondario"
+>
+    This is heading 5
+</h5>
+
+<h6
+        id="sezione-3"
+        class="title h6-title"
+        style="text-align:left; color:red;"
+        title="Titolo di livello minimo"
+>
+    This is heading 6
+</h6>
+
+<!-- =============================== -->
+<!-- TAG <p>                         -->
+<!-- =============================== -->
+<!-- Il tag <p> definisce un paragrafo di testo.
+     Serve a racchiudere blocchi di contenuto testuale.
+     È un elemento di tipo block (va a capo automaticamente).
+     Utilizza solo attributi globali HTML.
+     Non può contenere altri <p>. -->
+
+<p style="text-align:justify; color:red">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+</p>
+
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
+</p>
+
+<!-- =============================== -->
+<!-- TAG <hr>                        -->
+<!-- =============================== -->
+<!-- Il tag <hr> rappresenta una separazione tematica
+     tra contenuti o sezioni.
+     Non serve solo a disegnare una linea grafica.
+     È un tag vuoto (senza chiusura) ed è di tipo block.
+     Utilizza solo attributi globali e viene stilizzato con CSS. -->
+
+<hr style="border: 2px solid red;">
+
+<p>
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+
+<hr style="border: 1px dashed blue;">
+
+<p>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</p>
+
+<hr style="border: 3px dotted green;">
+
+<p>
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<p style="text-align:justify; color:red">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+</p>
+
+
+
+</body>
+</html>
