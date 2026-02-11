@@ -1,15 +1,3 @@
-/*
-Sintassi del tag h
-<hN attributi_globali>contenuto</hN>
-<!-- Identificatore univoco dell’elemento nella pagina.
-     Deve essere unico.
-     Usato da CSS, JavaScript e link interni. -->
-     <h1 id="titolo-principale">
-*/
-
-
-
-
 h1, h2, h3, h4, h5, h6 {
     color: orange;
     font-weight: bold;
@@ -25,7 +13,7 @@ h4 { font-size: 1em; margin: 1.33em 0; }
 h5 { font-size: 0.83em; margin: 1.67em 0; }
 h6 { font-size: 0.67em; margin: 2.33em 0; }
 
-p{
+
     p{
         color: orange;
         display: block;
@@ -49,7 +37,7 @@ p{
         border-style: inset;
         border-width: 1px;
     }
-}
+
 
 .testo_evidenziato{
     color: green;
