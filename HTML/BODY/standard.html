@@ -128,7 +128,154 @@
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<!-- Elementi inline -->
 
+<!-- ========================= -->
+<!-- TESTO SEMANTICO (INLINE)  -->
+<!-- ========================= -->
+<!-- ========================= -->
+<!-- <strong>                  -->
+<!-- ========================= -->
+<!--
+Indica il testo di forte importanza. Viene usato quando:
+ * Ci sono avvisi importanti
+ * Parole/frasi che devono avere un maggior peso per lettori e accessibilità
+
+-->
+<p style="color: aqua"><strong>Testo importante</strong></p>
+<!-- ========================= -->
+<!-- <em>                      -->
+<!-- ========================= -->
+<!--
+Viene usato per definire il testo enfatizzato, visualizzandolo in corsivo
+-->
+<p><em>Testo enfatizzato</em></p>
+
+<p><mark>Testo evidenziato</mark></p>
+
+<p><small>Testo secondario o piccolo</small></p>
+
+<p><cite>Titolo di un'opera</cite></p>
+
+<p><dfn>Termine da definire</dfn></p>
+
+<p><abbr title="HyperText Markup Language">HTML</abbr></p>
+
+<p><time datetime="2026-02-11">11 Febbraio 2026</time></p>
+
+<p><var>x</var> è una variabile</p>
+
+
+<!-- ========================= -->
+<!-- TESTO SEMANTICO (BLOCK)   -->
+<!-- ========================= -->
+
+<address>
+    Scritto da Mario Rossi<br>
+    Email: mario.rossi@email.com
+</address>
+
+
+<!-- ========================= -->
+<!-- FORMATTAZIONE TESTO       -->
+<!-- ========================= -->
+
+<!-- Elementi inline -->
+<p><b>testo</b></p>
+<p><i>testo</i></p>
+<p><u>testo</u></p>
+<p>prova<sub>testo</sub></p>
+<p>prova<sup>testo</sup></p>
+
+<!-- Elemento block -->
+<pre>testo prova pre</pre>
+
+
+<!-- ========================= -->
+<!-- MODIFICHE AL TESTO        -->
+<!-- ========================= -->
+
+<!-- Elementi inline -->
+<p>Ho <ins>aggiunto</ins> una parola.</p>
+<p>Prezzo: <del>50€</del> 30€</p>
+<p><s>Offerta valida</s></p>
+
+
+<!-- ========================= -->
+<!-- SCRITTE TECNICHE (INLINE) -->
+<!-- ========================= -->
+
+<p>Per stampare in JavaScript si usa <code>console.log()</code>.</p>
+<p>Premi <kbd>Ctrl</kbd> + <kbd>C</kbd> per copiare.</p>
+<p>Il programma restituisce <samp>Hello World</samp>.</p>
+
+<!-- Codice su più righe (block con <pre>, dentro c'è <code>) -->
+<pre><code>function saluta() {
+  console.log("Ciao");
+}</code></pre>
+
+
+<!-- ========================= -->
+<!-- CITAZIONI                 -->
+<!-- ========================= -->
+
+<!-- Inline -->
+<p>Leonardo diceva: <q>La semplicità è la massima sofisticazione</q>.</p>
+
+<!-- Block -->
+<p>Come diceva Leonardo:</p>
+<blockquote>
+    La semplicità è la massima sofisticazione.
+</blockquote>
+
+
+<!-- ===================================== -->
+<!-- RUBY (ANNOTAZIONI LINGUE ASIATICHE)   -->
+<!-- ===================================== -->
+
+<p>
+    <ruby>
+        学校
+        <rp>(</rp><rt>がっこう</rt><rp>)</rp>
+    </ruby>
+    significa scuola.
+</p>
+
+
+<!-- ========================= -->
+<!-- MISURAZIONI E PROGRESSO   -->
+<!-- ========================= -->
+
+<p>
+    Livello batteria:
+    <meter value="70" min="0" max="100">70%</meter>
+</p>
+
+<p>
+    Caricamento file:
+    <progress value="40" max="100">40%</progress>
+</p>
+
+<p>
+    Caricamento in corso:
+    <progress max="100">In corso...</progress>
+</p>
+
+
+<!-- ========================= -->
+<!-- DIREZIONE DEL TESTO       -->
+<!-- ========================= -->
+
+<p>Utente: <bdi>محمد</bdi></p>
+
+<p><bdo dir="rtl">Testo invertito</bdo></p>
+
+
+<!-- ========================= -->
+<!-- INTERRUZIONE DI LINEA     -->
+<!-- ========================= -->
+
+<p>supercalifragilisti<wbr>chespiralido<wbr>so</p>
 
 
 
