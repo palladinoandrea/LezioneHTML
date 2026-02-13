@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--<input type="text">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required             ║ autofocus            ║
+║ placeholder          ║ readonly             ║ autocomplete         ║
+║ maxlength            ║ disabled             ║ form                 ║
+║ minlength            ║ pattern              ║ formaction           ║
+║ size                 ║                      ║ formmethod           ║
+║ list                 ║                      ║ formnovalidate       ║
+║ inputmode            ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╗
+║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╣
+║ (tutti i precedenti  ║ min                  ║
+║  sono compatibili    ║ max                  ║
+║  per type="text")    ║ step                 ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+╚══════════════════════╩══════════════════════╝
+-->
+
+
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="fname">First name: </label>
+    <input type="text" id="fname" name="fname">
+    <input type="submit">
+</form>
+<br><br>
+<!--<input type="password">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required             ║ autofocus            ║
+║ placeholder          ║ readonly             ║ autocomplete         ║
+║ maxlength            ║ disabled             ║ form                 ║
+║ minlength            ║ pattern              ║ formaction           ║
+║ size                 ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╗
+║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╣
+║ inputmode            ║ min                  ║
+║ list                 ║ max                  ║
+║                      ║ step                 ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+╚══════════════════════╩══════════════════════╝
+-->
+
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="pwd">Password:</label>
+    <input type="password" id="pwd" name="pwd" minlength="8">
+    <input type="submit">
+</form>
+<br><br>
+
+<!--
+ATTRIBUTI <input type="email">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required             ║ autofocus            ║
+║ placeholder          ║ readonly             ║ autocomplete         ║
+║ maxlength            ║ disabled             ║ form                 ║
+║ minlength            ║ pattern              ║ formaction           ║
+║ size                 ║                      ║ formmethod           ║
+║ list                 ║                      ║ formnovalidate       ║
+║ multiple             ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╗
+║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╣
+║ inputmode            ║ min                  ║
+║                      ║ max                  ║
+║                      ║ step                 ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+╚══════════════════════╩══════════════════════╝
+-->
+
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email">
+    <input type="submit">
+</form>
+<br><br>
+
+<!--<input type="search">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required             ║ autofocus            ║
+║ placeholder          ║ readonly             ║ autocomplete         ║
+║ maxlength            ║ disabled             ║ form                 ║
+║ minlength            ║ pattern              ║ formaction           ║
+║ size                 ║                      ║ formmethod           ║
+║ list                 ║                      ║ formnovalidate       ║
+║ inputmode            ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╗
+║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╣
+║ (tutti i precedenti  ║ min                  ║
+║  sono compatibili    ║ max                  ║
+║  per type="search")  ║ step                 ║
+║                      ║ multiple             ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+╚══════════════════════╩══════════════════════╝
+-->
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="gsearch">Search Google:</label>
+    <input type="search" id="gsearch" name="gsearch">
+    <input type="submit">
+</form>
+<br><br>
+
+
+
+
+<!--
+ATTRIBUTI <input type="tel">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required             ║ autofocus            ║
+║ placeholder          ║ readonly             ║ autocomplete         ║
+║ maxlength            ║ disabled             ║ form                 ║
+║ minlength            ║ pattern              ║ formaction           ║
+║ size                 ║                      ║ formmethod           ║
+║ list                 ║                      ║ formnovalidate       ║
+║ inputmode            ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╗
+║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╣
+║ (già inclusi sopra)  ║ min                  ║
+║                      ║ max                  ║
+║                      ║ step                 ║
+║                      ║ multiple             ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+╚══════════════════════╩══════════════════════╝
+-->
+
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="phone">Enter your phone number:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+    <input type="submit">
+</form>
+<br><br>
+
+
+
+
+<!--<input type="url">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required             ║ autofocus            ║
+║ placeholder          ║ readonly             ║ autocomplete         ║
+║ maxlength            ║ disabled             ║ form                 ║
+║ minlength            ║ pattern              ║ formaction           ║
+║ size                 ║                      ║ formmethod           ║
+║ list                 ║                      ║ formnovalidate       ║
+║ inputmode            ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╗
+║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╣
+║ (già inclusi sopra)  ║ min                  ║
+║                      ║ max                  ║
+║                      ║ step                 ║
+║                      ║ multiple             ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+╚══════════════════════╩══════════════════════╝
+-->
+<form action="https://www.w3schools.com/action_page.php">
+<label for="homepage">Add your homepage:</label>
+<input type="url" id="homepage" name="homepage" placeholder="http://www.nomedelsito.com">
+</form>
+
+
+
+
+<!--<input type="number">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ min                  ║ required             ║ autofocus            ║
+║ max                  ║ readonly             ║ autocomplete         ║
+║ step                 ║ disabled             ║ form                 ║
+║ value                ║                      ║ formaction           ║
+║                      ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╗
+║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╣
+║ placeholder          ║ maxLength            ║
+║ inputmode            ║ minLength            ║
+║ list                 ║ pattern              ║
+║                      ║ size                 ║
+║                      ║                      ║
+║                      ║                      ║
+║                      ║                      ║
+╚══════════════════════╩══════════════════════╝
+-->
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="quantity">Quantity (between 1 and 5):</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="5">
+    <input type="submit">
+</form>
+<br><br>
+
+<!--
+ATTRIBUTI <input type="range">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ min                  ║ disabled             ║ autofocus            ║
+║ max                  ║                      ║ form                 ║
+║ step                 ║                      ║ formaction           ║
+║ value                ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+║                      ║                      ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╗
+║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╣
+║ list                 ║ placeholder          ║
+║                      ║ inputmode            ║
+║                      ║ required             ║
+║                      ║ readonly             ║
+║                      ║ autocomplete         ║
+║                      ║ maxlength            ║
+║                      ║ minlength            ║
+║                      ║ pattern              ║
+║                      ║ size                 ║
+╚══════════════════════╩══════════════════════╝
+-->
+<!--
+ATTRIBUTI <input type="range">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ min                  ║ disabled             ║ autofocus            ║
+║ max                  ║                      ║ form                 ║
+║ step                 ║                      ║ formaction           ║
+║ value                ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+║                      ║                      ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╗
+║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╣
+║ list                 ║ placeholder          ║
+║                      ║ inputmode            ║
+║                      ║ required             ║
+║                      ║ readonly             ║
+║                      ║ autocomplete         ║
+║                      ║ maxlength            ║
+║                      ║ minlength            ║
+║                      ║ pattern              ║
+║                      ║ size                 ║
+║                      ║ multiple             ║
+╚══════════════════════╩══════════════════════╝
+-->
+
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="vol">Volume (between 0 and 50):</label>
+    <input type="range" id="vol" name="vol" min="0" max="50">
+    <input type="submit">
+</form>
+<br><br>
+
+<!--
+DATA E ORA
+ATTRIBUTI <input type="date | time | datetime-local | month | week">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ min                  ║ required             ║ autofocus            ║
+║ max                  ║ readonly*            ║ autocomplete         ║
+║ step                 ║ disabled             ║ form                 ║
+║ value                ║                      ║ formaction           ║
+║                      ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*readonly: funziona ma non impedisce modifica da tastiera in alcuni browser
+
+╔══════════════════════╦══════════════════════╗
+║ Supporto parziale    ║ Non supportati       ║
+╠══════════════════════╬══════════════════════╣
+║ list*                ║ maxlength            ║
+║ placeholder**        ║ minlength            ║
+║                      ║ pattern              ║
+║                      ║ size                 ║
+║                      ║ placeholder***       ║
+║                      ║ inputmode            ║
+║                      ║ multiple             ║
+╚══════════════════════╩══════════════════════╝
+
+*list: Chrome/Edge/Safari ✔, Firefox ❌
+**placeholder: solo in Firefox (fallback text input)
+***placeholder: non funziona in Chrome/Edge/Safari/Opera
+
+FORMATI VALUE:
+
+╔══════════════════════╦════════════════════════════════╗
+║ Type                 ║ Formato value                  ║
+╠══════════════════════╬════════════════════════════════╣
+║ date                 ║ YYYY-MM-DD                     ║
+║ time                 ║ HH:MM o HH:MM:SS               ║
+║ datetime-local       ║ YYYY-MM-DDTHH:MM               ║
+║ month                ║ YYYY-MM                        ║
+║ week                 ║ YYYY-W##                       ║
+╚══════════════════════╩════════════════════════════════╝
+-->
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="data">Inserisci un data:</label>
+    <input type="date" id="data" name="data"><br><br>
+
+    <label for="time">Inserisci un orario:</label>
+    <input type="time" id="time" name="time"><br><br>
+
+    <label for="data_ora">Inserimento data e orario:</label>
+    <input type="datetime-local" id="data_ora" name="data_ora"><br><br>
+
+    <label for="mese_anno">Inserisci il mese e anno:</label>
+    <input type="month" id="mese_anno" name="mese_anno"><br><br>
+
+    <label for="week">Seleziona la settimana:</label>
+    <input type="week" id="week" name="week">
+    <input type="submit">
+</form>
+<br><br>
+<!--
+ATTRIBUTI <input type="color">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required*            ║ autofocus            ║
+║                      ║ readonly**           ║ autocomplete         ║
+║                      ║ disabled             ║ form                 ║
+║                      ║                      ║ formaction***        ║
+║                      ║                      ║ formmethod***        ║
+║                      ║                      ║ formnovalidate***    ║
+║                      ║                      ║ formtarget***        ║
+║                      ║                      ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*required: funziona ma ha poco senso (sempre un colore valido di default)
+**readonly: impedisce l'apertura del selettore, ma si può modificare via JS
+***solo se dentro <form> e con type="submit"
+
+╔══════════════════════╦══════════════════════╗
+║ Supporto parziale    ║ Non supportati       ║
+╠══════════════════════╬══════════════════════╣
+║ list*                ║ maxlength            ║
+║                      ║ minlength            ║
+║                      ║ pattern              ║
+║                      ║ size                 ║
+║                      ║ step                 ║
+║                      ║ min                  ║
+║                      ║ max                  ║
+║                      ║ placeholder**        ║
+║                      ║ inputmode            ║
+║                      ║ multiple             ║
+╚══════════════════════╩══════════════════════╝
+
+*list: Chrome/Edge/Safari ✔, Firefox ❌
+**placeholder: non supportato (il browser mostra il colore, non testo)
+
+FORMATO VALUE:
+╔══════════════════════╦════════════════════════════════╗
+║ Attributo            ║ Formato                        ║
+╠══════════════════════╬════════════════════════════════╣
+║ value                ║ #RRGGBB (esadecimale)          ║
+║                      ║ default: #000000 (nero)        ║
+║                      ║ esempio: #ff0000 (rosso)       ║
+╚══════════════════════╩════════════════════════════════╝
+-->
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="selezionacolore">Select your favorite color:</label>
+    <input type="color" id="selezionacolore" name="selezionacolore" value="#ff0000">
+    <input type="submit">
+</form>
+<br><br>
+<!--<input type="file">
+
+
+╔══════════════════════╦══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║ Non supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╬══════════════════════╣
+║ accept               ║ required             ║ autofocus            ║ maxlength            ║
+║ capture              ║ disabled             ║ autocomplete*        ║ minlength            ║
+║ multiple             ║                      ║ form                 ║ pattern              ║
+║                      ║                      ║ formaction**         ║ size                 ║
+║                      ║                      ║ formmethod**         ║ step                 ║
+║                      ║                      ║ formnovalidate**     ║ min                  ║
+║                      ║                      ║ formtarget**         ║ max                  ║
+║                      ║                      ║                      ║ value                ║
+║                      ║                      ║                      ║ placeholder          ║
+║                      ║                      ║                      ║ list                 ║
+║                      ║                      ║                      ║ readonly             ║
+║                      ║                      ║                      ║ inputmode            ║
+╚══════════════════════╩══════════════════════╩══════════════════════╩══════════════════════╝
+*autocomplete: non ha effetti pratici su file
+**solo se dentro <form> e con type="submit"
+
+
+
+<label for="file">Seleziona il file:</label>
+<input type="file" id="file" name="file">
+
+*autocomplete: non ha effetti pratici su file
+***solo se dentro <form> e con type="submit"
+
+╔════════════════════════════════════════════════════════════════════╗
+║ ACCEPT - Esempi di utilizzo:                                      ║
+║  accept="image/*"              -> tutte le immagini               ║
+║  accept=".pdf,.doc,.docx"     -> estensioni specifiche            ║
+║  accept="image/png,image/jpeg"-> tipi MIME specifici              ║
+║  accept="audio/*"             -> tutti gli audio                  ║
+║  accept="video/*"             -> tutti i video                    ║
+║                                                                   ║
+║ CAPTURE - Uso mobile:                                             ║
+║  capture="camera"             -> fotocamera                       ║
+║  capture="microphone"         -> microfono                        ║
+║  capture="environment"        -> fotocamera posteriore            ║
+║                                                                   ║
+║ MULTIPLE - Permette selezione multipla di file                    ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<form action="https://www.w3schools.com/action_page.php">
+    <label for="file">Seleziona il file:</label>
+    <input type="file" id="file" name="file">
+    <input type="submit">
+</form>
+<br><br>
+<!--<input type="checkbox">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║ Non supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required             ║ autofocus            ║ maxlength            ║
+║ checked              ║ disabled             ║ autocomplete         ║ minlength            ║
+║                      ║                      ║ form                 ║ pattern              ║
+║                      ║                      ║ formaction           ║ size                 ║
+║                      ║                      ║ formmethod           ║ step                 ║
+║                      ║                      ║ formnovalidate       ║ min                  ║
+║                      ║                      ║ formtarget           ║ max                  ║
+║                      ║                      ║                      ║ placeholder          ║
+║                      ║                      ║                      ║ list                 ║
+║                      ║                      ║                      ║ readonly             ║
+║                      ║                      ║                      ║ inputmode            ║
+╚══════════════════════╩══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════╗
+║ VALUE - Valore inviato al server quando selezionato               ║
+║ CHECKED - Checkbox selezionata di default                         ║
+║ REQUIRED - Almeno una checkbox del gruppo deve essere selezionata ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+<form action="https://www.w3schools.com/action_page.php">
+    <input type="checkbox" id="scelta1" name="scelta1" value="scelta1">
+    <label for="scelta1">Hai selezionato scelta1</label><br>
+
+    <input type="checkbox" id="scelta2" name="scelta2" value="scelta2">
+    <label for="scelta2">Hai selezionato scelta2</label><br>
+
+    <input type="checkbox" id="scelta3" name="scelta3" value="scelta3">
+    <label for="scelta3">Hai selezionato scelta3</label><br>
+    <input type="submit">
+</form>
+<br><br>
+<!--
+ATTRIBUTI <input type="radio">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║ Non supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required             ║ autofocus            ║ maxlength            ║
+║ checked              ║ disabled             ║ autocomplete         ║ minlength            ║
+║                      ║                      ║ form                 ║ pattern              ║
+║                      ║                      ║ formaction           ║ size                 ║
+║                      ║                      ║ formmethod           ║ step                 ║
+║                      ║                      ║ formnovalidate       ║ min                  ║
+║                      ║                      ║ formtarget           ║ max                  ║
+║                      ║                      ║                      ║ placeholder          ║
+║                      ║                      ║                      ║ list                 ║
+║                      ║                      ║                      ║ readonly             ║
+║                      ║                      ║                      ║ inputmode            ║
+╚══════════════════════╩══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════╗
+║ VALUE - Valore inviato al server quando selezionato               ║
+║ CHECKED - Radio selezionata di default (solo una per gruppo)      ║
+║ REQUIRED - Obbligatorio selezionare un'opzione del gruppo         ║
+║ NAME - Raggruppa le radio (stesso name = stesso gruppo)           ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<form action="https://www.w3schools.com/action_page.php">
+    <!-- GRUPPO 1 - Tre opzioni, una sola selezionabile -->
+    <input type="radio" id="radio1" name="gruppo1" value="radio1">
+    <label for="radio1">Scelta radio 1</label><br>
+
+    <input type="radio" id="radio2" name="gruppo1" value="radio2">
+    <label for="radio2">Scelta radio 2</label><br>
+
+    <input type="radio" id="radio3" name="gruppo1" value="radio3">
+    <label for="radio3">Scelta radio 3</label><br>
+    <hr>
+
+    <!-- GRUPPO 2 - Due opzioni, una sola selezionabile -->
+    <input type="radio" id="radio4" name="gruppo2" value="radio4">
+    <label for="radio4">Scelta radio 4</label><br>
+
+    <input type="radio" id="radio5" name="gruppo2" value="radio5">
+    <label for="radio5">Scelta radio 5</label><br>
+    <input type="submit">
+</form>
+<br><br>
+
+
+
+
+
+</body>
+</html>
