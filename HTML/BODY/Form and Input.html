@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms e Input</title>
+</head>
+<body>
+<!-- FORM-->
+<!--
+<form attributi_globali attributi_specifici attributi_evento>
+accept-charset="UTF-8
+Specifica la codifica dei caratteri da utilizzare quando i dati del form
+vengono inviati al server.
+
+
+action="URL"
+Indica l'URL (indirizzo) a cui verranno inviati i dati del form
+quando l'utente preme il pulsante di invio.
+
+autocomplete="on|off"
+Attiva o disattiva il completamento automatico dei campi del modulo.
+Valori possibili:
+- on  → Il browser completerà automaticamente i valori in base ai valori che l'utente ha inserito prima
+- off → L'utente deve inserire un valore in ogni campo per ogni utilizzo. Il browser non completa automaticamente le voci
+
+enctype="value"
+Specifica come devono essere codificati i dati prima di essere inviati al server.
+Si usa solo con method="post".
+
+Valori possibili:
+
+- application/x-www-form-urlencoded (predefinito)
+  Usato per form semplici.
+  I dati vengono convertiti in coppie chiave=valore
+  (esempio: nome=Mario&cognome=Rossi).
+
+- multipart/form-data (necessario per upload di file)
+  Usato quando nel form è presente <input type="file">.
+  I dati vengono inviati in parti separate e i file non vengono convertiti in testo.
+
+- text/plain
+  Invia i dati in formato testo semplice, senza codifica speciale.
+  È raramente usato, principalmente per debug o test.
+
+
+method="get|post|dialog"
+Specifica il metodo HTTP usato per inviare i dati.
+Valori possibili:
+- get  → i dati sono visibili nell'URL
+- post → i dati sono inviati nel corpo della richiesta
+- dialog → Quando il modulo si trova all'interno di un elemento <dialog>, chiude la finestra di dialogo e provoca l'esecuzione di un evento di invio all'invio, senza inviare dati o cancellare il modulo
+
+
+name="text"
+Specifica il nome del form.
+Serve per identificare il form tramite JavaScript.
+
+novalidate
+Indica che il form non deve essere validato automaticamente
+prima dell'invio.
+Non ha valore (è un attributo booleano).
+
+
+rel="value"
+Specifica la relazione tra il documento corrente e la risorsa collegata.
+
+Valori possibili:
+
+- rel="external"
+  Indica che la risorsa collegata è esterna al sito corrente.
+
+- rel="help"
+  Indica che il link porta a una pagina di aiuto.
+
+- rel="license"
+  Indica che il link porta alla licenza del documento.
+
+- rel="next"
+  Indica che il link porta al documento successivo (es. pagina successiva).
+
+- rel="prev"
+  Indica che il link porta al documento precedente.
+
+- rel="search"
+  Indica che il link porta a uno strumento di ricerca.
+
+- rel="nofollow"
+  Dice ai motori di ricerca di non seguire quel link
+  (non influenza il posizionamento SEO).
+
+- rel="noopener"
+  Impedisce alla pagina aperta con target="_blank"
+  di accedere alla finestra originale (migliora la sicurezza).
+
+- rel="noreferrer"
+  Impedisce di inviare informazioni sulla pagina di origine
+  e blocca l'accesso alla finestra originale.
+
+- rel="opener"
+  Permette alla nuova pagina aperta di accedere alla finestra originale
+  (opposto di noopener).
+
+
+target="_blank|_self|_parent|_top|framename"
+Specifica dove visualizzare la risposta dopo l'invio del form.
+Valori possibili:
+- _blank  → in una nuova scheda
+- _self   → nella stessa pagina (predefinito)
+- _parent → nel frame genitore
+- _top    → nella finestra completa
+- framename → La risposta viene visualizzata in un iframe denominato
+
+style="proprietà: valore;"
+Specifica uno stile CSS inline direttamente sull’elemento HTML.
+Permette di applicare regole di formattazione senza usare un file CSS esterno.
+
+
+-->
+<form
+        id="formLogin"
+        class="form-principale"
+        title="Modulo di accesso"
+        lang="it"
+        dir="ltr"
+        data-versione="1.0"
+
+        action="#"
+        method="post"
+        enctype="multipart/form-data"
+        accept-charset="UTF-8"
+        autocomplete="on"
+        name="loginForm"
+        novalidate
+        target="_self"
+
+        onsubmit="return controllaForm()"
+        onreset="console.log('Reset eseguito')"
+        oninput="console.log('Input modificato')"
+        onchange="console.log('Valore cambiato')"
+
+>
+</form>
+<!-- Campi di testo -->
+
+<label for="text">Campo1 </label>
+<input type="text" id="text" name="text"><br><br>
+
+<label for="pwd">Password:</label>
+<input type="password" id="pwd" name="pwd">
+
+<label for="email">e-mail:</label>
+<input type="email" id="email" name="email">
+
+<label for="search">Campo di ricerca</label>
+<input type="search" id="search" name="search">
+
+<label for="phone">Enter your phone number:</label>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{10}">
+
+<label for="homepage">Add your homepage:</label>
+<input type="url" id="homepage" name="homepage" placeholder="http://www.nomedelsito.com">
+<!--
+ATTRIBUTI <input type="number">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ min                  ║ required             ║ autofocus            ║
+║ max                  ║ readonly             ║ autocomplete         ║
+║ step                 ║ disabled             ║ form                 ║
+║ value                ║                      ║ formaction           ║
+║                      ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ GLobali              ║ Compatibili          ║ Non compatibili      ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║ placeholder          ║ maxLength            ║
+║ name                 ║ inputmode            ║ minLength            ║
+║ class                ║ list                 ║ pattern              ║
+║ style                ║                      ║ size                 ║
+║ title                ║                      ║                      ║
+║ lang                 ║                      ║                      ║
+║ dir                  ║                      ║                      ║
+║ tabindex             ║                      ║                      ║
+║ hidden               ║                      ║                      ║
+║ data-*               ║                      ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+-->
+
+
+<label for="quantity">Quantity (between 1 and 5):</label>
+<input type="number" id="quantity" name="quantity" min="1" max="5">
+
+<label for="vol">Volume (between 0 and 50):</label>
+<input type="range" id="vol" name="vol" min="0" max="50">
+
+<!-- Data e ora -->
+<!--
+ATTRIBUTI <input type="date | time | datetime-local | month | week">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ min                  ║ required             ║ autofocus            ║
+║ max                  ║ readonly*            ║ autocomplete         ║
+║ step                 ║ disabled             ║ form                 ║
+║ value                ║                      ║ formaction           ║
+║                      ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*readonly: funziona ma non impedisce modifica da tastiera in alcuni browser
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ Non supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║ list*                ║ maxlength            ║
+║ name                 ║ placeholder**        ║ minlength            ║
+║ class                ║                      ║ pattern              ║
+║ style                ║                      ║ size                 ║
+║ title                ║                      ║ placeholder***       ║
+║ lang                 ║                      ║                      ║
+║ dir                  ║                      ║                      ║
+║ tabindex             ║                      ║                      ║
+║ hidden               ║                      ║                      ║
+║ data-*               ║                      ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*list: Chrome/Edge/Safari ✔, Firefox ❌
+**placeholder: solo in Firefox (fallback text input)
+***placeholder: non funziona in Chrome/Edge/Safari/Opera
+-->
+
+<label for="data">Inserisci un data:</label>
+<input type="date" id="data" name="data">
+
+<label for="time">Inserisci un orario:</label>
+<input type="time" id="time" name="time">
+
+<label for="data_ora">Inserimento data e orario:</label>
+<input type="datetime-local" id="data_ora" name="data_ora">
+
+
+<label for="mese_anno">Inserisci il mese e anno:</label>
+<input type="month" id="mese_anno" name="mese_anno" >
+
+<label for="week">Seleziona la settimana:</label>
+<input type="week" id="week" name="week">
+
+<!--
+ATTRIBUTI <input type="color">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required*            ║ autofocus            ║
+║                      ║ readonly**           ║ autocomplete         ║
+║                      ║ disabled             ║ form                 ║
+║                      ║                      ║ formaction***        ║
+║                      ║                      ║ formmethod***        ║
+║                      ║                      ║ formnovalidate***    ║
+║                      ║                      ║ formtarget***        ║
+║                      ║                      ║ name                 ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*required: funziona ma ha poco senso (sempre un colore valido di default)
+**readonly: impedisce l'apertura del selettore, ma si può modificare via JS
+***solo se dentro <form> e con type="submit"
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ Non supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║ list*                ║ maxlength            ║
+║ name                 ║ placeholder**        ║ minlength            ║
+║ class                ║                      ║ pattern              ║
+║ style                ║                      ║ size                 ║
+║ title                ║                      ║ step                 ║
+║ lang                 ║                      ║ min                  ║
+║ dir                  ║                      ║ max                  ║
+║ tabindex             ║                      ║                      ║
+║ hidden               ║                      ║                      ║
+║ data-*               ║                      ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*list: Chrome/Edge/Safari ✔, Firefox ❌
+**placeholder: non supportato (il browser mostra il colore, non testo)
+-->
+<label for="selezionacolore">Select your favorite color:</label>
+<input type="color" id="selezionacolore" name="selezionacolore" value="#ff0000">
+
+<!--
+ATTRIBUTI <input type="file">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ accept               ║ required             ║ autofocus            ║
+║ capture              ║ disabled             ║ autocomplete*        ║
+║ files**              ║                      ║ form                 ║
+║ multiple             ║                      ║ formaction***        ║
+║                      ║                      ║ formmethod***        ║
+║                      ║                      ║ formnovalidate***    ║
+║                      ║                      ║ formtarget***        ║
+║                      ║                      ║ name                 ║
+║                      ║                      ║ readonly****         ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*autocomplete: non ha effetti pratici su file
+**files: propriet√† DOM di sola lettura, NON attributo HTML
+***solo se dentro <form> e con type="submit"
+****readonly: NON supportato su type="file"
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ Non supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║                      ║ maxlength            ║
+║ name                 ║                      ║ minlength            ║
+║ class                ║                      ║ pattern              ║
+║ style                ║                      ║ size*                ║
+║ title                ║                      ║ step                 ║
+║ lang                 ║                      ║ min                  ║
+║ dir                  ║                      ║ max                  ║
+║ tabindex             ║                      ║ value**              ║
+║ hidden               ║                      ║ placeholder***       ║
+║ data-*               ║                      ║ list****             ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*size: funziona solo su type="text" e simili
+**value: di sola lettura per sicurezza (non impostabile da JS/HTML)
+***placeholder: non supportato su file
+****list: non supportato su file
+
+╔════════════════════════════════════════════════════════════════════╗
+║ ACCEPT - Esempi di utilizzo:                                      ║
+║  accept="image/*"              -> tutte le immagini               ║
+║  accept=".pdf,.doc,.docx"     -> estensioni specifiche            ║
+║  accept="image/png,image/jpeg"-> tipi MIME specifici              ║
+║  accept="audio/*"             -> tutti gli audio                  ║
+║  accept="video/*"             -> tutti i video                    ║
+║                                                                   ║
+║ CAPTURE - Uso mobile:                                             ║
+║  capture="camera"             -> fotocamera                       ║
+║  capture="microphone"         -> microfono                        ║
+║  capture="environment"        -> fotocamera posteriore            ║
+║                                                                   ║
+║ MULTIPLE - Permette selezione multipla di file                    ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<label for="file">Seleziona il file:</label>
+<input type="file" id="file" name="file">
+
+
+<!--
+ATTRIBUTI <input type="checkbox">
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required             ║ autofocus            ║
+║ checked              ║ disabled             ║ autocomplete         ║
+║                      ║ readonly*            ║ form                 ║
+║                      ║                      ║ formaction**         ║
+║                      ║                      ║ formmethod**         ║
+║                      ║                      ║ formnovalidate**     ║
+║                      ║                      ║ formtarget**         ║
+║                      ║                      ║ name                 ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*readonly: non impedisce il cambiamento visivo (usare disabled)
+**solo se dentro <form> e con type="submit"
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ Non supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║                      ║ maxlength            ║
+║ name                 ║                      ║ minlength            ║
+║ class                ║                      ║ pattern              ║
+║ style                ║                      ║ size                 ║
+║ title                ║                      ║ step                 ║
+║ lang                 ║                      ║ min                  ║
+║ dir                  ║                      ║ max                  ║
+║ tabindex             ║                      ║ placeholder          ║
+║ hidden               ║                      ║ list                 ║
+║ data-*               ║                      ║ accept               ║
+║                      ║                      ║ capture              ║
+║                      ║                      ║ multiple*            ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*multiple: non supportato su checkbox (si usano più checkbox con stesso name)
+
+╔════════════════════════════════════════════════════════════════════╗
+║ NOTE IMPORTANTI:                                                   ║
+║ - value: inviato solo se checkbox è selezionato                    ║
+║ - default value: "on" se non specificato                           ║
+║ - checked: attributo booleano (presenza = selezionato)             ║
+║ - Più checkbox con stesso name: inviano array di valori            ║
+║                                                                    ║
+║ ESEMPIO con stesso name:                                           ║
+║ <input type="checkbox" name="interessi" value="libri">             ║
+║ <input type="checkbox" name="interessi" value="musica">            ║
+║ → invia interessi=libri&interessi=musica (se selezionati)          ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<input type="checkbox" id="scelta1" name="scelta1" value="scelta1">
+<label for="scelta1">Hai selezionato scelta1</label><br>
+
+<input type="checkbox" id="scelta2" name="scelta2" value="scelta2">
+<label for="scelta2">Hai selezionato scelta2</label><br>
+
+<input type="checkbox" id="scelta3" name="scelta3" value="scelta3">
+<label for="scelta3">Hai selezionato scelta3</label><br>
+
+
+<!--
+input type="radio">
+
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ required*            ║ autofocus            ║
+║ checked              ║ disabled             ║ autocomplete         ║
+║                      ║                      ║ form                 ║
+║                      ║                      ║ formaction**         ║
+║                      ║                      ║ formmethod**         ║
+║                      ║                      ║ formnovalidate**     ║
+║                      ║                      ║ formtarget**         ║
+║                      ║                      ║ name***              ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*required: basta su un solo elemento del gruppo per obbligare la selezione
+**solo se dentro <form> e con type="submit"
+***name: stesso valore per tutto il gruppo (selezione esclusiva)
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ NON supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║                      ║ maxlength            ║
+║ name                 ║                      ║ minlength            ║
+║ class                ║                      ║ pattern              ║
+║ style                ║                      ║ size                 ║
+║ title                ║                      ║ step                 ║
+║ lang                 ║                      ║ min                  ║
+║ dir                  ║                      ║ max                  ║
+║ tabindex             ║                      ║ placeholder          ║
+║ hidden               ║                      ║ list                 ║
+║ data-*               ║                      ║ accept               ║
+║                      ║                      ║ capture              ║
+║                      ║                      ║ multiple             ║
+║                      ║                      ║ readonly*            ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*readonly: non supportato su radio (usare disabled)
+
+╔════════════════════════════════════════════════════════════════════╗
+║ NOTE IMPORTANTI:                                                   ║
+║ - value: inviato al server SOLO se il radio è selezionato          ║
+║ - checked: attributo booleano (presenza = selezionato di default)  ║
+║ - name: DEVE essere identico per TUTTI i radio dello stesso gruppo ║
+║ - required: va inserito su UN SOLO radio del gruppo (funziona)     ║
+║ - Deselezione: non possibile via click (solo selezionando altro)   ║
+║                                                                    ║
+║ ESEMPIO CORRETTO:                                                  ║
+║ <input type="radio" name="colore" value="rosso" id="rosso">        ║
+║ <label for="rosso">Rosso</label>                                   ║
+║ <input type="radio" name="colore" value="verde" id="verde">        ║
+║ <label for="verde">Verde</label>                                   ║
+║ → invia colore=rosso (se selezionato)                              ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<!-- GRUPPO 1 - Tre opzioni, una sola selezionabile -->
+<input type="radio" id="radio1" name="gruppo1" value="radio1">
+<label for="radio1">Scelta radio 1</label><br>
+
+<input type="radio" id="radio2" name="gruppo1" value="radio2">
+<label for="radio2">Scelta radio 2</label><br>
+
+<input type="radio" id="radio3" name="gruppo1" value="radio3">
+<label for="radio3">Scelta radio 3</label><br>
+<hr>
+
+<!-- GRUPPO 2 - Due opzioni, una sola selezionabile -->
+<input type="radio" id="radio4" name="gruppo2" value="radio4">
+<label for="radio4">Scelta radio 4</label><br>
+
+<input type="radio" id="radio5" name="gruppo2" value="radio5">
+<label for="radio5">Scelta radio 5</label><br>
+
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                          ATTRIBUTI <input type="button">                         ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ JavaScript           ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value*               ║ onclick              ║ autofocus            ║
+║                      ║ onmouseover          ║ disabled             ║
+║                      ║ onmouseout           ║ form**               ║
+║                      ║ onfocus              ║ name                 ║
+║                      ║ onblur               ║                      ║
+║                      ║ ... (tutti gli event)║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*value: testo visualizzato sul pulsante (obbligatorio)
+**form: associa il pulsante a un form (anche se fuori)
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ NON supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║                      ║ maxlength            ║
+║ name                 ║                      ║ minlength            ║
+║ class                ║                      ║ pattern              ║
+║ style                ║                      ║ size                 ║
+║ title                ║                      ║ step                 ║
+║ lang                 ║                      ║ min                  ║
+║ dir                  ║                      ║ max                  ║
+║ tabindex             ║                      ║ placeholder          ║
+║ hidden               ║                      ║ list                 ║
+║ data-*               ║                      ║ accept               ║
+║                      ║                      ║ capture              ║
+║                      ║                      ║ multiple             ║
+║                      ║                      ║ checked              ║
+║                      ║                      ║ required             ║
+║                      ║                      ║ readonly             ║
+║                      ║                      ║ src                  ║
+║                      ║                      ║ alt                  ║
+║                      ║                      ║ width                ║
+║                      ║                      ║ height               ║
+║                      ║                      ║ formaction           ║
+║                      ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════╗
+║ NOTE IMPORTANTI:                                                  ║
+║                                                                   ║
+║ type="button":                                                    ║
+║ - Non ha azione predefinita (a differenza di submit/reset)       ║
+║ - Deve essere programmato con JavaScript                          ║
+║ - value = testo visibile sul pulsante (obbligatorio)             ║
+║ - Può essere usato dentro e fuori i form                          ║
+║                                                                   ║
+║ CONFRONTO:                                                        ║
+║ <button> vs <input type="button">:                                ║
+║ - <button> può contenere HTML (icone, grassetto, ecc.)           ║
+║ - <input type="button"> solo testo (value)                       ║
+║ - Entrambi fanno la stessa cosa                                   ║
+║                                                                   ║
+║ ESEMPIO ALTERNATIVO CON <button>:                                ║
+║ <button onclick="msg()">Click me</button>                        ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<input type="button" value="Click me" onclick="msg()">
+
+<script>
+    function msg() {
+        alert("Hello world!");
+    }
+</script>
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                          ATTRIBUTI <input type="submit">                         ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Sovrascrittura form* ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ formaction           ║ autofocus            ║
+║                      ║ formmethod           ║ disabled             ║
+║                      ║ formnovalidate       ║ form**               ║
+║                      ║ formtarget           ║ name                 ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*Sovrascrivono gli attributi action/method/novalidate/target del <form>
+**form: associa il pulsante a un form (anche se fuori dal form)
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ NON supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║                      ║ maxlength            ║
+║ name                 ║                      ║ minlength            ║
+║ class                ║                      ║ pattern              ║
+║ style                ║                      ║ size                 ║
+║ title                ║                      ║ step                 ║
+║ lang                 ║                      ║ min                  ║
+║ dir                  ║                      ║ max                  ║
+║ tabindex             ║                      ║ placeholder          ║
+║ hidden               ║                      ║ list                 ║
+║ data-*               ║                      ║ accept               ║
+║                      ║                      ║ capture              ║
+║                      ║                      ║ multiple             ║
+║                      ║                      ║ checked              ║
+║                      ║                      ║ required             ║
+║                      ║                      ║ readonly             ║
+║                      ║                      ║ src                  ║
+║                      ║                      ║ alt                  ║
+║                      ║                      ║ width                ║
+║                      ║                      ║ height               ║
+║                      ║                      ║ onclick**            ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+**onclick: è supportato! Ma qui è nella colonna sbagliata - è un evento globale supportato
+
+╔════════════════════════════════════════════════════════════════════╗
+║ NOTE IMPORTANTI:                                                  ║
+║                                                                   ║
+║ type="submit":                                                    ║
+║ - Invia automaticamente i dati del form al server                ║
+║ - Azione predefinita: invio del form e ricarica pagina           ║
+║ - Value = testo visualizzato sul pulsante                        ║
+║ - Se non specificato, default: "Invia"/"Submit" (browser)        ║
+║                                                                   ║
+║ FORMACTION / FORMMETHOD:                                          ║
+║ - Permettono di avere pulsanti submit diversi con destinazioni   ║
+║   diverse nello stesso form                                      ║
+║                                                                   ║
+║ ESEMPIO:                                                          ║
+║ <form action="/normale.php">                                     ║
+║   <input type="submit" value="Salva bozza">                      ║
+║   <input type="submit" value="Pubblica"                         ║
+║          formaction="/pubblica.php" formmethod="post">           ║
+║ </form>                                                           ║
+║                                                                   ║
+║ CONFRONTO:                                                        ║
+║ <button type="submit"> vs <input type="submit">:                 ║
+║ - <button> può contenere HTML (icone, testo formattato)          ║
+║ - <input> solo testo (attributo value)                           ║
+║ - Entrambi inviano il form                                       ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                     ATTRIBUTI <input type="reset">                               ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Comportamento        ║ NOTE                 ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ autofocus            ║ Nessun attributo     ║
+║                      ║ disabled             ║ di sovrascrittura    ║
+║                      ║ form*                ║ (formaction,         ║
+║                      ║ name                 ║  formmethod, ...)    ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*form: associa il pulsante a un form (anche se fuori dal form)
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ NON supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║                      ║ maxlength            ║
+║ name                 ║                      ║ minlength            ║
+║ class                ║                      ║ pattern              ║
+║ style                ║                      ║ size                 ║
+║ title                ║                      ║ step                 ║
+║ lang                 ║                      ║ min                  ║
+║ dir                  ║                      ║ max                  ║
+║ tabindex             ║                      ║ placeholder          ║
+║ hidden               ║                      ║ list                 ║
+║ data-*               ║                      ║ accept               ║
+║                      ║                      ║ capture              ║
+║                      ║                      ║ multiple             ║
+║                      ║                      ║ checked              ║
+║                      ║                      ║ required             ║
+║                      ║                      ║ readonly             ║
+║                      ║                      ║ src                  ║
+║                      ║                      ║ alt                  ║
+║                      ║                      ║ width                ║
+║                      ║                      ║ height               ║
+║                      ║                      ║ formaction           ║
+║                      ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════╗
+║ NOTE IMPORTANTI:                                                  ║
+║                                                                   ║
+║ type="reset":                                                     ║
+║ - Resetta TUTTI i campi del form ai VALORI INIZIALI              ║
+║ - NON cancella i campi! Ripristina i valori di default           ║
+║ - Value = testo visualizzato sul pulsante                        ║
+║ - Se non specificato, default: "Reset" (browser)                 ║
+║                                                                   ║
+║ ⚠️ ATTENZIONE:                                                    ║
+║ - Non chiede conferma! Azione potenzialmente pericolosa          ║
+║ - L'utente può perdere dati inseriti senza volerlo               ║
+║ - Molti sviluppatori preferiscono NON usarlo o aggiungere JS     ║
+║                                                                   ║
+║ CONFRONTO:                                                        ║
+║ ┌─────────────┬──────────────────┬─────────────────────┐         ║
+║ │ Type        │ Azione           │ Tipico utilizzo     │         ║
+║ ├─────────────┼──────────────────┼─────────────────────┤         ║
+║ │ submit      │ Invia form       │ Salva, Invia, OK    │         ║
+║ │ reset       │ Resetta campi    │ Annulla, Cancella   │         ║
+║ │ button      │ Nessuna (JS)     │ Personalizzato      │         ║
+║ └─────────────┴──────────────────┴─────────────────────┘         ║
+║                                                                   ║
+║ ESEMPIO COMPLETO:                                                ║
+║ <form>                                                           ║
+║   <label>Nome: <input type="text" name="nome" value="Mario"></label>║
+║   <input type="reset" value="Annulla modifiche">                 ║
+║   <input type="submit" value="Salva">                            ║
+║ </form>                                                           ║
+║ → Reset ripristina "Mario" (valore iniziale)                    ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<input type="reset" value="Reset">
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                          ATTRIBUTI <input type="image">                          ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════╦══════════════════════╦══════════════════════╦══════════════════════╗
+║ Obbligatori          ║ Specifici            ║ Sovrascrittura form* ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╬══════════════════════╣
+║ src                  ║ width                ║ formaction           ║ autofocus            ║
+║ alt                  ║ height               ║ formmethod           ║ disabled             ║
+║                      ║                      ║ formnovalidate       ║ form**               ║
+║                      ║                      ║ formtarget           ║ name***              ║
+╚══════════════════════╩══════════════════════╩══════════════════════╩══════════════════════╝
+
+*Sovrascrivono gli attributi action/method/novalidate/target del <form>
+**form: associa il pulsante a un form (anche se fuori dal form)
+***name: invia anche coordinate del click (nome.x e nome.y)
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ NON supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║ value*               ║ maxlength            ║
+║ class                ║                      ║ minlength            ║
+║ style                ║                      ║ pattern              ║
+║ title                ║                      ║ size                 ║
+║ lang                 ║                      ║ step                 ║
+║ dir                  ║                      ║ min                  ║
+║ tabindex             ║                      ║ max                  ║
+║ hidden               ║                      ║ placeholder          ║
+║ data-*               ║                      ║ list                 ║
+║                      ║                      ║ accept               ║
+║                      ║                      ║ capture              ║
+║                      ║                      ║ multiple             ║
+║                      ║                      ║ checked              ║
+║                      ║                      ║ required             ║
+║                      ║                      ║ readonly             ║
+║                      ║                      ║ value**              ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*value: esiste ma non viene mai usato/inviato (usa alt)
+**value: completamente ignorato su type="image"
+
+╔════════════════════════════════════════════════════════════════════╗
+║ NOTE IMPORTANTI:                                                   ║
+║                                                                    ║
+║ type="image":                                                      ║
+║ - FUNZIONA COME UN SUBMIT CON IMMAGINE                             ║
+║ - Invia automaticamente il form quando cliccato                    ║
+║ - Invia anche le COORDINATE del click:                             ║
+║   → name.x=123 & name.y=456 (dove name è l'attributo name)         ║
+║                                                                    ║
+║ SRC e ALT:                                                         ║
+║ - src: URL dell'immagine (OBBLIGATORIO)                            ║
+║ - alt: testo alternativo (OBBLIGATORIO per accessibilità)          ║
+║ - title: consigliato (tooltip e accessibilità)                     ║
+║                                                                    ║
+║ WIDTH e HEIGHT:                                                    ║
+║ - Non obbligatori ma FORTEMENTE CONSIGLIATI                        ║
+║ - SVG vettoriali: basta width, height si adatta                    ║
+║ - PNG/JPG: specificare entrambi per evitare layout shift           ║
+║                                                                    ║
+║ CONFRONTO:                                                         ║
+║ ┌──────────────┬──────────────────┬─────────────────────────┐      ║
+║ │ Type         │ Aspetto          │ Comportamento           │      ║
+║ ├──────────────┼──────────────────┼─────────────────────────┤      ║
+║ │ submit       │ Testo (value)    │ Invia form              │      ║
+║ │ image        │ Immagine         │ Invia form + coordinate │      ║
+║ │ button       │ Testo (value)    │ Nessuno (JS)            │      ║
+║ └──────────────┴──────────────────┴─────────────────────────┘      ║
+║                                                                    ║
+║                                                                    ║
+║                                                                    ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<input type="image"
+       src="https://icons.getbootstrap.com/assets/icons/send-fill.svg"
+       alt="Invia"
+       width="48"
+       height="48">
+<input type="image" src="https://icons.getbootstrap.com/assets/icons/send-fill.svg" alt="Invia" width="48" height="48">
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                          ATTRIBUTI <input type="hidden">                         ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Obbligatori          ║ Comportamento        ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ value                ║ name                 ║ form*                ║
+║                      ║ value**              ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*form: associa il campo hidden a un form (anche se fuori)
+**value: tecnicamente obbligatorio? Non dà errore se manca, ma è inutile senza
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ NON supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║                      ║ maxlength            ║
+║ class*               ║                      ║ minlength            ║
+║ style*               ║                      ║ pattern              ║
+║ title*               ║                      ║ size                 ║
+║ lang                 ║                      ║ step                 ║
+║ dir                  ║                      ║ min                  ║
+║ tabindex**           ║                      ║ max                  ║
+║ hidden***            ║                      ║ placeholder          ║
+║ data-*               ║                      ║ list                 ║
+║                      ║                      ║ accept               ║
+║                      ║                      ║ capture              ║
+║                      ║                      ║ multiple             ║
+║                      ║                      ║ checked              ║
+║                      ║                      ║ required             ║
+║                      ║                      ║ readonly             ║
+║                      ║                      ║ disabled****         ║
+║                      ║                      ║ autofocus            ║
+║                      ║                      ║ autocomplete         ║
+║                      ║                      ║ src                  ║
+║                      ║                      ║ alt                  ║
+║                      ║                      ║ width                ║
+║                      ║                      ║ height               ║
+║                      ║                      ║ formaction           ║
+║                      ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*class/style/title: esistono ma non hanno effetto visivo (campo nascosto)
+**tabindex: non ha senso su un campo invisibile
+***hidden: ridondante (type="hidden" è già nascosto)
+****disabled: funziona ma blocca l'invio del valore
+
+╔═══════════════════════════════════════════════════════════════════╗
+║ NOTE IMPORTANTI:                                                  ║
+║                                                                   ║
+║ type="hidden":                                                    ║
+║ - NON viene mostrato all'utente                                   ║
+║ - VIENE inviato al server con i dati del form                     ║
+║ - Utilizzato per dati contestuali:                                ║
+║   → ID utente, ID prodotto, token CSRF, paginazione               ║
+║   → timestamp, riferimenti sessione, dati predefiniti             ║
+║                                                                   ║
+║ ⚠️ SICUREZZA:                                                     ║
+║ - L'utente NON vede ma PUÒ modificare (dev tools)                 ║
+║ - NON inserire dati sensibili (password, prezzi, ruoli)          ║
+║ - Usare per REFERENZIARE, non per AUTORIZZARE                    ║
+║ - Validare SEMPRE lato server!                                   ║
+║                                                                   ║
+║ 📦 ESEMPI DI UTILIZZO:                                            ║
+║ ┌─────────────────────────────────────────────────────────────┐   ║
+║ │ <input type="hidden" name="user_id" value="12345">        │   ║
+║ │ <input type="hidden" name="product_id" value="987">       │   ║
+║ │ <input type="hidden" name="csrf_token" value="a1b2c3">    │   ║
+║ │ <input type="hidden" name="redirect" value="/thankyou">   │   ║
+║ │ <input type="hidden" name="form_id" value="contact">      │   ║
+║ └─────────────────────────────────────────────────────────────┘ ║
+║                                                                 ║
+║ 🆚 CONFRONTO:                                                    ║
+║ ┌──────────┬─────────────────┬────────────────────────────┐     ║
+║ │ Type     │ Visibile        │ Modificabile dall'utente   │     ║
+║ ├──────────┼─────────────────┼────────────────────────────┤     ║
+║ │ hidden   │ ❌ No           │ ✅ Sì (dev tools)           │      ║
+║ │ text     │ ✅ Sì           │ ✅ Sì (interfaccia)         │     ║
+║ │ readonly │ ✅ Sì           │ ❌ No                       │     ║
+║ │ disabled │ ✅ Sì (grigio)  │ ❌ No                       │     ║
+║ └──────────┴─────────────────┴────────────────────────────┘     ║
+║                                                                 ║
+║ 💡 BEST PRACTICE:                                               ║
+║ - name: sempre descrittivo                                      ║
+║ - value: sempre presente                                        ║
+║ - id: utile per JS (selettore)                                  ║
+║ - Non abusare: pochi hidden necessari                           ║
+╚═════════════════════════════════════════════════════════════════╝
+-->
+
+<input type="hidden" id="custId" name="custId" value="3487">
+
+
+<!--Test Area-->
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                              ATTRIBUTI <textarea>                                ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════╦══════════════════════╦══════════════════════╦══════════════════════╗
+║ Dimensioni           ║ Validazione          ║ Comportamento        ║ Specifici            ║
+╠══════════════════════╬══════════════════════╬══════════════════════╬══════════════════════╣
+║ rows                 ║ required             ║ autofocus            ║ placeholder          ║
+║ cols                 ║ readonly             ║ autocomplete         ║ maxlength            ║
+║                      ║ disabled             ║ form*                ║ minlength            ║
+║                      ║                      ║ name                 ║ wrap**               ║
+║                      ║                      ║ id                   ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╩══════════════════════╝
+
+*form: associa la textarea a un form (anche se fuori)
+**wrap: suggerimento su come gestire gli a capo (hard/soft/off) - supporto variabile
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ NON supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║                      ║ value*               ║
+║ class                ║                      ║ pattern              ║
+║ style                ║                      ║ size                 ║
+║ title                ║                      ║ step                 ║
+║ lang                 ║                      ║ min                  ║
+║ dir                  ║                      ║ max                  ║
+║ tabindex             ║                      ║ list                 ║
+║ hidden               ║                      ║ accept               ║
+║ data-*               ║                      ║ capture              ║
+║                      ║                      ║ multiple             ║
+║                      ║                      ║ checked              ║
+║                      ║                      ║ src                  ║
+║                      ║                      ║ alt                  ║
+║                      ║                      ║ width                ║
+║                      ║                      ║ height               ║
+║                      ║                      ║ formaction           ║
+║                      ║                      ║ formmethod           ║
+║                      ║                      ║ formnovalidate       ║
+║                      ║                      ║ formtarget           ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*value: non esiste! Il contenuto va tra i tag di apertura e chiusura
+
+╔════════════════════════════════════════════════════════════════════╗
+║ NOTE IMPORTANTI:                                                  ║
+║                                                                   ║
+║ 📋 DIFFERENZE RISPETTO A <input>:                                ║
+║ ┌──────────────┬────────────────────────┬──────────────────────┐  ║
+║ │Caratteristica│ <input>                │ <textarea>           │  ║
+║ ├──────────────┼────────────────────────┼──────────────────────┤  ║
+║ │ Tag          │ Auto-chiuso            │ Apertura/chiusura    │  ║
+║ │ Value        │ Attributo value        │ Contenuto tra tag    │  ║
+║ │ Testo predef.│ value="testo"          │ >testo</textarea>    │  ║
+║ │ Righe        │ size (text)            │ rows                 │  ║
+║ │ Colonne      │ size (text)            │ cols                 │  ║
+║ │ Maxlength    │ ✅                      │ ✅                   │  ║
+║ │ Placeholder  │ ✅                      │ ✅                   │  ║
+║ │ Pattern      │ ✅                      │ ❌                   │  ║
+║ └──────────────┴────────────────────────┴──────────────────────┘  ║
+║                                                                   ║
+║ 💡 SUGGERIMENTI:                                                  ║
+║ - Usa CSS invece di rows/cols per design responsive               ║
+║ - maxlength fondamentale per limitare input                       ║
+║ - placeholder guida l'utente                                      ║
+║ - Il testo tra i tag può essere modificato dinamicamente con JS   ║
+╚═══════════════════════════════════════════════════════════════════╝
+-->
+
+<label for="w3review">Review of W3Schools:</label>
+
+<textarea id="w3review" name="w3review" rows="4" cols="50">
+At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+</textarea>
+
+<!--
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                              ATTRIBUTI <select>                                  ║
+╚══════════════════════════════════════════════════════════════════════════════════╝
+
+╔══════════════════════╦══════════════════════╦══════════════════════╦══════════════════════╗
+║ Specifici            ║ Validazione          ║ Comportamento        ║ Dimensioni           ║
+╠══════════════════════╬══════════════════════╬══════════════════════╬══════════════════════╣
+║ multiple             ║ required             ║ autofocus            ║ size                 ║
+║                      ║ disabled             ║ autocomplete         ║                      ║
+║                      ║                      ║ form*                ║                      ║
+║                      ║                      ║ name                 ║                      ║
+║                      ║                      ║ id                   ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╩══════════════════════╝
+
+*form: associa la select a un form (anche se fuori)
+⚠️ readonly: NON ESISTE per select (usare disabled o JS)
+⚠️ value: NON ESISTE per select (si usa selected su option)
+
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                              ATTRIBUTI <option>                                  ║
+╠══════════════════════╦══════════════════════╦══════════════════════╦══════════════════════╣
+║ Value & Testo        ║ Stato predefinito    ║ Etichetta            ║ Altri                ║
+╠══════════════════════╬══════════════════════╬══════════════════════╬══════════════════════╣
+║ value*               ║ selected             ║ label**              ║ disabled             ║
+║                      ║                      ║                      ║ class                ║
+║                      ║                      ║                      ║ style                ║
+╚══════════════════════╩══════════════════════╩══════════════════════╩══════════════════════╝
+
+*value: se omesso, viene inviato il TESTO tra i tag <option></option>
+**label: sostituisce il testo visibile (utile per valori lunghi)
+
+╔══════════════════════════════════════════════════════════════════════════════════╗
+║                              ATTRIBUTI <optgroup>                                ║
+╠══════════════════════╦══════════════════════╦══════════════════════╦══════════════════════╣
+║ Obbligatorio         ║ Stato                ║                      ║                      ║
+╠══════════════════════╬══════════════════════╬══════════════════════╬══════════════════════╣
+║ label                ║ disabled             ║                      ║                      ║
+╚══════════════════════╩══════════════════════╩══════════════════════╩══════════════════════╝
+
+╔══════════════════════╦══════════════════════╦══════════════════════╗
+║ Globali              ║ Supporto parziale    ║ NON supportati       ║
+╠══════════════════════╬══════════════════════╬══════════════════════╣
+║ id                   ║ autocomplete*        ║ maxlength            ║
+║ class                ║                      ║ minlength            ║
+║ style                ║                      ║ pattern              ║
+║ title                ║                      ║ placeholder          ║
+║ lang                 ║                      ║ step                 ║
+║ dir                  ║                      ║ min/max              ║
+║ tabindex             ║                      ║ list                 ║
+║ hidden               ║                      ║ accept/capture       ║
+║ data-*               ║                      ║ rows/cols            ║
+║                      ║                      ║ src/alt              ║
+║                      ║                      ║ width/height         ║
+║                      ║                      ║ readonly             ║
+║                      ║                      ║ value                ║
+║                      ║                      ║ formaction...        ║
+╚══════════════════════╩══════════════════════╩══════════════════════╝
+
+*autocomplete: funziona solo su select semplici (non multiple)
+
+╔════════════════════════════════════════════════════════════════════╗
+║ NOTE IMPORTANTI:                                                  ║
+║                                                                   ║
+║ 🎯 FUNZIONAMENTO:                                                ║
+║ ┌────────────┬─────────────────────────────────────────────────┐ ║
+║ │ Tag        │ Ruolo                                           │ ║
+║ ├────────────┼─────────────────────────────────────────────────┤ ║
+║ │ <select>   │ Contenitore principale                         │ ║
+║ │ <option>   │ Singola voce selezionabile                     │ ║
+║ │ <optgroup> │ Raggruppa opzioni (non selezionabile)          │ ║
+║ └────────────┴─────────────────────────────────────────────────┘ ║
+║                                                                   ║
+║ 📤 INVIO DATI:                                                   ║
+║ ┌──────────────────────────────────────────────────────────────┐ ║
+║ │ • Normale:        name=value_della_option_selezionata       │ ║
+║ │ • Con multiple:   name=valore1&name=valore2 (più coppie)    │ ║
+║ │ • Senza value:    viene inviato il TESTO visibile           │ ║
+║ │ • Nessuna scelta: non viene inviato nulla (se non required) │ ║
+║ └──────────────────────────────────────────────────────────────┘ ║
+║                                                                   ║
+║ ⚠️ READONLY:                                                    ║
+║ <select> NON supporta readonly. Alternative:                   ║
+║ - disabled: disabilita + non invia dati                        ║
+║ - JS: impedire modifica ma mantenere invio                     ║
+║ - Hidden field: invia valore fisso                             ║
+║                                                                   ║
+║ 💡 SUGGERIMENTI AVANZATI:                                       ║
+║                                                                   ║
+║ 1️⃣ OPZIONE PLACEHOLDER:                                        ║
+║ <option value="" disabled selected>--Scegli--</option>         ║
+║    - disabled: non selezionabile                                ║
+║    - selected: appare all'inizio                                ║
+║    - value="": invia vuoto se selezionato (ma è disabled)      ║
+║                                                                   ║
+║ 2️⃣ SELEZIONE MULTIPLA:                                         ║
+║ <select multiple size="4"> ... </select>                       ║
+║    - Ctrl+click (Windows) / Cmd+click (Mac)                    ║
+║    - size consigliato almeno = numero opzioni                  ║
+║    - name="categorie[]" (convenzione lato server)             ║
+║                                                                   ║
+║ 3️⃣ OTTIMIZZAZIONE UX:                                          ║
+║    - Usa optgroup per più di 5 opzioni                         ║
+║    - Evita select lunghissimi (meglio datalist o ricerca)      ║
+║    - Su mobile: multiple è scomodo (evitare)                   ║
+║    - CSS: puoi stilizzare solo parzialmente                    ║
+║                                                                   ║
+║ 🆚 CONFRONTI UTILI:                                             ║
+║ ┌──────────────┬────────────┬─────────────┬──────────────────┐  ║
+║ │ Elemento     │ Selezione  │ Aspetto     │ Quando usarlo    │  ║
+║ ├──────────────┼────────────┼─────────────┼──────────────────┤  ║
+║ │ select       │ Singola    │ Tendina     │ 2-8 opzioni      │  ║
+║ │ select multi │ Multipla   │ Lista       │ Selezione multipla│ ║
+║ │ radio        │ Singola    │ Pulsanti    │ Poche opzioni (≤5)│ ║
+║ │ datalist     │ Singola    │ Input+drop  │ Tante opzioni    │ ║
+║ └──────────────┴────────────┴─────────────┴──────────────────┘  ║
+║                                                                   ║
+║ 🧪 ESEMPIO COMPLETO (tutti i casi):                             ║
+║
+║ <input type="hidden" name="paese" value="italia">             ║
+╚════════════════════════════════════════════════════════════════════╝
+-->
+
+<select name="auto" id="auto" required>
+   <option value="" disabled selected>--Modello--</option>
+   <optgroup label="Fiat">
+     <option value="panda">Panda</option>
+     <option value="500">500</option>
+   </optgroup>
+   <optgroup label="Ford">
+     <option value="fiesta">Fiesta</option>
+     <option value="focus">Focus</option>
+   </optgroup>
+ </select>
+
+<!-- Select multipla -->
+<select name="interessi[]" id="interessi" multiple size="4">
+    <option value="sport">Sport</option>
+      <option value="musica">Musica</option>
+      <option value="lettura">Lettura</option>
+      <option value="viaggi">Viaggi</option>
+    </select>
+
+<label for="paese"></label>
+<select name="paese" id="paese" disabled>
+<option value="italia" selected>Italia</option>
+    <option value="america" selected>america</option>
+</select>
+<input type="hidden" name="paese" value="Italia">
+
+
+<fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday"><br><br>
+    <input type="submit" value="Submit">
+</fieldset>
+
+<label for="browser">Choose your browser from the list:</label>
+<input list="browsers" name="browser" id="browser">
+
+<label for="browser">Choose your browser from the list:</label>
+<input list="browsers" name="browser" id="browser">
+
+<datalist id="browsers">
+    <option value="Edge">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+</datalist>
+
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="range" id="a" value="50">
+    +<input type="number" id="b" value="25">
+    =<output name="x" for="a b"></output>
+</form>
+
+
+
+</body>
+</html>

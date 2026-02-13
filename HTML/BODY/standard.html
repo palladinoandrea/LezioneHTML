@@ -277,6 +277,260 @@ Viene usato per definire il testo enfatizzato, visualizzandolo in corsivo
 
 <p>supercalifragilisti<wbr>chespiralido<wbr>so</p>
 
+<!-- ========================= -->
+<!-- INPUT                     -->
+<!-- ========================= -->
+
+<!--Elemento inline -->
+<!-- <label for="id_input" form="id_form" [attributi globali]>Testo</label>
+
+Il tag <label> definisce un'etichetta per un elemento <input> o <meter>.
+- "for" collega la label all'elemento con lo stesso id.
+    <label id="HTLM"> HTML</label>
+- "form" specifica a quale form appartiene la label.
+    <label for="HTLM"> HTML</label>
+    <input type="text" id="HTLM" name="HTLM">
+-->
+<!-- TEXT: campo di testo semplice -->
+<label for="EsempioInput">HTML</label>
+<input type="text" id="EsempioInput" name="EsempioInput">
+
+
+<!-- CHECKBOX: permette selezioni multiple -->
+<input type="checkbox" id="checkbox1" name="checkbox" value="checkbox">
+<label for="checkbox1">checkbox1</label><br>
+
+<input type="checkbox" id="checkbox2" name="checkbox2" value="checkbox2">
+<label for="checkbox2">checkbox2</label><br>
+
+<input type="checkbox" id="checkbox3" name="checkbox3" value="checkbox3">
+<label for="checkbox3">checkbox3</label><br>
+
+
+<!-- RADIO: permette una sola scelta per gruppo (stesso name) -->
+<input type="radio" id="radio1" name="radio" value="invio Radio1">
+<label for="radio1">Radio1</label><br>
+
+<input type="radio" id="radio2" name="radio" value="invio Radio2">
+<label for="radio2">Radio2</label><br>
+
+<input type="radio" id="radio3" name="radio" value="invio Radio3">
+<label for="radio3">Radio3</label><br>
+
+
+<!-- EMAIL: campo email con validazione automatica -->
+<label for="email">Email:</label>
+<input type="email" id="email" name="email">
+
+
+<!-- PASSWORD: campo con testo nascosto -->
+<label for="pass">Password:</label>
+<input type="password" id="pass" name="pass">
+
+
+<!-- TEL: campo per numero di telefono -->
+<label for="tel">Telefono:</label>
+<input type="tel" id="tel" name="tel">
+
+
+<!-- URL: campo per indirizzo web -->
+<label for="sito">Sito Web:</label>
+<input type="url" id="sito" name="sito">
+
+
+<!-- NUMBER: campo numerico con limiti -->
+<label for="eta">Età:</label>
+<input type="number" id="eta" name="eta" min="0" max="120">
+
+
+<!-- RANGE: slider numerico -->
+<label for="volume">Volume:</label>
+<input type="range" id="volume" name="volume" min="0" max="10">
+
+
+<!-- DATE: selettore di data -->
+<label for="data">Data di nascita:</label>
+<input type="date" id="data" name="data">
+
+
+<!-- TIME: selettore di orario -->
+<label for="ora">Orario:</label>
+<input type="time" id="ora" name="ora">
+
+
+<!-- FILE: permette il caricamento di file -->
+<label for="file">Carica file:</label>
+<input type="file" id="file" name="file">
+
+
+<!-- SUBMIT: pulsante per inviare il form -->
+<input type="submit" value="Invia">
+
+
+<!-- RESET: ripristina i valori iniziali del form -->
+<input type="reset" value="Annulla">
+
+
+<!-- BUTTON: pulsante generico (richiede JavaScript per funzionare) -->
+<input type="button" value="Cliccami" onclick="alert('Ciao!')">
+
+
+<!-- HIDDEN: campo nascosto invisibile all’utente -->
+<input type="hidden" name="id_utente" value="12345">
+
+
+<!-- COLOR: selettore di colore -->
+<label for="colore">Colore preferito:</label>
+<input type="color" id="colore" name="colore">
+
+
+<!-- SEARCH: campo di ricerca -->
+<label for="cerca">Cerca:</label>
+<input type="search" id="cerca" name="cerca">
+
+
+<!-- DATETIME-LOCAL: selettore data + ora locale -->
+<label for="app">Appuntamento:</label>
+<input type="datetime-local" id="app" name="app">
+
+
+
+<input><\<input>
+
+<button>></button>
+
+<select></select>
+
+
+<optgroup> (interno a <select>)
+
+<option> (interno a <select>)
+
+
+
+<legend> (interno a <fieldset>)
+
+<datalist>
+
+<output>
+<!--Elemento block -->
+<!-- FORM-->
+<!--
+
+accept-charset="UTF-8
+Specifica la codifica dei caratteri da utilizzare quando i dati del form
+vengono inviati al server.
+
+
+action="processa.php"
+Indica l'URL (indirizzo) a cui verranno inviati i dati del form
+quando l'utente preme il pulsante di invio.
+
+autocomplete="on|off"
+Attiva o disattiva il completamento automatico dei campi del modulo.
+Valori possibili:
+- on  → abilita l'autocompletamento
+- off → disabilita l'autocompletamento
+
+enctype="value"
+Specifica come devono essere codificati i dati prima di essere inviati al server.
+Si usa solo con method="post".
+
+Valori possibili:
+
+- application/x-www-form-urlencoded (predefinito)
+  Usato per form semplici.
+  I dati vengono convertiti in coppie chiave=valore
+  (esempio: nome=Mario&cognome=Rossi).
+
+- multipart/form-data (necessario per upload di file)
+  Usato quando nel form è presente <input type="file">.
+  I dati vengono inviati in parti separate e i file non vengono convertiti in testo.
+
+- text/plain
+  Invia i dati in formato testo semplice, senza codifica speciale.
+  È raramente usato, principalmente per debug o test.
+
+
+method="get|post|dialog"
+Specifica il metodo HTTP usato per inviare i dati.
+Valori possibili:
+- get  → i dati sono visibili nell'URL
+- post → i dati sono inviati nel corpo della richiesta
+- dialog → usato con <dialog>
+
+
+name="text"
+Specifica il nome del form.
+Serve per identificare il form tramite JavaScript.
+
+novalidate
+Indica che il form non deve essere validato automaticamente
+prima dell'invio.
+Non ha valore (è un attributo booleano).
+
+
+rel="value"
+Specifica la relazione tra il documento corrente e la risorsa collegata.
+
+Valori possibili:
+
+- rel="external"
+  Indica che la risorsa collegata è esterna al sito corrente.
+
+- rel="help"
+  Indica che il link porta a una pagina di aiuto.
+
+- rel="license"
+  Indica che il link porta alla licenza del documento.
+
+- rel="next"
+  Indica che il link porta al documento successivo (es. pagina successiva).
+
+- rel="prev"
+  Indica che il link porta al documento precedente.
+
+- rel="search"
+  Indica che il link porta a uno strumento di ricerca.
+
+- rel="nofollow"
+  Dice ai motori di ricerca di non seguire quel link
+  (non influenza il posizionamento SEO).
+
+- rel="noopener"
+  Impedisce alla pagina aperta con target="_blank"
+  di accedere alla finestra originale (migliora la sicurezza).
+
+- rel="noreferrer"
+  Impedisce di inviare informazioni sulla pagina di origine
+  e blocca l'accesso alla finestra originale.
+
+- rel="opener"
+  Permette alla nuova pagina aperta di accedere alla finestra originale
+  (opposto di noopener).
+
+
+target="_blank|_self|_parent|_top|framename"
+Specifica dove visualizzare la risposta dopo l'invio del form.
+Valori possibili:
+- _blank  → in una nuova scheda
+- _self   → nella stessa pagina (predefinito)
+- _parent → nel frame genitore
+- _top    → nella finestra completa
+- framename → La risposta viene visualizzata in un iframe denominato
+
+style="proprietà: valore;"
+Specifica uno stile CSS inline direttamente sull’elemento HTML.
+Permette di applicare regole di formattazione senza usare un file CSS esterno.
+
+
+-->
+<form action="">
+
+
+</form>
+<
+
 
 
 </body>
