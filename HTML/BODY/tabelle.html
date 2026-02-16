@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                          TAG DELLE TABELLE HTML: <table>, <caption>, <thead>, <tbody>, <tfoot>,                                       ║
+║                                         <tr>, <th>, <td>, <colgroup>, <col>                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+    <table>                                         <-- è il contenitore principale obbligatorio
+        <caption>Titolo della tabella</caption>     <-- fornisce un titolo/descrizione per la tabella (opzionale)
+
+        <colgroup>                                  <--Serve solo a definire proprietà strutturali/stilistiche delle colonne
+            <col span="2" style="background: #f0f0f0;">
+            <col style="background: #e0e0e0;">
+        </colgroup>
+
+        <thead>                                     <-- raggruppano le righe per intestazione
+            <tr>                                    <-- definisce una riga di tabella
+                <th scope="col">Intestazione 1</th> <-- definisce una cella di intestazione
+                <th scope="col">Intestazione 2</th> <-- definisce una cella di intestazione
+                <th scope="col">Intestazione 3</th> <-- definisce una cella di intestazione
+            </tr>
+        </thead>
+
+        <tbody>                                     <-- raggruppano le righe per corpo
+            <tr>                                    <-- definisce una riga di tabella
+                <td>Riga 1, Cella 1</td>            <-- definisce una cella di dati
+                <td>Riga 1, Cella 2</td>            <-- definisce una cella di dati
+                <td>Riga 1, Cella 3</td>            <-- definisce una cella di dati
+            </tr>
+            <tr>                                    <-- definisce una riga di tabella
+                <td>Riga 2, Cella 1</td>            <-- definisce una cella di dati
+                <td>Riga 2, Cella 2</td>            <-- definisce una cella di dati
+                <td>Riga 2, Cella 3</td>            <-- definisce una cella di dati
+            </tr>
+        </tbody>
+
+        <tfoot>                                     <-- raggruppano le righe per pie di pagina
+            <tr>                                    <-- definisce una riga di tabella
+                <td colspan="2">Totale</td>         <-- definisce una cella di dati
+                <td>€ 100</td>                      <-- definisce una cella di dati
+            </tr>
+        </tfoot>
+    </table>
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         TABELLA ATTRIBUTI <table>                                                                     ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ border       ║ border="1"                                ║ Spessore bordo (in pixel) - usare CSS preferibilmente  ║
+║              ║ border="0"                                ║ (deprecato, usa CSS border)                            ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ cellpadding  ║ cellpadding="10"                          ║ Spazio tra bordo cella e contenuto - deprecato         ║
+║              ║                                            ║ (usa CSS padding)                                       ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ cellspacing  ║ cellspacing="5"                           ║ Spazio tra celle - deprecato (usa CSS border-spacing)  ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ width        ║ width="500"                               ║ Larghezza tabella - deprecato (usa CSS width)          ║
+║              ║ width="80%"                               ║                                                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ align        ║ align="left/center/right"                 ║ Allineamento tabella - deprecato (usa CSS margin)      ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ bgcolor      ║ bgcolor="#f0f0f0"                         ║ Colore sfondo - deprecato (usa CSS background-color)   ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         TABELLA ATTRIBUTI <th> e <td>                                                                 ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ colspan      ║ colspan="2"                               ║ Numero di colonne che la cella occupa                   ║
+║              ║ colspan="3"                               ║ (unisce celle orizzontalmente)                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ rowspan      ║ rowspan="2"                               ║ Numero di righe che la cella occupa                     ║
+║              ║ rowspan="3"                               ║ (unisce celle verticalmente)                            ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ scope        ║ scope="col"                               ║ Indica che la cella è intestazione di colonna           ║
+║ (solo per th)║ scope="row"                               ║ Indica che la cella è intestazione di riga              ║
+║              ║ scope="colgroup"                          ║ Intestazione per gruppo di colonne                      ║
+║              ║ scope="rowgroup"                          ║ Intestazione per gruppo di righe                        ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ headers      ║ headers="nome-id"                         ║ Associa la cella a una o più celle di intestazione      ║
+║              ║ headers="id1 id2"                         ║ (per accessibilità)                                     ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ abbr         ║ abbr="Breve"                               ║ Versione abbreviata del contenuto (solo th)             ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ width        ║ width="100"                                ║ Larghezza cella - deprecato (usa CSS)                  ║
+║ height       ║ height="50"                                ║ Altezza cella - deprecato (usa CSS)                     ║
+║ align        ║ align="left/center/right"                  ║ Allineamento orizzontale - deprecato (usa CSS)          ║
+║ valign       ║ valign="top/middle/bottom"                 ║ Allineamento verticale - deprecato (usa CSS)            ║
+║ bgcolor      ║ bgcolor="#f0f0f0"                          ║ Colore sfondo - deprecato (usa CSS)                     ║
+║ nowrap       ║ nowrap                                      ║ Impedisce il ritorno a capo - deprecato (usa CSS)       ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         TABELLA ATTRIBUTI <colgroup> e <col>                                                          ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ span         ║ span="2"                                  ║ Numero di colonne interessate (su colgroup o col)       ║
+║              ║ span="3"                                  ║                                                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ width        ║ width="100"                               ║ Larghezza delle colonne (su col) - usa CSS preferibilm.║
+║              ║ width="20%"                               ║                                                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ align        ║ align="left/center/right"                  ║ Allineamento testo nelle colonne - deprecato           ║
+║ valign       ║ valign="top/middle/bottom"                 ║ Allineamento verticale - deprecato                      ║
+║ bgcolor      ║ bgcolor="#f0f0f0"                          ║ Colore sfondo - deprecato (usa CSS)                     ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         ATTRIBUTI EVENTO (supportati da tutti)                                                        ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                    ║
+║ onclick    ║ ondblclick ║ onmousedown ║ onmouseup ║ onmouseover ║ onmouseout ║ onmousemove ║ onfocus ║ onblur                      ║
+║ onkeydown  ║ onkeyup    ║ onkeypress  ║ oninput   ║ onchange    ║                                                                    ║
+║                                                                                                                                    ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+      -->
+<style>
+
+
+
+
+</style>
+<table border="1" width="100%">
+  <caption>Titolo della tabella</caption>
+
+  <colgroup>
+    <col span="2" style="background: #ffff;">
+    <col style="background: #e0e0e0;">
+  </colgroup>
+
+  <thead>
+  <tr>
+    <th scope="col">Intestazione 1</th>
+    <th scope="col">Intestazione 2</th>
+    <th scope="col">Intestazione 3</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td>Riga 1, Cella 1</td>
+    <td>Riga 1, Cella 2</td>
+    <td>Riga 1, Cella 3</td>
+  </tr>
+  <tr>
+    <td>Riga 2, Cella 1</td>
+    <td>Riga 2, Cella 2</td>
+    <td>Riga 2, Cella 3</td>
+  </tr>
+  </tbody>
+
+  <tfoot>
+  <tr>
+    <td colspan="2">Totale</td>
+    <td>€ 100</td>
+  </tr>
+  </tfoot>
+</table>
+</body>
+</html>

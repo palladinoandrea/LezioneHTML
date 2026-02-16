@@ -1,0 +1,381 @@
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 1. BORDI DELLA TABELLA (shorthand)                      */
+        /* ──────────────────────────────────────────────────────── */
+
+
+        /* Valori per border-width:
+           medium (default) <--Valore predefinito (circa 3-4px a seconda del browser)
+           thin             <--Bordo sottile (circa 1-2px)
+           thick	        <--Bordo spesso (circa 5-6px)
+           length (px, em)  <--Valore preciso in px, em, rem, % (es. 1px, 0.2em)
+           initial          <--Ripristina al valore predefinito (medium)
+           inherit          <--Eredita il valore dal genitore
+
+        /* Valori per border-style:
+            none      <-- Nessun bordo (valore predefinito)
+            hidden    <-- Come none, ma ha effetto nei conflitti di bordo delle tabelle
+            dotted    <-- Bordo a puntini
+            dashed    <-- Bordo a trattini
+            solid     <-- Bordo continuo (linea singola)
+            double    <-- Bordo doppio (due linee parallele)
+            groove    <-- Bordo con effetto scavato (3D, sembra inciso)
+            ridge     <-- Bordo con effetto in rilievo (3D, opposto a groove)
+            inset     <-- Bordo che dà effetto incassato
+            outset    <-- Bordo che dà effetto in rilievo
+            initial   <-- Ripristina al valore predefinito (none)
+            inherit   <-- Eredita il valore dal genitore
+
+            Nota: double richiede almeno 3px di spessore per essere visibile
+            Nota: gli stili 3D dipendono dal colore e dallo spessore del bordo */
+
+        /* /* Valori per border-color:
+           color       <-- Colore specifico (nome, hex, rgb, hsl, ecc.)
+                          Esempi: red, #ff0000, rgb(255,0,0), hsl(0,100%,50%)
+
+           transparent <-- Bordo trasparente (invisibile ma occupa spazio)
+
+           initial     <-- Ripristina al valore predefinito (dipende dal browser)
+
+           inherit     <-- Eredita il colore dal genitore
+
+           Nota: Puoi specificare colori diversi per ogni lato:
+                 border-color: red green blue yellow;  (top, right, bottom, left)
+*/
+
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 2. GESTIONE BORDI DOPPI                                  */
+        /* ──────────────────────────────────────────────────────── */
+        /*border-collapse: separate;<-- separate mantiene i bordi separati (usa border-spacing)
+                                   <--- collapse: unisce i bordi in uno singolo */
+
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 3. SPAZIATURA TRA CELLE (solo se border-collapse: separate) */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per border-spacing:
+           length            <-- Singolo valore: stessa distanza orizzontale e verticale
+                                Esempio: border-spacing: 15px;
+
+           length length     <-- Due valori: primo = orizzontale, secondo = verticale
+                                Esempio: border-spacing: 10px 20px;
+
+           initial           <-- Ripristina al valore predefinito (0)
+
+           inherit           <-- Eredita il valore dal genitore
+
+           Nota: Funziona SOLO quando border-collapse: separate
+           Nota: Accetta qualsiasi unità di misura (px, em, rem, %)
+        */
+
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 4. SPAZIATURA INTERNA DELLE CELLE                        */
+        /* ──────────────────────────────────────────────────────── */
+        /* Shorthand (top right bottom left) */
+
+        /* Versione estesa:
+           padding-top: 2px;
+           padding-right: 2px;
+           padding-bottom: 3px;
+           padding-left: 2px;
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 5. DIMENSIONI DELLA TABELLA                               */
+        /* ──────────────────────────────────────────────────────── */
+
+        /* Larghezza della tabella */
+        /* Valori per width:
+           auto        <-- Il browser calcola automaticamente la larghezza (default)
+                          Esempio: width: auto;
+
+           value       <-- Valore in unità di misura (px, em, rem, %, vw, ecc.)
+                          Esempio: width: 50%; width: 500px; width: 30em;
+
+           initial     <-- Ripristina al valore predefinito (auto)
+
+           inherit     <-- Eredita il valore dal genitore
+
+           Nota: Per tabelle, % si riferisce alla larghezza del contenitore
+           Nota: Puoi usare anche min-width e max-width per limiti
+        */
+
+
+        /* Altezza della tabella */
+        /* Valori per height:
+           auto        <-- Il browser calcola automaticamente l'altezza (default)
+                          Esempio: height: auto;
+
+           length      <-- Valore in unità di misura (px, em, rem, %, vh, ecc.)
+                          Esempio: height: 70px; height: 10em; height: 20%;
+
+           initial     <-- Ripristina al valore predefinito (auto)
+
+           inherit     <-- Eredita il valore dal genitore
+
+           Nota: Per tabelle, % per altezza funziona solo se il genitore ha altezza definita
+           Nota: Puoi usare anche min-height e max-height per limiti
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 6. ALLINEAMENTO TESTO                                     */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per text-align:
+           left        <-- Allinea il testo a sinistra (default per LTR)
+           right       <-- Allinea il testo a destra
+           center      <-- Centra il testo
+           justify     <-- Giustifica il testo (spaziature uniformi)
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 7. ALLINEAMENTO VERTICALE                                  */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per vertical-align:
+           baseline    <-- Allinea alla linea di base del testo (default)
+           length      <-- Solleva/abbassa di una specifica misura (px, em)
+           sub         <-- Allinea come pedice
+           super       <-- Allinea come apice
+           top         <-- Allinea alla parte superiore dell'elemento più alto
+           text-top    <-- Allinea alla parte superiore del testo
+           middle      <-- Allinea al centro
+           bottom      <-- Allinea alla parte inferiore dell'elemento più basso
+           text-bottom <-- Allinea alla parte inferiore del testo
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 8. BORDO INFERIORE (SHORTHAND)                            */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per border-bottom (shorthand):
+           border-width border-style border-color  <-- Tutti e tre i valori
+           Esempio: border-bottom: 1px solid black;
+
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 9. SPESSORE BORDO INFERIORE                                */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per border-bottom-width:
+           medium      <-- Spessore medio (default)
+           thin        <-- Sottile
+           thick       <-- Spesso
+           length      <-- Valore preciso (px, em, rem)
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 10. STILE BORDO INFERIORE                                  */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per border-bottom-style:
+           none        <-- Nessun bordo (default)
+           hidden      <-- Come none, ma per tabelle
+           dotted      <-- A puntini
+           dashed      <-- A trattini
+           solid       <-- Linea continua
+           double      <-- Doppia linea
+           groove      <-- Effetto scavato
+           ridge       <-- Effetto in rilievo
+           inset       <-- Effetto incassato
+           outset      <-- Effetto in rilievo
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 11. COLORE BORDO INFERIORE                                 */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per border-bottom-color:
+           color       <-- Colore specifico (nome, hex, rgb, hsl)
+           transparent <-- Trasparente
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 12. GESTIONE CONTENUTO IN ECCESSO                          */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per overflow-x (orizzontale):
+           visible     <-- Il contenuto eccedente è visibile (default)
+           hidden      <-- Il contenuto eccedente è nascosto
+           scroll      <-- Mostra sempre le barre di scorrimento
+           auto        <-- Barre di scorrimento solo se necessario
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+
+           Nota: overflow-y controlla la direzione verticale
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 13. POSIZIONE DELLA DIDASCALIA                             */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per caption-side:
+           top         <-- Didascalia sopra la tabella (default)
+           bottom      <-- Didascalia sotto la tabella
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+
+           Nota: Si applica all'elemento <caption>
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 14. CELLE VUOTE                                           */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per empty-cells:
+           show        <-- Mostra bordo e sfondo delle celle vuote (default)
+           hide        <-- Nasconde bordo e sfondo delle celle vuote
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+
+           Nota: Funziona solo con border-collapse: separate
+        */
+
+        /* ──────────────────────────────────────────────────────── */
+        /* 15. ALGORITMO DI LAYOUT DELLA TABELLA                     */
+        /* ──────────────────────────────────────────────────────── */
+        /* Valori per table-layout:
+           auto        <-- Larghezza colonne basata sul contenuto (default)
+                          (più lento ma flessibile)
+
+           fixed       <-- Larghezza colonne basata sulla larghezza della tabella
+                          (più veloce, migliore per performance)
+
+           initial     <-- Ripristina al valore predefinito
+           inherit     <-- Eredita il valore dal genitore
+
+           Nota: fixed è più performante per tabelle grandi
+           Nota: Con fixed, la prima riga determina la larghezza delle colonne
+        */
+
+
+        /* ============================================================
+        TABLE - Contenitore principale
+        ============================================================ */
+        table {
+            /* BORDI */
+            border-width: thin;
+            border-style: solid;
+            border-color: black;
+
+            /* GESTIONE BORDI (Scegli UNA) */
+            border-collapse: collapse;  /* Opzione 1: bordi uniti */
+            /* border-spacing: 15px; */ /* Opzione 2: solo con border-collapse: separate */
+
+            /* DIMENSIONI */
+            width: 100%;
+            height: auto;                /* auto è meglio di 100% */
+
+            /* LAYOUT */
+            table-layout: fixed;
+
+            /* DIDASCALIA */
+            caption-side: bottom;
+
+            /* CELLE VUOTE */
+            empty-cells: show;
+
+            /* OVERFLOW */
+            overflow-x: auto;
+
+            /* SFONDO */
+            background: #cccccc;
+        }
+
+        /* ============================================================
+           CAPTION - Didascalia
+           ============================================================ */
+        caption {
+            /* BORDI */
+            border-width: thin;
+            border-style: solid;
+            border-color: black;
+            border-bottom: 1px solid #ddd;
+
+            /* DIMENSIONI */
+            width: auto;                 /* auto invece di 100% */
+            height: auto;                /* auto invece di 100% */
+
+            /* ALLINEAMENTO */
+            text-align: center;
+            vertical-align: middle;      /* bottom era strano */
+
+            /* SPAZIATURA */
+            padding: 10px;
+
+            /* SFONDO */
+            background: #cccccc;
+
+            /* NO overflow-x qui */
+            /* NO caption-side qui (già su table) */
+        }
+
+        /* ============================================================
+           TH e TD - Celle
+           ============================================================ */
+        th, td {
+            /* BORDI */
+            border-width: thin;
+            border-style: solid;
+            border-color: black;
+            border-bottom: 1px solid #ddd;
+
+            /* DIMENSIONI */
+            width: auto;                 /* auto invece di 100% */
+            height: auto;                /* auto invece di 100% */
+
+            /* ALLINEAMENTO */
+            text-align: center;
+            vertical-align: middle;      /* middle è più comune */
+
+            /* SPAZIATURA */
+            padding: 10px;
+
+            /* SFONDO */
+            background: #cccccc;
+
+            /* NO overflow-x qui (evita) */
+        }
+
+        /* ============================================================
+           TR - Righe
+           ============================================================ */
+        tr {
+            /* ALTEZZA */
+            height: auto;                /* auto invece di 100% */
+
+            /* SFONDO */
+            background: #cccccc;
+
+            /* HOVER (opzionale) */
+            &:hover {
+                background: #dddddd;
+            }
+        }
+
+        /* ============================================================
+           THEAD, TBODY, TFOOT - Sezioni
+           ============================================================ */
+        thead, tbody, tfoot {
+            /* SFONDO (ereditato dalle righe) */
+            background: #cccccc;
+
+            /* Di solito non si mettono altre proprietà qui */
+        }
+
+        /* ============================================================
+           COL e COLGROUP - Colonne
+           ============================================================ */
+        col, colgroup {
+            /* LARGHEZZA COLONNA (valore sensato, non 100% per tutte) */
+            width: auto;                 /* O un valore tipo 150px */
+
+            /* SFONDO COLONNA */
+            background: #cccccc;
+        }
