@@ -1,0 +1,186 @@
+<!--<body></body>-->
+<!--
+<body
+
+    [attributi_globali]
+    [evento_specifici]
+    [eventi]
+
+>
+ ... CONTENUTO VISIBILE DELLA PAGINA ...
+
+</body>
+
+• Il tag <body> rappresenta il contenuto principale del documento HTML                                                               ║
+• Tutto ciò che viene visualizzato dall'utente va all'interno del <body>                                                             ║
+• Deve essere unico nel documento e posizionato dopo l'<head>                                                                        ║
+• Supporta attributi globali e attributi specifici (principalmente eventi globali)                                                   ║
+• Gli attributi di evento sul <body> si applicano all'intera finestra del browser                                                    ║
+• Gli attributi per i colori e margini (bgcolor, text, link, ecc.) sono DEPRECATI (usa CSS)
+
+-->
+
+<!--<header></header>-->
+<!--
+<!--
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                          TAG <header>                                                                 ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                    NOTE E CONSIGLI                                                                    ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ • Il tag <header> rappresenta un contenitore introduttivo o un gruppo di aiuti alla navigazione.                                     ║
+║ • Può contenere intestazioni (h1-h6), loghi, menu di navigazione, icone, ecc.                                                        ║
+║ • Non va confuso con <head> (che contiene metadati) o con <h1>-<h6> (intestazioni di sezione).                                      ║
+║ • Può essere utilizzato più volte in una pagina (intestazione principale, intestazioni di articoli, ecc.).                           ║
+║ • Di solito è posizionato all'inizio di una sezione o all'inizio della pagina.                                                        ║
+║ • È un elemento puramente semantico, non ha alcun effetto visivo intrinseco (tranne quelli del browser di default).                 ║
+║ • È un elemento "contenitore" (come <div>) ma con significato semantico.                                                             ║
+║ • Supporta attributi globali ed eventi come qualsiasi altro elemento.                                                                ║
+║                                                                                                                                       ║
+║ 📚 USO CORRETTO:                                                                                                                      ║
+║   • <header> principale della pagina: di solito contiene il logo e il menu principale.                                               ║
+║   • <header> di un articolo: può contenere il titolo, la data, l'autore.                                                             ║
+║   • Non va usato all'interno di <footer> o <address>.                                                                                ║
+║   • Non va usato come contenitore generico (usa <div> per quello).                                                                   ║
+║                                                                                                                                       ║
+║ 🆚 DIFFERENZA CON <head> E <h1-6>:                                                                                                    ║
+║   • <head> → Contiene metadati della pagina (non visibile).                                                                          ║
+║   • <h1>-<h6> → Intestazioni di sezione (titoli veri e propri).                                                                      ║
+║   • <header> → Contenitore introduttivo che può includere <h1-6>, ma anche altri elementi.                                           ║
+║                                                                                                                                       ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+<header
+
+    [attributi_globali]
+    [attributi_evento]
+
+>
+ <div
+ </div>
+
+   <nav>
+
+   </nav>
+<header>
+  <form role="search">
+    <input type="search" placeholder="Cerca...">
+    <button type="submit">Cerca</button>
+  </form>
+</header>
+
+</header>
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         TABELLA ATTRIBUTI <header>                                                                    ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ (nessuno)    ║                                            ║ <header> NON HA ATTRIBUTI SPECIFICI!                     ║
+║              ║                                            ║ Supporta SOLO attributi globali ed eventi                ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         ATTRIBUTI GLOBALI (supportati)                                                                ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                    ║
+║ id         ║ class       ║ style       ║ title       ║ lang        ║ dir         ║ tabindex    ║ hidden      ║ data-*               ║
+║                                                                                                                                      ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         ATTRIBUTI EVENTO (supportati)                                                                 ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                    ║
+║ onclick    ║ ondblclick ║ onmousedown ║ onmouseup ║ onmouseover ║ onmouseout ║ onmousemove ║ onmouseenter ║ onmouseleave          ║
+║ onkeydown  ║ onkeyup    ║ onkeypress  ║ oninput   ║ onchange    ║ onfocus    ║ onblur      ║ oncontextmenu                       ║
+║                                                                                                                                    ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         ATTRIBUTI NON SUPPORTATI (o non pertinenti)                                                   ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                    ║
+║ ❌ src          ❌ alt          ❌ href         ❌ name         ❌ value         ❌ type                                             ║
+║ ❌ for          ❌ form         ❌ action       ❌ method       ❌ enctype       ❌ accept                                           ║
+║ ❌ placeholder  ❌ maxlength    ❌ minlength    ❌ pattern      ❌ required      ❌ readonly                                         ║
+║ ❌ disabled     ❌ checked      ❌ selected     ❌ multiple     ❌ size          ❌ step                                             ║
+║ ❌ min          ❌ max          ❌ low          ❌ high         ❌ optimum       ❌ colspan                                          ║
+║ ❌ rowspan      ║                                                                                                                   ║
+║                                                                                                                                    ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         SINTASSI GENERICA <header>                                                                   ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                    ║
+║    <header                                                                                                                            ║
+║        id="identificativo"           ║ Attributi globali                                                                             ║
+║        class="nome-classe"                                                                                                            ║
+║        style="css: valore;"                                                                                                           ║
+║        title="testo"                                                                                                                  ║
+║        lang="it"                                                                                                                      ║
+║        dir="ltr/rtl"                                                                                                                  ║
+║        tabindex="numero"                                                                                                              ║
+║        hidden                                                                                                                         ║
+║        data-*="valore"                                                                                                                ║
+║                                                                                                                                    ║
+║        onclick="funzione()"           ║ Attributi evento                                                                             ║
+║        onmouseover="funzione()"                                                                                                       ║
+║        ...                                                                                                                            ║
+║    >                                                                                                                                  ║
+║        ... CONTENUTO DELL'INTESTAZIONE ...                                                                                           ║
+║    </header>                                                                                                                          ║
+║                                                                                                                                    ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+
+
+
+
+
+
+
+-->
+
+
+
+<!-- -->
+<!-- --><!-- -->
+
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+
+<!-- -->
+
+
+
+<!-- -->
+<!-- --><!-- -->
+
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- -->
+
+

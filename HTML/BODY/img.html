@@ -1,0 +1,498 @@
+<!-- <img> -->
+<!-- <img
+
+        [attributi_globali]
+        [attributi_specifici]
+        [attributi_evento]
+
+>
+
+• Il tag <img> incorpora un'immagine nella pagina HTML                                                                               ║
+• È un tag vuoto (auto-chiudente) - non ha contenuto tra apertura e chiusura                                                         ║
+• Gli attributi src e alt sono OBBLIGATORI per validità e accessibilità                                                              ║
+• Supporta attributi globali, specifici ed eventi                                                                                    ║
+• Le immagini possono essere di vari formati: JPEG, PNG, GIF, SVG, WebP, AVIF, ecc.                                                 ║
+║
+FORMATI SUPPORTATI:                                                                                                               ║
+• JPEG (.jpg, .jpeg) - Foto, immagini complesse                                                                                    ║
+• PNG (.png) - Grafica, trasparenza                                                                                                ║
+• GIF (.gif) - Animazioni semplici                                                                                                 ║
+• SVG (.svg) - Grafica vettoriale (scalabile)                                                                                      ║
+• WebP (.webp) - Formato moderno (Google)                                                                                          ║
+• AVIF (.avif) - Formato moderno (alta compressione)                                                                               ║
+║
+
+
+╔╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 ATTRIBUTI NORMALI (obbligatori e funzionalità base)                                        ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ src          ║ "immagine.jpg"                            ║ OBBLIGATORIO - Percorso dell'immagine                    ║
+║              ║ "https://sito.com/foto.png"               ║                                                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ alt          ║ "Esempio foto"                            ║ OBBLIGATORIO - Testo alternativo (accessibilità)         ║
+║              ║                                           ║ Mostrato se l'immagine non carica                        ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ width        ║ "300"                                     ║ Larghezza dell'immagine (in pixel)                       ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ height       ║ "200"                                     ║ Altezza dell'immagine (in pixel)                         ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ title        ║ "Tramonto in montagna"                    ║ Tooltip (al passaggio del mouse)                         ║
+║              ║                                           ║ Non sostituisce alt!                                    ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ loading      ║ eager                                     ║ Carica immediatamente (default)                          ║
+║              ║ lazy                                      ║ Carica solo quando sta per diventare visibile            ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ decoding     ║ sync                                      ║ Decodifica sincrona (blocca il rendering)                ║
+║              ║ async                                     ║ Decodifica asincrona (non blocca) - consigliato          ║
+║              ║ auto                                      ║ Il browser decide (default)                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ fetchpriority║ auto                                      ║ Priorità automatica (default)                            ║
+║              ║ high                                      ║ Alta priorità (immagini critiche - LCP)                  ║
+║              ║ low                                       ║ Bassa priorità (immagini secondarie)                     ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ srcset       ║ "foto.jpg 1x, foto@2x.jpg 2x"             ║ Immagini multiple per risoluzioni diverse                ║
+║              ║                                           ║ (per display retina)                                     ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ sizes        ║ "(max-width: 600px) 100vw, 50vw"          ║ Dimensioni condizionali per srcset                       ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ usemap       ║ "#nome_mappa"                             ║ Associa una mappa immagine (con <map>)                   ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ ismap        ║ ismap                                     ║ Immagine come mappa lato server                          ║
+║              ║                                           ║ (attributo booleano)                                     ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ crossorigin  ║ anonymous                                 ║ Richiesta senza credenziali (immagini pubbliche)         ║
+║              ║ use-credentials                           ║ Richiesta con credenziali (autenticazione)               ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ referrerpolicy║ no-referrer                               ║ Nessuna informazione referrer inviata                    ║
+║              ║ no-referrer-when-downgrade                ║ DEFAULT - Non invia a origini senza HTTPS                ║
+║              ║ origin                                    ║ Invia solo origine (schema, host, porta)                 ║
+║              ║ origin-when-cross-origin                  ║ Cross-origin: solo origine; stesso-origine: completo     ║
+║              ║ same-origin                               ║ Solo per richieste stesso-origine                        ║
+║              ║ strict-origin                             ║ Solo origine per richieste sicure (HTTPS→HTTPS)          ║
+║              ║ strict-origin-when-cross-origin           ║ Consigliato - origine solo per richieste sicure          ║
+║              ║ unsafe-url                                ║ INSICURO - invia URL completo                            ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+    -->
+<!-- <map><area>-->
+<!--
+<img src="immagine.jpg" usemap="#nome_mappa">
+
+<map name="nome_mappa"
+
+    [attributi_globali]
+    [attributi_specifici]
+    [attributi_evento]
+
+>
+    <area shape="rect" coords="..." href="link.html">
+</map>
+
+<map>                                            ← LIVELLO 1: Contenitore (obbligatorio)
+    │
+    ├── attributi di <map>                       ← Attributi del contenitore
+    │    ├── name="nome_mappa"                   ← OBBLIGATORIO - identificatore unico
+    │    ├── id="nome_mappa"                      ← Opzionale (stesso valore di name)
+    │    └── [attributi_globali]                  ← class, style, title, data-*, ecc.
+    │
+    └── <area>                                   ← LIVELLO 2: Aree cliccabili (almeno una)
+         │
+         ├── attributi OBBLIGATORI (se href)     ← Richiesti per aree con link
+         │    ├── shape="rect|circle|poly|default"
+         │    ├── coords="..."                    ← (non per default)
+         │    ├── href="URL"
+         │    └── alt="testo"
+         │
+         ├── attributi OPZIONALI                  ← Per comportamento avanzato
+         │    ├── target="_blank|_self|..."
+         │    ├── rel="nofollow|noopener|..."
+         │    ├── download="filename"
+         │    ├── referrerpolicy="..."
+         │    ├── hreflang="it"
+         │    ├── type="image/jpeg"
+         │    └── media="(max-width: 600px)"
+         │
+         └── [attributi_globali]                  ← class, style, title, data-*, ecc.
+
+ • I tag <map> e <area> lavorano insieme per creare immagini con aree cliccabili (image map)                                          ║
+ • <map> è il contenitore che definisce la mappa, <area> definisce le singole regioni cliccabili                                      ║
+ • L'elemento <area> è sempre annidato all'interno di <map> [citation:1][citation:2]                                                  ║
+ • L'attributo usemap dell'<img> si collega al name del <map> per creare la relazione [citation:1][citation:8]                        ║
+ • In HTML5, se si usa anche l'attributo id sul <map>, deve avere lo stesso valore del name [citation:8]                              ║
+ • <area> è un tag vuoto (auto-chiudente) - non ha contenuto tra apertura e chiusura [citation:7]                                     ║
+                                                                                                                                       ║
+ 📐 FORME E COORDINATE:                                                                                                                ║
+   • rect: rettangolo - coords="x1,y1,x2,y2" (angolo superiore sinistro, angolo inferiore destro)                                    ║
+   • circle: cerchio - coords="x,y,raggio" (centro e raggio) [citation:1][citation:7]                                                 ║
+   • poly: poligono - coords="x1,y1,x2,y2,x3,y3,..." (coordinate dei vertici) [citation:10]                                           ║
+   • default: tutta l'immagine (valore speciale)                                                                                      ║
+                                                                                                                                       ║
+ 🔗 RELAZIONE:                                                                                                                         ║
+                                                                                          ║
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                          📌 ATTRIBUTI SPECIFICI <map>                                                                 ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ name         ║ "mappa-prodotti"                          ║ OBBLIGATORIO - Nome della mappa (riferito da usemap)   ║
+║              ║ "planetmap"                               ║ Deve essere unico nella pagina                           ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 ATTRIBUTI SPECIFICI <area>                                                                 ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ alt          ║ "testo descrittivo"                       ║ Testo alternativo (OBBLIGATORIO se href è presente)     ║
+║              ║                                           ║ Per accessibilità e se l'immagine non carica             ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ shape        ║ rect                                       ║ Forma rettangolare                                       ║
+║              ║ circle                                     ║ Forma circolare                                          ║
+║              ║ poly                                       ║ Forma poligonale                                         ║
+║              ║ default                                    ║ Intera area dell'immagine                                ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ coords       ║ x1,y1,x2,y2                               ║ Coordinate per shape="rect"                              ║
+║              ║ x,y,raggio                                 ║ Coordinate per shape="circle"                            ║
+║              ║ x1,y1,x2,y2,x3,y3,...                      ║ Coordinate per shape="poly"                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ href         ║ "pagina.html"                             ║ URL di destinazione del link                             ║
+║              ║ "https://sito.com"                        ║                                                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ target       ║ _blank                                     ║ Nuova finestra/scheda                                    ║
+║              ║ _self                                      ║ Stessa finestra (default)                                ║
+║              ║ _parent                                    ║ Frame genitore                                           ║
+║              ║ _top                                       ║ Finestra principale                                      ║
+║              ║ "nome_frame"                               ║ Frame specifico                                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ download     ║ "immagine.jpg"                             ║ Scarica il target invece di navigarlo                    ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ rel          ║ alternate                                  ║ Versione alternativa del documento                       ║
+║              ║ author                                     ║ Link all'autore del documento                            ║
+║              ║ bookmark                                   ║ URL permanente per segnalibri                            ║
+║              ║ help                                       ║ Link a documento di aiuto                                ║
+║              ║ license                                    ║ Informazioni sul copyright                               ║
+║              ║ next                                       ║ Documento successivo                                     ║
+║              ║ nofollow                                   ║ Link non approvato (SEO)                                 ║
+║              ║ noreferrer                                 ║ Non inviare header referrer                              ║
+║              ║ prefetch                                   ║ Precarca il documento in cache                           ║
+║              ║ prev                                       ║ Documento precedente                                     ║
+║              ║ search                                     ║ Tool di ricerca                                          ║
+║              ║ tag                                        ║ Parola chiave per il documento                           ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ referrerpolicy║ no-referrer                               ║ Nessuna informazione inviata                             ║
+║              ║ no-referrer-when-downgrade                ║ DEFAULT - non invia a origini senza HTTPS                ║
+║              ║ origin                                    ║ Invia solo origine (schema, host, porta)                 ║
+║              ║ origin-when-cross-origin                  ║ Cross-origin: solo origine; stesso-origine: completo     ║
+║              ║ same-origin                               ║ Solo per richieste stesso-origine                        ║
+║              ║ strict-origin                             ║ Solo origine per richieste sicure (HTTPS→HTTPS)          ║
+║              ║ strict-origin-when-cross-origin           ║ Consigliato - origine solo per richieste sicure          ║
+║              ║ unsafe-url                                ║ INSICURO - invia URL completo                            ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ hreflang     ║ "en", "it", "fr"                          ║ Lingua del documento di destinazione                     ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ type         ║ "text/html"                               ║ Tipo MIME del target                                     ║
+║              ║ "image/jpeg"                              ║                                                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ media        ║ "screen and (max-width: 600px)"           ║ Per quali dispositivi è ottimizzato                     ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+-->
+<!-- <canvas></canvas>-->
+<!--
+<canvas
+
+    [attributi_globali]
+    [attributi_specifici]
+    [attributi_evento]
+
+>
+    ... TESTO ALTERNATIVO (per browser che non supportano canvas) ...
+</canvas>
+
+• Il tag <canvas> definisce un'area grafica disegnabile via JavaScript                                                               ║
+ • È un contenitore vuoto - il disegno avviene tramite script                                                                         ║
+ • Si usa con l'API Canvas 2D o WebGL per grafica 2D e 3D                                                                             ║
+ • Supporta attributi globali, specifici ed eventi                                                                                    ║
+ • Il contenuto tra i tag è testo alternativo (per browser non supportati)                                                            ║
+                                                                                                                                       ║
+  UTILIZZI COMUNI:                                                                                                                   ║
+   • Grafici e diagrammi                                                                                                              ║
+   • Animazioni e giochi                                                                                                              ║
+   • Elaborazione immagini                                                                                                            ║
+   • Visualizzazione dati
+
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 ATTRIBUTI SPECIFICI <canvas>                                                               ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ width        ║ "300"                                     ║ Larghezza dell'area di disegno (in pixel)               ║
+║              ║                                           ║ Default: 300px                                           ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ height       ║ "150"                                     ║ Altezza dell'area di disegno (in pixel)                 ║
+║              ║                                           ║ Default: 150px                                           ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+-->
+
+<!-- <figure><figcaption>-->
+<!--
+  <figure
+
+        [attributi_globali]
+        [attributi_evento]
+
+>
+
+    ... CONTENUTO MULTIMEDIALE (immagini, video, codice, ecc.) ...
+    <figcaption>
+
+    </figcaption>
+
+</figure>
+
+<figure>                          ← CONTENITORE PRINCIPALE (può esistere da solo)
+       ├── <figcaption>               ← DIDASCALIA (opzionale, PRIMO figlio)
+       │                                 "Titolo o descrizione"
+       │
+       ├── <img src="foto.jpg">       ← CONTENUTO MULTIMEDIALE
+       ├── <video>...</video>         ← (immagine, video, audio, codice, ecc.)
+       └── <figcaption>               ← DIDASCALIA (opzionale, ULTIMO figlio)
+                                        "Fonte: autore"
+
+
+  REGOLE DI DIPENDENZA:
+   • <figure> PUÒ esistere da solo (contenitore generico)
+   • <figcaption> NON PUÒ esistere senza <figure>
+   • <figcaption> DEVE essere il primo o l'ultimo figlio di <figure>
+   • Di solito c'è un solo <figcaption> per <figure> (ma tecnicamente possibili più di uno)
+
+ • I tag <figure> e <figcaption> lavorano insieme per associare una didascalia a contenuti multimediali
+ • <figure> è il contenitore che raggruppa il contenuto (immagini, video, codice, citazioni, ecc.)
+ • <figcaption> fornisce una didascalia o descrizione per il contenuto del <figure>
+ • <figcaption> può essere il primo o l'ultimo figlio di <figure>
+ • Sono elementi puramente semantici, non hanno effetti visivi intrinseci (tranne quelli del browser)
+ • Supportano attributi globali ed eventi come qualsiasi altro elemento
+
+  UTILIZZI COMUNI:
+   • Immagini con didascalia (es. gallerie fotografiche)
+   • Grafici e diagrammi con descrizione
+   • Snippet di codice con spiegazione
+   • Citazioni con attribuzione
+   • Video con titolo
+
+  ACCESSIBILITÀ:
+   • Il <figcaption> viene letto dagli screen reader come descrizione del contenuto
+   • Migliora la comprensione del contenuto per utenti con disabilità
+  -->
+
+<!--<picture></picture> -->
+<!--
+<picture>
+
+        [attributi_globali]
+        [attributi_evento]
+       <source media="(min-width: 800px)" srcset="grande.jpg" type="image/jpeg">
+       <source media="(min-width: 400px)" srcset="media.jpg" type="image/jpeg">
+       <img src="piccola.jpg" alt="descrizione">
+   </picture>
+
+ • Il tag <picture> è un contenitore flessibile per immagini responsive
+ • Permette di specificare più fonti di immagini per diversi contesti (viewport, risoluzione, formato)
+ • Funziona in combinazione con i tag <source> e <img>
+ • Il browser sceglie la prima fonte che soddisfa le condizioni (media, type, ecc.)
+ • Il tag <img> è SEMPRE presente come fallback (obbligatorio)
+ • Supporta attributi globali ed eventi come qualsiasi altro elemento
+
+  UTILIZZI PRINCIPALI:
+   • Formati moderni con fallback (WebP/AVIF con backup JPEG/PNG)
+   • Immagini diverse per diverse dimensioni dello schermo (art direction)
+   • Immagini ad alta risoluzione per display retina (srcset)
+   • Ottimizzazione delle performance (caricare immagini più leggere su mobile)
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 ATTRIBUTI SPECIFICI <source> (dentro <picture>)                                            ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ TIPO          ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ srcset       ║ OBBLIGATORIO  ║ "immagine.jpg"                            ║ URL dell'immagine o lista di URL con descrittori        ║
+║              ║               ║ "immagine.jpg 1x, immagine@2x.jpg 2x"     ║ • 1x, 2x = densità pixel (retina)                       ║
+║              ║               ║ "immagine.jpg 480w, immagine.jpg 800w"    ║ • 480w, 800w = larghezza in pixel (per sizes)           ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ media        ║ OPZIONALE     ║ "(min-width: 800px)"                      ║ Condizione CSS media query                               ║
+║              ║               ║ "(max-width: 600px)"                      ║ Es. larghezza viewport, orientamento, risoluzione       ║
+║              ║               ║ "(orientation: portrait)"                 ║                                                          ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ type         ║ OPZIONALE     ║ "image/jpeg"                              ║ Tipo MIME dell'immagine                                 ║
+║              ║               ║ "image/png"                               ║ Utile per formati moderni (WebP, AVIF) con fallback     ║
+║              ║               ║ "image/webp"                              ║                                                          ║
+║              ║               ║ "image/avif"                              ║                                                          ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ sizes        ║ OPZIONALE     ║ "(max-width: 600px) 100vw, 50vw"          ║ Dimensioni condizionali per srcset (avanzato)           ║
+║              ║               ║                                           ║ Usato insieme a srcset con descrittori 'w'              ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ width        ║ OPZIONALE     ║ "480"                                     ║ Larghezza intrinseca dell'immagine (pixel)              ║
+║              ║               ║                                           ║ (Raro in <picture>, più comune in <img>)                ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ height       ║ OPZIONALE     ║ "320"                                     ║ Altezza intrinseca dell'immagine (pixel)                ║
+║              ║               ║                                           ║ (Raro in <picture>, più comune in <img>)                ║
+╚══════════════╩═══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 TAG <img> DENTRO <picture>                                                                ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ • Il tag <img> è OBBLIGATORIO all'interno di <picture>                                                                               ║
+║ • Serve come fallback se nessun <source> è valido                                                                                    ║
+║ • Definisce anche l'alt text per accessibilità                                                                                       ║
+║ • Può includere tutti gli attributi normali di <img>                                                                                 ║
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ TIPO          ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ src          ║ OBBLIGATORIO  ║ "immagine.jpg"                            ║ URL dell'immagine di fallback                            ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ alt          ║ OBBLIGATORIO  ║ "descrizione"                             ║ Testo alternativo (accessibilità)                        ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ width        ║ CONSIGLIATO   ║ "400"                                     ║ Larghezza (previene layout shift - CLS)                  ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ height       ║ CONSIGLIATO   ║ "300"                                     ║ Altezza (previene layout shift - CLS)                    ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ loading      ║ OPZIONALE     ║ "lazy"                                    ║ Caricamento pigro (performance)                          ║
+║              ║               ║ "eager"                                   ║ Caricamento immediato (default)                          ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ decoding     ║ OPZIONALE     ║ "async"                                   ║ Decodifica asincrona (consigliato)                       ║
+║              ║               ║ "sync"                                    ║ Decodifica sincrona (bloccante)                          ║
+║              ║               ║ "auto"                                    ║ Il browser decide (default)                              ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ fetchpriority║ OPZIONALE     ║ "high"                                    ║ Alta priorità (LCP - Largest Contentful Paint)          ║
+║              ║               ║ "low"                                     ║ Bassa priorità                                           ║
+║              ║               ║ "auto"                                    ║ Priorità automatica (default)                            ║
+╚══════════════╩═══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+-->
+
+
+<!--<svg></svg>-->
+<!--
+<svg
+
+    [attributi_globali]
+    [attributi_specifici]
+    [attributi_evento]
+
+>
+    ELEMENTI SVG
+    ATTRIBUTI DI PRESENTAZIONE
+</svg>
+
+ • Il tag <svg> definisce un contenitore per grafica vettoriale scalabile (SVG)                                                       ║
+ • Le immagini SVG sono XML-based e possono essere manipolate via CSS e JavaScript                                                    ║
+ • Vantaggi: scalabili senza perdita di qualità, dimensioni file ridotte, stilizzabili                                                ║
+ • Può contenere elementi come <circle>, <rect>, <path>, <text>, <g>, ecc.                                                            ║
+ • Supporta attributi globali, specifici ed eventi                                                                                    ║
+ • Può essere incorporato direttamente nel HTML o referenziato tramite <img>, <object>, <iframe>                                      ║
+
+                                                                                                                                       ║
+   UTILIZZI COMUNI:                                                                                                                   ║
+    • Icone e loghi (scalabili)                                                                                                        ║
+   • Grafici e diagrammi                                                                                                              ║
+   • Illustrazioni e animazioni                                                                                                       ║
+   • Mappe interattive                                                                                                                ║
+                                                                                                                                          ║
+
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 ATTRIBUTI SPECIFICI <svg>                                                                  ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ TIPO          ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ width        ║ OPZIONALE     ║ "100"                                     ║ Larghezza del viewport (in pixel o percentuale)         ║
+║              ║               ║ "100%"                                   ║ Se non specificato, dipende dal contenuto               ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ height       ║ OPZIONALE     ║ "100"                                     ║ Altezza del viewport (in pixel o percentuale)          ║
+║              ║               ║ "100%"                                   ║ Se non specificato, dipende dal contenuto               ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ viewBox      ║ OPZIONALE     ║ "0 0 100 100"                             ║ Definisce il sistema di coordinate interno              ║
+║              ║               ║                                           ║ "min-x min-y width height"                              ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ preserveAspectRatio║ OPZIONALE║ "none"                                    ║ Come adattare il contenuto al viewport                  ║
+║              ║               ║ "xMidYMid meet"                           ║ • meet: adatta mantenendo proporzioni                   ║
+║              ║               ║ "xMinYMin slice"                          ║ • slice: riempie tagliando                               ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ xmlns        ║ OPZIONALE     ║ "http://www.w3.org/2000/svg"              ║ Namespace XML (richiesto per file .svg autonomi)       ║
+║              ║               ║                                           ║ Non necessario per SVG inline in HTML5                  ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ version      ║ OPZIONALE     ║ "1.1"                                     ║ Versione SVG (per compatibilità)                        ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ x            ║ OPZIONALE     ║ "10"                                      ║ Posizione X (solo se usato come elemento annidato)     ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ y            ║ OPZIONALE     ║ "10"                                      ║ Posizione Y (solo se usato come elemento annidato)     ║
+╚══════════════╩═══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         🔷 ELEMENTI PRINCIPALI DENTRO <svg>                                                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ┌─────────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ ║
+║ │ Elemento    │ Descrizione                                                                                                        │ ║
+║ ├─────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ ║
+║ │ <circle>    │ Cerchio - attributi: cx, cy, r                                                                                     │ ║
+║ │ <rect>      │ Rettangolo - attributi: x, y, width, height, rx, ry                                                                │ ║
+║ │ <line>      │ Linea - attributi: x1, y1, x2, y2                                                                                  │ ║
+║ │ <polyline>  │ Linea spezzata - attributi: points                                                                                 │ ║
+║ │ <polygon>   │ Poligono - attributi: points                                                                                       │ ║
+║ │ <path>      │ Percorso complesso - attributi: d (data)                                                                           │ ║
+║ │ <text>      │ Testo - attributi: x, y, font-family, font-size                                                                   │ ║
+║ │ <g>         │ Gruppo di elementi (per trasformazioni/stili comuni)                                                               │ ║
+║ │ <defs>      │ Definizioni (gradienti, pattern, ecc.)                                                                             │ ║
+║ │ <use>       │ Riutilizza un elemento definito altrove                                                                            │ ║
+║ │ <linearGradient> │ Gradiente lineare                                                                                             │ ║
+║ │ <radialGradient> │ Gradiente radiale                                                                                             │ ║
+║ │ <filter>    │ Filtri (effetti)                                                                                                   │ ║
+║ │ <animate>   │ Animazioni                                                                                                         │ ║
+║ └─────────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ ║
+║                                                                                                                                       ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         🎨 ATTRIBUTI DI PRESENTAZIONE (comuni)                                                        ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ┌─────────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ ║
+║ │ Attributo   │ Descrizione                                                                                                        │ ║
+║ ├─────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤ ║
+║ │ fill        │ Colore di riempimento ("red", "#FF0000", "rgb(255,0,0)")                                                           │ ║
+║ │ stroke      │ Colore del contorno                                                                                                │ ║
+║ │ stroke-width│ Larghezza del contorno                                                                                             │ ║
+║ │ opacity     │ Opacità (0-1)                                                                                                      │ ║
+║ │ fill-opacity│ Opacità del riempimento                                                                                            │ ║
+║ │ stroke-opacity│ Opacità del contorno                                                                                             │ ║
+║ │ font-family │ Famiglia di font (per <text>)                                                                                      │ ║
+║ │ font-size   │ Dimensione font                                                                                                    │ ║
+║ │ text-anchor │ Allineamento testo: start, middle, end                                                                             │ ║
+║ │ transform   │ Trasformazioni: translate(), rotate(), scale(), skewX(), skewY()                                                   │ ║
+║ └─────────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ ║
+║                                                                                                                                       ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>

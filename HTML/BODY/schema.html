@@ -21,88 +21,38 @@
 </head>
 
 
-<body>
+<body onbeforeunload="return funzione()">
+<!-- FRAMES -->
+<iframe src="https://www.w3schools.com" title="W3Schools Free Online Web Tutorials">
+</iframe>
 
-<header>                                <!-- <-- Il tag <header> rappresenta un contenitore introduttivo o di navigazione.-->
+<!-- IMMAGINI -->
 
-</header>
-<!-- <main>[attributi globali] [eventi]</main> -->
-<main>                              <!--  <main> racchiude il contenuto principale e unico della pagina.  Deve essere usato una sola volta. -->
-    <!-- <article>[attributi globali] [eventi]</article> -->
-    <article>                        <!-- <article> rappresenta un componente della pagina che ha senso
-                                            da solo (es. post di blog, notizia, commento). Può avere
-                                            intestazione e piè di pagina propri. -->
-        <!-- <main>[attributi globali] [eventi]</main> -->
-        <header>                      <!-- Questo <header> è interno all'articolo e contiene
-                                           l'intestazione specifica di questo contenuto. -->
-            <h2>Titolo articolo</h2>
-            <p>Sottotitolo</p>
-        </header>
-        <!-- <section>[attributi globali] [eventi]</section> -->
-        <section>                   <!-- <section> raggruppa contenuti tematicamente correlati.
-                                         Di solito ha un proprio titolo-->
-            <!-- <div>[attributi globali] [eventi]</div> -->
-            <div>                   <!-- <div> è un contenitore generico di blocco, senza significato
-                                        semantico. Si usa per raggruppare elementi a scopo di stile. -->
-                <!-- <span>[attributi globali] [eventi]</span> -->
-                <span>Testo inline</span> <!-- <span> è un contenitore generico inline, senza significato
-                                          semantico. Utile per applicare stili a porzioni di testo. -->
-            </div>
-            <!-- <data>[attributi globali] value="" </data> -->
-            <data value="123">Dato</data>  <!-- <data> associa un contenuto leggibile dall'utente ("Dato")
-                                                 a un valore leggibile dalla macchina (value="123").
-                                                 Utile per microdati o elaborazioni. -->
+<img>
+<map>
+    <area href="https://www.google.com/">
 
-            <form role="search"> <!-- <form> crea un modulo interattivo. L'attributo role="search"
-                                      dice ai lettori di schermo che è un modulo di ricerca. -->
-                <input type="search">
-            </form>
-        </section>
+</map>
+<figure>
+    <img src="pic_trulli.jpg" alt="Trulli" style="width:100%">
+    <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
+</figure>
+<picture>
+    <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+    <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+    <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
 
-        <details>                                <!-- <details> crea un widget che l'utente può aprire/chiudere
-                                                 per rivelare contenuti nascosti. -->
-            <summary>Apri</summary>              <!-- <summary> è il titolo visibile del tag <details>.
-                                                 Cliccandolo si apre/chiude il contenuto. -->
-            <p>Contenuto nascosto</p>
-        </details>
-        <object data="file.pdf" type="application/pdf">  <!-- <object> incorpora risorse esterne (PDF, immagini, applet).
-                                                            Se il browser non supporta il tipo, mostra il contenuto
-                                                                alternativo (qui assente). -->
-            <param name="zoom" value="100">               <!-- <param> definisce parametri per l'<object> padre.
-                                                               In questo caso imposta lo zoom iniziale del PDF. -->
-        </object>
-        <embed src="video.mp4" type="video/mp4">            <!-- <embed> incorpora contenuti esterni (simile a <object> ma più
-                                                            semplice). Oggi per i video si preferisce <video>. -->
-        <script>                                <!-- <script> contiene o collega codice JavaScript. -->
+<svg width="400" height="180">
+    <rect x="50" y="20" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+    Sorry, your browser does not support inline SVG.
+</svg>
 
-        </script>
-        <footer>                          <!-- Questo <footer> è interno all'articolo e contiene
-                 informazioni di chiusura specifiche (es. autore, data). -->
-            Footer dell'articolo
-        </footer>
-    </article>
+<!-- ELENCHI -->
 
-    <aside>                             <!-- <aside> contiene contenuti tangenzialmente correlati al contenuto
-                                         principale (es. sidebar, note, pubblicità). -->
-        Contenuto secondario
-    </aside>
 
-    <dialog>
-        Finestra modale
-    </dialog>   <!-- <dialog> rappresenta una finestra modale o finestra di dialogo.
-             Di solito è nascosta e viene mostrata con JavaScript. -->
-</main>
-<script>
 
-</script>
-<noscript> <!-- <noscript> mostra contenuto alternativo se JavaScript è disabilitato
-         nel browser. -->
-    Il tuo browser non supporta JavaScript.
-</noscript>
-<footer>   <!-- Questo è il footer globale della pagina, di solito con copyright,
-         link a note legali, etc. -->
-    Footer globale
-</footer>
+
 </body>
 
 

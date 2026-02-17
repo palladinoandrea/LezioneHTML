@@ -1,0 +1,67 @@
+
+<!--<menu></menu>-->
+<!--
+<menu
+    id="menu-modifica"
+    class="toolbar"
+    aria-label="Menu Modifica"
+>
+    <li><button type="button">Taglia</button></li>
+    <li><button type="button">Copia</button></li>
+    <li><button type="button">Incolla</button></li>
+</menu>
+
+
+ <menu>
+ └── <li>
+      ├── <button>
+      └── <menu>
+           └── <li>
+                └── <button>
+
+
+
+                                                                                                                                ║
+ • Il tag <menu> rappresenta un insieme di comandi o azioni (toolbar, menu contestuali)                                               ║
+ • In HTML5 è stato ridefinito come alternativa semantica a <ul> per liste di comandi                                                 ║
+ • I figli diretti DEVONO essere elementi <li> (come per <ul>)                                                                        ║
+ • Ogni <li> può contenere pulsanti, link, icone o altri elementi interattivi                                                         ║
+ • Supporta attributi globali, specifici ed eventi                                                                                    ║
+ • Il supporto browser è buono ma meno comune di <ul>                                                                                 ║
+                                                                                                                                       ║
+  UTILIZZI PRINCIPALI:                                                                                                               ║
+   • Toolbar con pulsanti                                                                                                             ║
+   • Menu contestuali (tasto destro)                                                                                                  ║
+   • Barre degli strumenti in editor                                                                                                  ║
+   • Liste di comandi/azioni
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<menu>
+    <li>
+        elemento 1
+        <menu>
+            sotto elemento di 1 a 1
+        </menu>
+    </li>
+
+
+    <li>
+        elemento 2
+    </li>
+
+</menu>
+
+
+
+</body>
+</html>

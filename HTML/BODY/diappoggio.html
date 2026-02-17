@@ -1,0 +1,67 @@
+<!--<menu></menu>-->
+<!--
+<menu
+    id="menu-modifica"
+    class="toolbar"
+    aria-label="Menu Modifica"
+>
+    <li><button type="button">Taglia</button></li>
+    <li><button type="button">Copia</button></li>
+    <li><button type="button">Incolla</button></li>
+</menu>
+
+
+ <menu>                                   ← LIVELLO 1: Contenitore principale
+    │
+    ├── Attributi globali
+    │     id
+    │     class
+    │     style
+    │     title
+    │     data-*
+    │
+    ├── Attributi ARIA (accessibilità)
+    │     aria-label
+    │     role
+    │     aria-*
+    │
+    ├── Attributi evento
+    │     onclick
+    │     onkeydown
+    │     ecc.
+    │
+    └── <li>                             ← LIVELLO 2: Figli diretti obbligatori
+         │
+         ├── Attributi globali
+         ├── Attributi ARIA
+         ├── Eventi
+         │
+         ├── <button>Comando</button>
+         ├── <a href="#">Link</a>
+         ├── Testo semplice
+         ├── Altri elementi inline
+         │
+         └── <menu>                      ← LIVELLO 3: Menu annidato (opzionale)
+              │
+              └── <li>
+                   ├── <button>Sotto-comando</button>
+                   ├── <a href="#">Sotto-link</a>
+                   └── Altri elementi inline
+
+
+                                                                                                                                ║
+ • Il tag <menu> rappresenta un insieme di comandi o azioni (toolbar, menu contestuali)                                               ║
+ • In HTML5 è stato ridefinito come alternativa semantica a <ul> per liste di comandi                                                 ║
+ • I figli diretti DEVONO essere elementi <li> (come per <ul>)                                                                        ║
+ • Ogni <li> può contenere pulsanti, link, icone o altri elementi interattivi                                                         ║
+ • Supporta attributi globali, specifici ed eventi                                                                                    ║
+ • Il supporto browser è buono ma meno comune di <ul>                                                                                 ║
+                                                                                                                                       ║
+  UTILIZZI PRINCIPALI:                                                                                                               ║
+   • Toolbar con pulsanti                                                                                                             ║
+   • Menu contestuali (tasto destro)                                                                                                  ║
+   • Barre degli strumenti in editor                                                                                                  ║
+   • Liste di comandi/azioni                                                                                                          ║
+
+
+

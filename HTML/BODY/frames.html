@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<iframe></iframe>-->
+<!--
+
+<iframe
+
+    [attributi_globali]
+    [attributi_specifici]
+    [attributi_evento]
+
+>
+
+    ... TESTO ALTERNATIVO (per browser che non supportano iframe) ...
+
+</iframe>
+
+• Il tag <iframe> (inline frame) incorpora un'altra pagina HTML all'interno della pagina corrente                                    ║
+• Ampiamente supportato e utilizzato per incorporare contenuti esterni (video YouTube, mappe Google, ecc.)                           ║
+• Deve essere posizionato all'interno del <body>                                                                                     ║
+ • Supporta attributi globali, specifici ed eventi                                                                                    ║
+ • Importante per la sicurezza: usare sandbox per contenuti non fidati                                                                ║
+                                                                                                                                      ║
+🔒 SICUREZZA:                                                                                                                         ║
+• sandbox: limita le funzionalità del contenuto incorporato                                                                        ║
+• allow: permette funzionalità specifiche (geolocation, camera, ecc.)                                                              ║
+• referrerpolicy: controlla le informazioni inviate                                                                                ║
+• loading: lazy loading per performance
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 ATTRIBUTI NORMALI (funzionalità base)                                                      ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ src          ║ URL                                       ║ Indirizzo della pagina da caricare nell'iframe           ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ srcdoc       ║ HTML_code                                 ║ Contenuto HTML diretto da mostrare (sostituisce src)     ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ name         ║ text                                      ║ Nome dell'iframe (per targeting con link)                ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ width        ║ pixels                                    ║ Larghezza dell'iframe (default 300px)                    ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ height       ║ pixels                                    ║ Altezza dell'iframe (default 150px)                      ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ loading      ║ eager                                     ║ L'iframe viene caricato subito, appena il browser       ║
+║              ║                                           ║ analizza il codice HTML                                  ║
+║              ║ lazy                                      ║ L'iframe viene caricato solo quando sta per diventare    ║
+║              ║                                           ║ visibile nella finestra del browser                      ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         🔒 ATTRIBUTI DI SICUREZZA (protezione e permessi)                                             ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ sandbox      ║ (vuoto)                                   ║ Attiva TUTTE le restrizioni (massima sicurezza)         ║
+║              ║ allow-forms                               ║ Permette l'invio di form                                 ║
+║              ║ allow-modals                              ║ Permette di aprire finestre modali                      ║
+║              ║ allow-orientation-lock                    ║ Permette di bloccare l'orientamento dello schermo       ║
+║              ║ allow-pointer-lock                        ║ Permette di bloccare il puntatore                        ║
+║              ║ allow-popups                              ║ Permette l'apertura di popup                             ║
+║              ║ allow-popups-to-escape-sandbox            ║ Permette ai popup di aprire nuove finestre senza        ║
+║              ║                                           ║ ereditare le restrizioni del sandbox                     ║
+║              ║ allow-presentation                        ║ Permette di avviare una sessione di presentazione       ║
+║              ║ allow-same-origin                         ║ Permette di trattare il contenuto come stessa origine    ║
+║              ║ allow-scripts                             ║ Permette l'esecuzione di script                          ║
+║              ║ allow-top-navigation                      ║ Permette di navigare il contesto principale              ║
+║              ║ allow-top-navigation-by-user-activation   ║ Permette di navigare il contesto principale solo        ║
+║              ║                                           ║ se iniziato dall'utente (es. con un click)               ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ referrerpolicy║ no-referrer                               ║ Nessuna informazione inviata                             ║
+║              ║ no-referrer-when-downgrade                ║ DEFAULT - nessun referrer su HTTP                        ║
+║              ║ origin                                    ║ Invia solo origine (https://sito.com)                    ║
+║              ║ origin-when-cross-origin                  ║ Origine completa per stesso dominio, solo origine per    ║
+║              ║                                           ║ richieste cross-origine                                  ║
+║              ║ same-origin                               ║ Referrer solo per richieste stesso dominio               ║
+║              ║ strict-origin                             ║ Invia solo origine per richieste sicure (HTTPS→HTTPS),  ║
+║              ║                                           ║ NON invia per richieste meno sicure (HTTPS→HTTP)        ║
+║              ║ strict-origin-when-cross-origin           ║ Rigoroso - consigliato per sicurezza                     ║
+║              ║ unsafe-url                                ║ Invia URL completo (INSICURO!)                           ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ allow        ║ geolocation 'self'                        ║ Permette geolocalizzazione solo stesso dominio           ║
+║              ║ geolocation 'none'                        ║ Blocca geolocalizzazione                                 ║
+║              ║ camera 'self'                             ║ Permette fotocamera solo stesso dominio                  ║
+║              ║ camera 'none'                             ║ Blocca accesso a fotocamera                              ║
+║              ║ microphone 'self'                          ║ Permette microfono solo stesso dominio                   ║
+║              ║ microphone 'none'                          ║ Blocca microfono                                         ║
+║              ║ fullscreen 'self'                         ║ Permette schermo intero solo stesso dominio              ║
+║              ║ fullscreen 'none'                          ║ Blocca schermo intero                                    ║
+║              ║ payment 'self'                             ║ Permette API di pagamento solo stesso dominio            ║
+║              ║ payment 'none'                             ║ Blocca API di pagamento                                  ║
+║              ║ autoplay 'self'                            ║ Permette autoplay solo stesso dominio                    ║
+║              ║ autoplay 'none'                            ║ Blocca autoplay                                          ║
+║              ║ clipboard-write 'self'                     ║ Permette scrittura clipboard stesso dominio              ║
+║              ║ clipboard-write 'none'                     ║ Blocca scrittura clipboard                               ║
+║              ║ accelerometer 'self'                       ║ Permette accesso a accelerometro                         ║
+║              ║ gyroscope 'self'                           ║ Permette accesso a giroscopio                            ║
+║              ║ magnetometer 'self'                        ║ Permette accesso a magnetometro                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ allowfullscreen║ true / false                            ║ Permette o meno la modalità a schermo intero             ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+-->
+
+</body>
+</html>
