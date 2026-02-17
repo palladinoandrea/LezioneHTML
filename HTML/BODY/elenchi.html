@@ -36,6 +36,149 @@
    • Liste di comandi/azioni
 
 -->
+<!--<ul><\ul>-->
+<!--
+<ul>
+ ├── <li> Primo elemento
+ │     └── <ul>
+ │          ├── <li> Sotto elemento 1.1
+ │          ├── <li> Sotto elemento 1.2
+ │          └── <li> Sotto elemento 1.3
+ │                └── <ul>
+ │                     └── <li> Sotto elemento 1.3.1
+ │
+ ├── <li> Secondo elemento
+ │
+ └── <li> Terzo elemento
+       └── <ul>
+            └── <li> Sotto elemento 3.1
+
+            <ul
+        [attributi_globali]
+        [attributi_specifici]
+        [attributi_evento]
+      >
+
+    <li>
+        Primo elemento
+
+        <ul>
+            <li>Sotto elemento 1.1</li>
+            <li>Sotto elemento 1.2</li>
+            <li>
+                Sotto elemento 1.3
+                <ul>
+                    <li>Sotto elemento 1.3.1</li>
+                </ul>
+
+            </li>
+        </ul>
+
+    </li>
+
+    <li>Secondo elemento</li>
+
+    <li>Terzo elemento
+        <ul>
+        <li>Sotto elemento 1.3.1</li>
+        </ul>
+    </li>
+</ul>
+
+
+• Il tag <ul> rappresenta una lista non ordinata (unordered list)
+• Gli elementi sono tipicamente visualizzati con punti elenco (bullet points)
+• I figli diretti DEVONO essere elementi <li> (list item)
+• Può contenere liste annidate (altri <ul> o <ol> dentro <li>)
+• Supporta attributi globali, specifici (pochi) ed eventi
+• È uno dei tag più utilizzati per menu, elenchi, navigazione
+
+ UTILIZZI PRINCIPALI:
+  • Menu di navigazione
+  • Elenchi puntati
+  • Liste di prodotti o caratteristiche
+  • Strutture annidate (sotto-menu, TOC)
+
+
+-->
+<!-- <ol><\ol>-->
+<!--
+    <ol>
+     └── <li>
+          ├── testo
+          └── <ol>
+               └── <li>
+
+<ol
+        [attributi_globali]
+        [attributi_specifici]
+        [attributi_evento]
+         >
+          <li>Primo elemento</li>
+          <li>Secondo elemento</li>
+          <li>Terzo elemento</li>
+      </ol>
+• Il tag <ol> rappresenta una lista ordinata (ordered list)
+• Gli elementi sono tipicamente visualizzati con numeri o lettere progressive
+• I figli diretti DEVONO essere elementi <li> (list item)
+• Può contenere liste annidate (altri <ol> o <ul> dentro <li>)
+• Supporta attributi globali, specifici ed eventi
+• La numerazione può essere personalizzata con attributi o CSS
+
+🎯 UTILIZZI PRINCIPALI:
+• Classifiche e graduatorie
+• Istruzioni passo-passo
+• Indici e sommari
+• Procedure ordinate
+
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                            ATTRIBUTI SPECIFICI <ol>                                                                   ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ TIPO          ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ reversed     ║ BOOLEANO      ║ reversed                                  ║ La lista è ordinata in modo discendente (10,9,8...)     ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ start        ║ NUMERO        ║ "5"                                       ║ Valore iniziale della numerazione (default 1)           ║
+║              ║               ║ "10"                                      ║                                                          ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+
+-->
+<!--<li><\<li>-->
+<!--
+<li
+
+    [attributi_globali]
+    [attributi_specifici]
+    [attributi_evento]
+
+>
+
+    ... CONTENUTO DELL'ELEMENTO ...
+
+</li>
+
+ • Il tag <li> rappresenta un elemento di una lista (list item)
+    • Può essere figlio diretto di <ul>, <ol> o <menu>
+    • Deve essere SEMPRE contenuto all'interno di uno di questi elementi contenitore
+    • Può contenere qualsiasi elemento HTML (testo, link, immagini, altre liste, div, ecc.)
+    • Supporta attributi globali, specifici (pochi) ed eventi
+    • È un elemento fondamentale per la creazione di menu, elenchi e strutture navigazionali
+RELAZIONE CON <ul>, <ol>, <menu>:
+      <ul>                      <ol>                      <menu>
+        ├── <li>...</li>          ├── <li>...</li>          ├── <li>...</li>
+        ├── <li>...</li>          ├── <li>...</li>          ├── <li>...</li>
+        └── <li>...</li>          └── <li>...</li>          └── <li>...</li>
+
+    <li> NON PUÒ ESISTERE SENZA UN CONTENITORE!
+     UTILIZZI PRINCIPALI:
+      • Elementi di elenchi puntati (<ul>)
+      • Elementi di liste ordinate (<ol>)
+      • Voci di menu (<menu>)
+      • Contenitori per navigazione, breadcrumb, ecc.
+-->
 
 
 <!DOCTYPE html>
@@ -48,20 +191,23 @@
 
 <menu>
     <li>
-        elemento 1
-        <menu>
-            sotto elemento di 1 a 1
-        </menu>
+        primo elemento
     </li>
-
-
+    <menu>
+        <li>
+            sottocategoria 1 nel primo elemento
+        </li>
+    </menu>
     <li>
-        elemento 2
+        secondo elemento
     </li>
-
 </menu>
+<br>
+
+
 
 
 
 </body>
 </html>
+

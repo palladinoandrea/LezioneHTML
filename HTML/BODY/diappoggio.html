@@ -1,67 +1,203 @@
-<!--<menu></menu>-->
 <!--
-<menu
-    id="menu-modifica"
-    class="toolbar"
-    aria-label="Menu Modifica"
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                              TAG <dl>, <dt> e <dd> (description list)                                                 ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                                    NOTE E CONSIGLI                                                                    ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ • I tag <dl>, <dt> e <dd> lavorano insieme per creare liste di descrizione                                                            ║
+║ • <dl> (description list) è il contenitore principale                                                                                ║
+║ • <dt> (description term) definisce il termine/concetto da descrivere                                                                ║
+║ • <dd> (description details) fornisce la descrizione del termine                                                                     ║
+║ • Un termine (<dt>) può avere più descrizioni (<dd>)                                                                                 ║
+║ • Più termini possono condividere la stessa descrizione                                                                              ║
+║ • Supportano attributi globali ed eventi (pochi attributi specifici)                                                                 ║
+║                                                                                                                                       ║
+║ 🎯 UTILIZZI PRINCIPALI:                                                                                                               ║
+║   • Glossari e dizionari                                                                                                             ║
+║   • Metadati (coppie chiave-valore)                                                                                                  ║
+║   • FAQ (domande e risposte)                                                                                                         ║
+║   • Specifiche tecniche                                                                                                              ║
+║   • Informazioni di contatto                                                                                                         ║
+║                                                                                                                                       ║
+║ 🔗 RELAZIONE TRA I TAG:                                                                                                               ║
+║   <dl>                                                                                                                                ║
+║       <dt>Termine 1</dt>                                                                                                             ║
+║       <dd>Descrizione 1</dd>                                                                                                         ║
+║                                                                                                                                    ║
+║       <dt>Termine 2</dt>                                                                                                             ║
+║       <dd>Descrizione 2.1</dd>                                                                                                       ║
+║       <dd>Descrizione 2.2</dd>                                                                                                       ║
+║   </dl>                                                                                                                              ║
+║                                                                                                                                       ║
+║ 📌 REGOLA FONDAMENTALE:                                                                                                               ║
+║   • I figli diretti di <dl> POSSONO essere SOLO <dt> e <dd>                                                                          ║
+║   • <dt> e <dd> NON POSSONO ESISTERE SENZA <dl>                                                                                      ║
+║                                                                                                                                       ║
+╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+<!-- ============================================== TAG <dl> ============================================== -->
+
+<dl
+
+        [attributi_globali]
+        [attributi_evento]
+
 >
-    <li><button type="button">Taglia</button></li>
-    <li><button type="button">Copia</button></li>
-    <li><button type="button">Incolla</button></li>
-</menu>
+    <dt>...</dt>
+    <dd>...</dd>
+    ...
+</dl>
 
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 ATTRIBUTI SPECIFICI <dl>                                                                   ║
+    ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+    ║                                                                                                                                       ║
+    ║ ATTRIBUTO    ║ TIPO          ║ VALORE                                    ║ DESCRIZIONE                                              ║
+    ╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+    ║ compact      ║ DEPRECATO     ║ compact                                   ║ Rende la lista più compatta (non supportato in HTML5)   ║
+    ║              ║               ║                                           ║ Usare CSS (margin, padding) invece                       ║
+    ╚══════════════╩═══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
 
- <menu>                                   ← LIVELLO 1: Contenitore principale
-    │
-    ├── Attributi globali
-    │     id
-    │     class
-    │     style
-    │     title
-    │     data-*
-    │
-    ├── Attributi ARIA (accessibilità)
-    │     aria-label
-    │     role
-    │     aria-*
-    │
-    ├── Attributi evento
-    │     onclick
-    │     onkeydown
-    │     ecc.
-    │
-    └── <li>                             ← LIVELLO 2: Figli diretti obbligatori
-         │
-         ├── Attributi globali
-         ├── Attributi ARIA
-         ├── Eventi
-         │
-         ├── <button>Comando</button>
-         ├── <a href="#">Link</a>
-         ├── Testo semplice
-         ├── Altri elementi inline
-         │
-         └── <menu>                      ← LIVELLO 3: Menu annidato (opzionale)
-              │
-              └── <li>
-                   ├── <button>Sotto-comando</button>
-                   ├── <a href="#">Sotto-link</a>
-                   └── Altri elementi inline
+    <!-- ============================================== TAG <dt> ============================================== -->
 
+    <dt
 
-                                                                                                                                ║
- • Il tag <menu> rappresenta un insieme di comandi o azioni (toolbar, menu contestuali)                                               ║
- • In HTML5 è stato ridefinito come alternativa semantica a <ul> per liste di comandi                                                 ║
- • I figli diretti DEVONO essere elementi <li> (come per <ul>)                                                                        ║
- • Ogni <li> può contenere pulsanti, link, icone o altri elementi interattivi                                                         ║
- • Supporta attributi globali, specifici ed eventi                                                                                    ║
- • Il supporto browser è buono ma meno comune di <ul>                                                                                 ║
-                                                                                                                                       ║
-  UTILIZZI PRINCIPALI:                                                                                                               ║
-   • Toolbar con pulsanti                                                                                                             ║
-   • Menu contestuali (tasto destro)                                                                                                  ║
-   • Barre degli strumenti in editor                                                                                                  ║
-   • Liste di comandi/azioni                                                                                                          ║
+            [attributi_globali]
+            [attributi_evento]
 
+    >
+        ... TERMINE DA DEFINIRE ...
+    </dt>
 
+    ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                         📌 ATTRIBUTI SPECIFICI <dt>                                                                   ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+        ║                                                                                                                                       ║
+        ║ ATTRIBUTO    ║ TIPO          ║ VALORE                                    ║ DESCRIZIONE                                              ║
+        ╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+        ║ (nessuno)    ║               ║                                           ║ <dt> NON HA ATTRIBUTI SPECIFICI!                         ║
+        ║              ║               ║                                           ║ Supporta SOLO attributi globali ed eventi                ║
+        ╚══════════════╩═══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
 
+        <!-- ============================================== TAG <dd> ============================================== -->
+
+    <dd
+
+            [attributi_globali]
+            [attributi_evento]
+
+    >
+        ... DESCRIZIONE DEL TERMINE ...
+    </dd>
+
+    ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+    ║                                         📌 ATTRIBUTI SPECIFICI <dd>                                                                   ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+        ║                                                                                                                                       ║
+        ║ ATTRIBUTO    ║ TIPO          ║ VALORE                                    ║ DESCRIZIONE                                              ║
+        ╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+        ║ nowrap       ║ DEPRECATO     ║ nowrap                                    ║ Impedisce il ritorno a capo (non supportato in HTML5)   ║
+        ║              ║               ║                                           ║ Usare CSS white-space: nowrap invece                     ║
+        ╚══════════════╩═══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+
+        ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+        ║                                         ATTRIBUTI GLOBALI (supportati da tutti)                                                       ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+        ║                                                                                                                                       ║
+        ║ id         ║ class       ║ style       ║ title       ║ lang        ║ dir         ║ tabindex    ║ hidden      ║ data-*               ║
+        ║                                                                                                                                       ║
+        ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+        ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+        ║                                         ATTRIBUTI EVENTO (supportati da tutti)                                                        ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+        ║                                                                                                                                       ║
+        ║ onclick    ║ ondblclick ║ onmousedown ║ onmouseup ║ onmouseover ║ onmouseout ║ onmousemove ║ onmouseenter ║ onmouseleave          ║
+        ║ onfocus    ║ onblur     ║ onkeydown   ║ onkeyup   ║ onkeypress  ║                                                               ║
+        ║                                                                                                                                       ║
+        ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+        ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+        ║                                         GERARCHIA E REGOLE DI COMPOSIZIONE                                                            ║
+        ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+        ║                                                                                                                                       ║
+        ║   <dl>                                              ← LIVELLO 1: Contenitore principale (OBBLIGATORIO)                                ║
+            ║    │                                                                                                                               ║
+            ║    ├── [attributi_globali]                           ← id, class, style, title, data-*, ecc.                                        ║
+            ║    └── [attributi_deprecati]                         ← compact (NON USARE, usa CSS)                                                 ║
+            ║                                                                                                                                    ║
+            ║    ├── <dt>                                          ← LIVELLO 2: Termine da definire (opzionale ma almeno uno)                      ║
+                ║    │    │                                                                                                                           ║
+                ║    │    ├── [attributi_globali]                       ← class, style, data-*, ecc.                                                  ║
+                ║    │    └── Testo del termine                          ← "HTML"                                                                     ║
+                ║    │                                                                                                                               ║
+                ║    └── <dd>                                          ← LIVELLO 2: Descrizione del termine (opzionale)                                ║
+                ║         │                                                                                                                           ║
+                ║         ├── [attributi_globali]                       ← class, style, data-*, ecc.                                                  ║
+                ║         ├── Testo della descrizione                   ← "HyperText Markup Language"                                                  ║
+                ║         ├── <p>...</p>                                ← Può contenere paragrafi                                                      ║
+                ║         ├── <ul>...</ul>                              ← Liste                                                                      ║
+                ║         ├── <img>...                                  ← Immagini                                                                   ║
+                ║         └── <div>...</div>                            ← Contenitori complessi                                                       ║
+                ║                                                                                                                                    ║
+                ║   NOTA: È possibile avere:                                                                                                          ║
+                ║   • Un <dt> con più <dd> (più descrizioni per lo stesso termine)                                                                    ║
+                ║   • Più <dt> seguiti da uno stesso <dd> (più termini condividono la stessa descrizione)                                             ║
+                ║                                                                                                                                    ║
+                ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+                ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+                ║                                         REGOLE DI COMPOSIZIONE                                                                       ║
+                ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+                ║                                                                                                                                       ║
+                ║ ┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐ ║
+                ║ │ REGOLA 1: I figli diretti di <dl> DEVONO essere SOLO <dt> e <dd>                                                                  │ ║
+                    ║ │ REGOLA 2: <dt> e <dd> NON POSSONO esistere senza <dl>                                                                             │ ║
+                    ║ │ REGOLA 3: Ogni <dt> dovrebbe essere seguito da almeno un <dd> (buona pratica)                                                     │ ║
+                        ║ │ REGOLA 4: Un <dt> può avere più <dd> (descrizioni multiple)                                                                       │ ║
+                        ║ │ REGOLA 5: Più <dt> possono condividere lo stesso <dd>                                                                             │ ║
+                        ║ │ REGOLA 6: I <dd> possono contenere QUALSIASI elemento HTML (paragrafi, liste, immagini, ecc.)                                    │ ║
+                        ║ │ REGOLA 7: NON usare attributi deprecati (compact, nowrap) - usa CSS                                                               │ ║
+                        ║ └─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘ ║
+                        ║                                                                                                                                       ║
+                        ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+                        ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+                        ║                                         SINTASSI GENERICA <dl>, <dt>, <dd>                                                           ║
+                            ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+                            ║                                                                                                                                       ║
+                            ║    <dl                                                                                                                                 ║
+                                                                                                                                                                     ║        id="identificativo"           ║ Attributi globali                                                                             ║
+                                                                                                                                                                     ║        class="nome-classe"                                                                                                            ║
+                                                                                                                                                                     ║        style="css: valore;"                                                                                                           ║
+                                                                                                                                                                     ║        title="testo"                                                                                                                  ║
+                                                                                                                                                                     ║        lang="it"                                                                                                                      ║
+                                                                                                                                                                     ║        dir="ltr/rtl"                                                                                                                  ║
+                                                                                                                                                                     ║        tabindex="numero"                                                                                                              ║
+                                                                                                                                                                     ║        hidden                                                                                                                         ║
+                                                                                                                                                                     ║        data-*="valore"                                                                                                                ║
+                                                                                                                                                                     ║                                                                                                                                       ║
+                                                                                                                                                                     ║        onclick="funzione()"           ║ Attributi evento                                                                             ║
+                                                                                                                                                                     ║        onmouseover="funzione()">                                                                                                      ║
+                                ║                                                                                                                                       ║
+                                ║        <dt class="termine" data-id="1">HTML</dt>                                                                                      ║
+                                ║        <dd class="descrizione">HyperText Markup Language - Il linguaggio per pagine web</dd>                                          ║
+                                ║                                                                                                                                    ║
+                                ║        <dt class="termine" data-id="2">CSS</dt>                                                                                       ║
+                                ║        <dd class="descrizione">Cascading Style Sheets - Il linguaggio per lo stile delle pagine</dd>                                  ║
+                                ║        <dd class="descrizione">Permette di controllare layout, colori, font e animazioni</dd>                                         ║
+                                ║                                                                                                                                    ║
+                                ║        <dt class="termine" data-id="3">JS</dt>                                                                                        ║
+                                ║        <dt class="termine" data-id="4">JavaScript</dt>                                                                                ║
+                                ║        <dd class="descrizione">Linguaggio di programmazione per rendere interattive le pagine web</dd>                                ║
+                                ║    </dl>                                                                                                                              ║
+                            ║                                                                                                                                       ║
+                            ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+                            <!--
+                            ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+                            ║                                         ESEMPI PRATICI                                                                               ║
+                            ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
