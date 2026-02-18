@@ -1,0 +1,258 @@
+<!--<a></a>-->
+<!--
+<a
+
+    [attributi_globali]
+    [attributi_specifici]
+    [attributi_evento]
+
+>
+    ... CONTENUTO DEL LINK (testo, immagine, elemento) ...
+</a>
+UTILIZZI PRINCIPALI:
+    • Collegamenti ad altre pagine web
+    • Ancora a sezioni della stessa pagina (con #)
+    • Link per email (mailto:)
+    • Link per telefonate (tel:)
+    • Download di file
+    • Apertura in nuova scheda/finestra
+
+  • Il tag <a> (anchor) definisce un collegamento ipertestuale (hyperlink)
+  • Può collegare a pagine web, sezioni della stessa pagina, file, email, numeri di telefono, ecc.
+  • Il contenuto tra i tag <a> e </a> è la parte cliccabile (testo, immagine, elemento)
+  • L'attributo href è il più importante (definisce la destinazione del link)
+  • Supporta attributi globali, specifici ed eventi
+  • Fondamentale per la navigazione web
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                          ATTRIBUTI SPECIFICI <a>                                                                    ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ TIPO          ║ VALORE                                    ║ DESCRIZIONE                                              ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ href*         ║ URL           ║ "https://example.com"                     ║ URL di destinazione del link                            ║
+║              ║               ║ "/pagina.html"                            ║ Può essere assoluto, relativo, o protocollo speciale    ║
+║              ║               ║ "#sezione"                                ║                                                          ║
+║              ║               ║ "mailto:info@example.com"                 ║                                                          ║
+║              ║               ║ "tel:+39123456789"                        ║                                                          ║
+║              ║               ║ "javascript:void(0)"                      ║                                                          ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ target       ║ NOME          ║ "_self"                                   ║ DEFAULT - Apre nella stessa finestra                     ║
+║              ║               ║ "_blank"                                  ║ Apre in una nuova finestra/scheda                        ║
+║              ║               ║ "_parent"                                 ║ Apre nel frame genitore                                  ║
+║              ║               ║ "_top"                                    ║ Apre nell'intera finestra (ignora i frame)               ║
+║              ║               ║ "nome_frame"                              ║ Apre in un frame specifico                               ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ download*     ║ FILENAME      ║ "file.pdf"                                ║ Forza il download del link invece della navigazione     ║
+║              ║               ║ "immagine.jpg"                            ║ Opzionalmente, specifica il nome del file da salvare     ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ rel*          ║ VALORI        ║ "alternate"                               ║ Versione alternativa del documento                       ║
+║              ║               ║ "author"                                  ║ Link all'autore                                          ║
+║              ║               ║ "bookmark"                                ║ URL permanente per segnalibri                            ║
+║              ║               ║ "external"                                ║ Link esterno (non stesso sito)                           ║
+║              ║               ║ "help"                                    ║ Link a documento di aiuto                                ║
+║              ║               ║ "license"                                 ║ Informazioni sul copyright                               ║
+║              ║               ║ "next"                                    ║ Documento successivo                                     ║
+║              ║               ║ "nofollow"                                ║ Link non approvato (SEO)                                 ║
+║              ║               ║ "noopener"                                ║ Sicurezza per target="_blank"                            ║
+║              ║               ║ "noreferrer"                              ║ Non inviare header referrer                              ║
+║              ║               ║ "prev"                                    ║ Documento precedente                                     ║
+║              ║               ║ "search"                                  ║ Tool di ricerca                                          ║
+║              ║               ║ "tag"                                     ║ Parola chiave per il documento                           ║
+║              ║               ║ (più valori separati da spazio)          ║ Combinazioni: "nofollow noopener noreferrer"            ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ referrerpolicy*║ POLITICA     ║ "no-referrer"                             ║ Nessuna informazione referrer inviata                    ║
+║              ║               ║ "no-referrer-when-downgrade"              ║ DEFAULT - Invia se stesso livello o superiore,           ║
+║              ║               ║                                           ║ non invia a livelli meno sicuri (HTTPS→HTTP)             ║
+║              ║               ║ "origin"                                  ║ Invia solo origine (schema, host, porta)                 ║
+║              ║               ║ "origin-when-cross-origin"                ║ Cross-origin: solo origine; stesso-origine: completo     ║
+║              ║               ║ "same-origin"                             ║ Solo per richieste stesso-origine                        ║
+║              ║               ║ "strict-origin"                           ║ Solo origine per richieste sicure (HTTPS→HTTPS)          ║
+║              ║               ║ "strict-origin-when-cross-origin"         ║ Consigliato - origine solo per richieste sicure          ║
+║              ║               ║ "unsafe-url"                              ║ INSICURO - invia URL completo                            ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ hreflang*     ║ CODICE_LINGUA ║ "en"                                       ║ Lingua del documento di destinazione                     ║
+║              ║               ║ "it"                                       ║                                                          ║
+║              ║               ║ "fr"                                       ║                                                          ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ type*         ║ MIME_TYPE     ║ "text/html"                                ║ Tipo MIME del documento di destinazione                  ║
+║              ║               ║ "image/jpeg"                               ║                                                          ║
+║              ║               ║ "application/pdf"                          ║                                                          ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ media*        ║ MEDIA_QUERY   ║ "screen and (max-width: 600px)"            ║ Per quali dispositivi è ottimizzato il link             ║
+╠══════════════╬═══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════╣
+║ ping*         ║ URL           ║ "/track.php?link=1"                        ║ URL da notificare quando il link viene cliccato          ║
+║              ║               ║                                           ║ (per tracking)                                           ║
+╚══════════════╩═══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════╝
+-->
+<!--<link>-->
+<!--
+
+<link
+
+    [attributi_globali]
+    [attributi_specifici]
+    [attributi_evento]
+
+>
+   UTILIZZI PRINCIPALI:
+    • Collegare fogli di stile CSS (rel="stylesheet")
+    • Definire icone del sito (favicon) (rel="icon")
+    • Precaricare risorse (rel="preload", rel="prefetch", rel="preconnect")
+    • Indicare versioni alternative (rel="alternate")
+    • Indicare autore, licenza, aiuto (rel="author", rel="license", rel="help")
+    • Navigazione serie (rel="next", rel="prev")
+    • SEO (rel="canonical")
+
+
+  • Il tag <link> definisce una relazione tra il documento corrente e una risorsa esterna
+  • È un tag vuoto (auto-chiudente) - non ha contenuto tra apertura e chiusura
+  • Deve essere posizionato all'interno della sezione <head> del documento
+  • L'attributo più comune è rel="stylesheet" per collegare file CSS
+  • Supporta attributi globali, specifici ed eventi
+  • Fondamentale per il caricamento di risorse esterne
+
+
+
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 ATTRIBUTI SPECIFICI <link> (da W3Schools)                                                  ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE (da W3Schools)                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ rel          ║                                            ║ OBBLIGATORIO - Specifica la relazione tra il documento corrente       ║
+║              ║                                            ║ e il documento collegato                                                ║
+║              ║ "stylesheet"                              ║ foglio di stile CSS                                                     ║
+║              ║ "alternate"                               ║ versione alternativa del documento (es. stampa, traduzione)            ║
+║              ║ "author"                                  ║ link all'autore del documento                                          ║
+║              ║ "dns-prefetch"                            ║ risolve il DNS di un'origine in anticipo                               ║
+║              ║ "help"                                    ║ link a un documento di aiuto                                           ║
+║              ║ "icon"                                    ║ icona del sito (favicon)                                               ║
+║              ║ "license"                                 ║ link alle informazioni di licenza del documento                        ║
+║              ║ "next"                                    ║ documento successivo in una serie                                      ║
+║              ║ "pingback"                                ║ URL per il pingback (notifiche)                                        ║
+║              ║ "preconnect"                              ║ stabilisce una connessione anticipata a un'origine esterna             ║
+║              ║ "prefetch"                                ║ precarica una risorsa per pagine future                                ║
+║              ║ "preload"                                 ║ carica una risorsa con priorità per la pagina corrente                 ║
+║              ║ "prerender"                               ║ prerende una pagina intera in background                               ║
+║              ║ "prev"                                    ║ documento precedente in una serie                                      ║
+║              ║ "search"                                  ║ link a un tool di ricerca per il documento                             ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ href         ║                                            ║ Specifica la posizione (URL) del documento collegato                   ║
+║              ║ "/css/style.css"                          ║ percorso relativo                                                       ║
+║              ║ "https://fonts.googleapis.com/css2"      ║ URL assoluto                                                            ║
+║              ║ "/favicon.ico"                            ║ percorso per favicon                                                   ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ hreflang     ║                                            ║ Specifica la lingua del testo nel documento collegato                  ║
+║              ║ "en"                                      ║ inglese                                                                 ║
+║              ║ "it"                                      ║ italiano                                                                ║
+║              ║ "fr"                                      ║ francese                                                                ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ media        ║                                            ║ Specifica su quali dispositivi/media verrà applicata la risorsa        ║
+║              ║ "screen and (max-width: 600px)"           ║ schermi piccoli (mobile)                                               ║
+║              ║ "print"                                   ║ per la stampa                                                           ║
+║              ║ "(orientation: portrait)"                 ║ dispositivi in orientamento verticale                                  ║
+║              ║ "screen and (min-width: 768px)"           ║ schermi grandi                                                          ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ crossorigin  ║                                            ║ Specifica come gestire le richieste CORS                                ║
+║              ║ "anonymous"                               ║ richiesta senza credenziali                                            ║
+║              ║ "use-credentials"                         ║ richiesta con credenziali (cookie, certificati)                        ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ referrerpolicy║                                           ║ Specifica quale referrer usare quando si recupera la risorsa           ║
+║              ║ "no-referrer"                             ║ nessuna informazione inviata                                           ║
+║              ║ "no-referrer-when-downgrade"              ║ invia solo se stesso livello o superiore                                ║
+║              ║ "origin"                                  ║ solo l'origine (schema, host, porta)                                   ║
+║              ║ "origin-when-cross-origin"                ║ stesso-origine: completo; cross-origine: solo origine                  ║
+║              ║ "same-origin"                              ║ solo per richieste stesso-origine                                      ║
+║              ║ "strict-origin"                            ║ solo origine per richieste sicure                                      ║
+║              ║ "strict-origin-when-cross-origin"         ║ consigliato - origine solo per richieste sicure                         ║
+║              ║ "unsafe-url"                              ║ ⚠️ INSICURO - invia URL completo                                       ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ sizes        ║                                            ║ Specifica le dimensioni dell'icona (solo per rel="icon")              ║
+║              ║ "16x16"                                   ║ icona 16x16 pixel                                                       ║
+║              ║ "32x32"                                   ║ icona 32x32 pixel                                                       ║
+║              ║ "any"                                     ║ qualsiasi dimensione (per SVG)                                         ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ title        ║                                            ║ Definisce un foglio di stile preferito o alternativo                  ║
+║              ║ "Foglio di stile principale"              ║ foglio di stile predefinito                                            ║
+║              ║ "Foglio di stile alternativo"             ║ foglio di stile alternativo                                            ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ type         ║                                            ║ Specifica il tipo MIME del documento collegato                        ║
+║              ║ "text/css"                                ║ per fogli di stile CSS                                                 ║
+║              ║ "image/x-icon"                            ║ per icone favicon                                                      ║
+╚══════════════╩════════════════════════════════════════════╩══════════════════════════════════════════════════════════════════════════╝
+
+-->
+<!--<nav></nav>-->
+<!--
+
+<nav
+
+    [attributi_globali]
+    [attributi_evento]
+
+>
+    ... CONTENUTO DELLA NAVIGAZIONE (link, liste, ecc.) ...
+</nav>
+
+ <nav>
+      │
+      ├── [attributi_globali]
+      │
+      ├── <h2>Menu principale</h2>
+      │
+      ├── <ul> o <ol>
+      │    │
+      │    ├── <li>
+      │    │    └── <a href="/">Home</a>
+      │    │
+      │    ├── <li>
+      │    │    └── <a href="/chi-siamo">Chi Siamo</a>
+      │    │
+      │    └── <li>
+      │         └── <a href="/contatti">Contatti</a>
+      │
+      ├── <a href="/">Home</a>
+      ├── <a href="/chi-siamo">Chi Siamo</a>
+      └── <a href="/contatti">Contatti</a>
+
+
+   • Il tag <nav> definisce una sezione di navigazione in una pagina web
+   • Contiene collegamenti di navigazione principali (menu, indice, breadcrumb)
+   • È un elemento semantico - non ha effetti visivi intrinseci
+   • Supporta attributi globali ed eventi (NON ha attributi specifici)
+   • Può essere utilizzato più volte nella stessa pagina (menu principale, menu footer, ecc.)
+
+     UTILIZZI PRINCIPALI:
+     • Menu di navigazione principale del sito
+     • Menu secondari (categorie, sezioni)
+     • Breadcrumb (briciole di pane)
+     • Indice della pagina (table of contents)
+     • Link ai social media
+     • Paginazione (next/prev)
+
+     REGOLE FONDAMENTALI:
+     • Deve contenere principalmente link di navigazione
+     • Non tutti i link devono stare in <nav> (es. link in footer secondario)
+     • Di solito contiene liste <ul>/<ol> con link <a>
+     • Per accessibilità, è buona pratica includere un titolo (con aria-label o aria-labelledby)
+
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+

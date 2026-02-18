@@ -180,6 +180,86 @@ RELAZIONE CON <ul>, <ol>, <menu>:
       • Contenitori per navigazione, breadcrumb, ecc.
 -->
 
+<!--<dl><dt> <dd>-->
+<!--
+dl
+├── dt
+│   └── #text "Coffee"
+├── dd
+│   ├── #text "Black hot drink"
+│   └── dl
+│       ├── dt
+│       │   └── #text "Espresso"
+│       └── dd
+│           └── #text "Strong Italian coffee"
+├── dt
+│   └── #text "Milk"
+└── dd
+    └── #text "White cold drink"
+
+<dl
+    [attributi_globali]
+    [attributi_specifici]
+    [attributi_evento]
+>
+<dl
+    [attributi_globali]
+    [attributi_evento]
+>
+
+    <dt
+        [attributi_globali]
+        [attributi_evento]
+    >
+        Termine 1
+    </dt>
+
+    <dd
+        [attributi_globali]
+        [attributi_evento]
+    >
+        Descrizione 1
+    </dd>
+
+    <dt
+        [attributi_globali]
+        [attributi_evento]
+    >
+        Termine 2
+    </dt>
+
+    <dd
+        [attributi_globali]
+        [attributi_evento]
+    >
+        Descrizione 2.1
+    </dd>
+
+    <dd
+        [attributi_globali]
+        [attributi_evento]
+    >
+        Descrizione 2.2
+    </dd>
+
+</dl>
+
+
+  • I tag <dl>, <dt> e <dd> lavorano insieme per creare liste di descrizione
+  • <dl> (description list) è il contenitore principale
+  • <dt> (description term) definisce il termine/concetto da descrivere
+  • <dd> (description details) fornisce la descrizione del termine
+  • Un termine (<dt>) può avere più descrizioni (<dd>)
+  • Più termini possono condividere la stessa descrizione
+  • Supportano attributi globali ed eventi (pochi attributi specifici)
+
+   UTILIZZI PRINCIPALI:
+    • Glossari e dizionari
+    • Metadati (coppie chiave-valore)
+    • FAQ (domande e risposte)
+    • Specifiche tecniche
+    • Informazioni di contatto
+
 
 <!DOCTYPE html>
 <html lang="en">
