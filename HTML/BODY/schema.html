@@ -1,78 +1,876 @@
+<!--<header> (elemento HTML)-->
+<!--
+<header>
+    ...contenuto...
+</header>
+
+DESCRIZIONE:
+  L'elemento <header> rappresenta un contenitore introduttivo o un gruppo di ausili alla navigazione.
+  Tipicamente contiene:
+  ● Uno o più elementi di intestazione (<h1> - <h6>)
+  ● Logo o icona del sito
+  ● Informazioni sull'autore
+  ● Menu di navigazione
+
+  Contenuto consentito:
+  ● Contenuto flusso, ma senza elementi <header> o <footer> discendenti
+
+╔══════════════════════════════════════════════════════════════════════╦══════════════════════════════════════════════════════════════════════╗
+║                    INTESTAZIONE DI PAGINA                            ║              INTESTAZIONE DI SEZIONE/ARTICOLO                         ║
+╠══════════════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════╣
+║ <body>                                                               ║ <article>                                                             ║
+║   <header>                                                           ║   <header>                                                             ║
+║     <h1>Titolo del sito</h1>                                         ║     <h2>Titolo dell'articolo</h2>                                      ║
+║     <nav>...</nav>                                                   ║     <p>Pubblicato il:                                                 ║
+║   </header>                                                          ║        <time datetime="2024-01-15">                                   ║
+║   ...                                                                ║         15 Gennaio 2024                                               ║
+║ </body>                                                              ║        </time>                                                         ║
+║                                                                      ║     </p>                                                             ║
+║                                                                      ║     <p>Autore: Mario Rossi</p>                                       ║
+║                                                                      ║   </header>                                                          ║
+║                                                                      ║   <p>Contenuto dell'articolo...</p>                                  ║
+║                                                                      ║ </article>                                                            ║
+╠══════════════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════╣
+║ Come primo figlio di <body>:                                         ║ Come primo figlio di <article>/<section>/<aside>:                     ║
+║ • Rappresenta l'intestazione globale del sito                        ║ • Rappresenta l'intestazione di quella sezione specifica              ║
+║ • Ha ruolo ARIA "banner" implicitamente                              ║ • Non ha ruolo ARIA "banner"                                          ║
+║ • Di solito contiene logo, titolo, navigazione principale            ║ • Di solito contiene titolo, metadati, info contestuali              ║
+╚══════════════════════════════════════════════════════════════════════╩══════════════════════════════════════════════════════════════════════╝
+-->
+<!--<main> (elemento HTML)-->
+<!--
+<main>
+  [intestazioni]
+  [testo]
+  [Liste]
+  [Link]
+  [Immagini]
+  [Tabelle]
+  [Form]
+
+    <section>
+    </section>
+
+    <article>
+        <section>
+        </section>
+    </article>
+    <aside></aside>
+    <figure>
+      <figcaption></figcaption>
+    </figure>
+    <details>
+        <summary></summary>
+    </details>
+</main>
+
+Categoria: Contenuto di flusso, contenuto sezionante
+Contenuto consentito: Contenuto di flusso
+Ruolo ARIA implicito: main
+Deve essere unico nel documento
+
+DESCRIZIONE:
+  L'elemento <main> rappresenta il contenuto principale e unico del documento.
+  Il contenuto all'interno di <main> dovrebbe essere unico al documento,
+  escludendo elementi ripetuti come header, nav, sidebar, footer.
+
+  Caratteristiche principali:
+  ● Deve essere unico per pagina
+  ● Rappresenta il contenuto centrale dell'applicazione o documento
+  ● Non può essere figlio di <article>, <aside>, <footer>, <header>, <nav>
+  ● Aiuta i lettori di schermo a saltare direttamente al contenuto principale
+
+-->
+<!-- <article> (elemento HTML) -->
+<!--
+
+<article
+  [attributi_globali]
+  [attributi_evento]
+>
+
+  <header>
+    [intestazioni]
+    [testo]
+    [liste]
+    [link]
+    [immagini]
+    [tabelle]
+    [form]
+  </header>
+
+  <section>
+    [intestazioni]
+    [testo]
+    [liste]
+    [link]
+    [immagini]
+    [tabelle]
+    [form]
+  </section>
+
+  <figure>
+    <figcaption></figcaption>
+  </figure>
+
+  <footer>
+    [intestazioni]
+    [testo]
+    [liste]
+    [link]
+    [immagini]
+    [tabelle]
+    [form]
+  </footer>
+
+</article>
+
+   • Il tag <article> rappresenta un contenuto autonomo e indipendente nella pagina
+   • Può essere distribuito o riutilizzato in modo indipendente (sindacabile)
+   • Esempi tipici: post di blog, articoli di giornale, commenti, post di forum, schede prodotto
+   • È un elemento semantico - non ha effetti visivi intrinseci
+   • Supporta attributi globali ed eventi (NON ha attributi specifici)
+   • Può contenere al suo interno altri elementi strutturali come <header>, <footer>, <section>
+   • Può essere annidato (es. commenti dentro un articolo)
+   • Dovrebbe sempre avere un titolo (h1-h6) per essere completo
+
+   UTILIZZI PRINCIPALI:
+     • Articoli di blog o news
+     • Post in forum o commenti
+     • Schede prodotto in un e-commerce
+     • Contenuti autoconclusivi (ricette, recensioni)
+     • Widget indipendenti (meteo, calcolatrice)
+     • Commenti degli utenti
+
+   REGOLE FONDAMENTALI:
+     • Il contenuto di <article> deve avere senso anche da solo
+     • Può essere annidato (es. commenti dentro un articolo)
+     • Ogni <article> dovrebbe avere un titolo (h1-h6)
+     • Può contenere <header>, <footer>, <section> per organizzare il contenuto
+     • NON può contenere un <main> al suo interno
+
+   DIFFERENZA CON <section>:
+     • <article> = contenuto autonomo (esportabile, sindacabile) - ha senso da solo
+     • <section> = parte tematica di un contenuto più grande (non necessariamente autonomo)
+
+ -->
+<!-- <section> (elemento HTML) -->
+<!--
+<section
+     [attributi_globali]
+      [attributi_evento]
+      >
+      <header>
+        [intestazioni]
+        [testo]
+        [liste]
+        [link]
+        [immagini]
+        [tabelle]
+        [form]
+      </header>
+
+      [contenuto principale della sezione]
+        [intestazioni]
+        [testo]
+        [liste]
+        [link]
+        [immagini]
+        [tabelle]
+        [form]
+        [altri elementi HTML]
+
+      <figure>
+        <figcaption>Didascalia</figcaption>
+      </figure>
+
+      <footer>
+        [testo]
+        [link]
+        [informazioni aggiuntive]
+      </footer>
+    </section>
+DESCRIZIONE:
+    • L'elemento <section> rappresenta una sezione generica e autonoma di un documento
+    • Raggruppa contenuti tematicamente correlati
+    • Ogni sezione dovrebbe idealmente avere un'intestazione (h1-h6)
+    • È un elemento semantico - non ha effetti visivi intrinseci
+    • Supporta attributi globali ed eventi (NON ha attributi specifici)
+    • Può contenere header, footer, e altre section al suo interno (annidamento)
+
+Categoria: Contenuto di flusso, contenuto sezionante
+Contenuto consentito: Contenuto di flusso
+Ruolo ARIA implicito: region (se ha un nome accessibile) o generic
+UTILIZZI PRINCIPALI:
+    ✓ Capitoli di un libro/articolo
+    ✓ Sezioni di un documento tecnico
+    ✓ Parti di una pagina web (es. "Prodotti in evidenza", "Recensioni")
+    ✓ Gruppi tematici di contenuti (es. "Contatti", "Chi siamo")
+    ✓ Suddivisione interna di un <article>
+    ✓ Sezioni di una landing page
+REGOLE FONDAMENTALI:
+    • Dovrebbe sempre avere un'intestazione (h1-h6) - anche se nascosta visivamente
+    • Rappresenta un raggruppamento tematico di contenuti
+    • Può essere annidata (section dentro section) se la struttura lo richiede
+    • Non va usata come contenitore generico (per quello esiste <div>)
+    • Può contenere <header> e <footer> propri
+    • Deve avere senso nel contesto del documento
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ RIEPILOGO: Quando usare <section>                                                                                                  │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                                              │
+│  ✅ USA <section> QUANDO:                                  |  ❌ NON USARE <section> QUANDO:                                        │
+│ ---------------------------------------------------------- | -------------------------------------------------------------           │
+│  • Hai un gruppo tematico di contenuti                     |  • Hai bisogno solo di un contenitore stilistico (usa <div>)          │
+│  • Puoi dare un titolo al gruppo (h1-h6)                   |  • Il contenuto è autonomo e indipendente (usa <article>)             │
+│  • Il contenuto è correlato e ha senso essere raggruppato  |  • È l'intestazione o il piè di pagina (usa <header> o <footer>)     │
+│  • Stai dividendo un <article> in parti logiche            |  • Non puoi dare un titolo significativo alla sezione                 │
+│  • Vuoi migliorare la struttura semantica del documento    |                                                                       │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+-->
+<!-- <aside> (elemento HTML) -->
+<!--
+<aside
+  [attributi_globali]
+  [attributi_evento]
+>
+
+  <header>
+    [intestazioni]
+    [testo]
+    [liste]
+    [link]
+    [immagini]
+    [tabelle]
+    [form]
+  </header>
+
+    [intestazioni]
+    [testo]
+    [liste]
+    [link]
+    [immagini]
+    [tabelle]
+    [form]
+    [altri elementi HTML]
+
+    <figure>
+        <figcaption></figcaption>
+    </figure>
+
+    <footer>
+        [testo]
+        [link]
+        [informazioni aggiuntive]
+    </footer>
+
+</aside>
+
+
+ DESCRIZIONE:
+    • L'elemento <aside> rappresenta una sezione di contenuto che è solo tangenzialmente correlata
+      al contenuto circostante (es. sidebar, note a margine, approfondimenti)
+    • Può contenere informazioni complementari, citazioni, pubblicità, link correlati
+    • Se annidato in un <article>, rappresenta contenuto correlato all'articolo specifico
+    • Se usato a livello di pagina, rappresenta contenuto correlato all'intera pagina
+    • È un elemento semantico - non ha effetti visivi intrinseci
+    • Supporta attributi globali ed eventi (NON ha attributi specifici)
+
+
+    CATEGORIA:
+    • Categoria: Contenuto di flusso, contenuto sezionante
+    • Contenuto consentito: Contenuto di flusso
+    • Ruolo ARIA implicito: complementary (se è una sezione complementare) o generic
+
+
+    UTILIZZI PRINCIPALI:
+    ✓ Sidebar laterale con link correlati
+    ✓ Box con approfondimenti o note a piè di pagina
+    ✓ Citazioni o estratti (pull quote)
+    ✓ Pubblicità e banner
+    ✓ Informazioni di contatto o profilo autore
+    ✓ Articoli correlati o "potrebbe interessarti anche"
+    ✓ Calendario, archivi, categorie in un blog
+
+
+
+    REGOLE FONDAMENTALI:
+    • Il contenuto di <aside> dovrebbe essere correlato ma NON essenziale per la comprensione
+    • Può essere posizionato all'interno o all'esterno di un <article>
+    • Se rimosso, il contenuto principale deve rimanere comprensibile
+    • Non va usato per contenuti che sono parte integrante del flusso principale
+    • Può contenere <header> e <footer> propri
+    • Dovrebbe idealmente avere un'intestazione (h1-h6) se il contesto lo richiede
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    RIEPILOGO: Quando usare <aside>
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+
+     ✅ USA <aside> QUANDO:                                 |  ❌ NON USARE <aside> QUANDO:
+     ------------------------------------------------------- | -------------------------------------------------------------
+     • Hai contenuti complementari non essenziali            |  • Il contenuto è parte integrante del flusso principale
+     • Vuoi creare una sidebar con link correlati            |  • Hai bisogno di un semplice contenitore stilistico (usa <div>)
+     • Aggiungi approfondimenti, note, citazioni             |  • Il contenuto è autonomo e indipendente (usa <article>)
+     • Includi pubblicità o banner promozionali              |  • Stai strutturando il contenuto principale della pagina
+     • Mostri articoli correlati o "potrebbe interessarti"   |  • L'elemento non ha alcuna relazione col contenuto circostante
+     • Aggiungi informazioni sull'autore o profilo           |
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+-->
+<!-- <details> (elemento HTML) -->
+<!--
+<details
+  [attributi_globali]
+  [attributi_evento]
+  open
+>
+
+  <summary>
+    [testo riassuntivo visibile]
+  </summary>
+
+  [testo]
+  [liste]
+  [link]
+  [immagini]
+  [tabelle]
+  [form]
+  [altri elementi HTML]
+
+</details>
+
+
+DESCRIZIONE:
+  • L'elemento <details> rappresenta un contenuto aggiuntivo che l'utente
+    può mostrare o nascondere interattivamente
+  • Crea un widget nativo espandibile/collassabile
+  • Il contenuto è nascosto di default
+  • Se presente l'attributo "open", il contenuto è visibile inizialmente
+  • È un elemento semantico e interattivo (non serve JavaScript base)
+
+
+CATEGORIA:
+  • Categoria: Contenuto di flusso, contenuto interattivo, contenuto palpabile
+  • Contenuto consentito: Un elemento <summary> seguito da contenuto di flusso
+  • Ruolo ARIA implicito: group
+
+
+UTILIZZI PRINCIPALI:
+  ✓ FAQ (domande e risposte)
+  ✓ Sezioni "Leggi di più"
+  ✓ Informazioni tecniche opzionali
+  ✓ Note espandibili
+  ✓ Dettagli di prodotto
+  ✓ Log, specifiche, contenuti secondari
+
+
+REGOLE FONDAMENTALI:
+  • <summary> deve essere il primo figlio (se presente)
+  • Solo il contenuto dentro <summary> è sempre visibile
+  • Il resto viene mostrato/nascosto al click
+  • Può contenere qualsiasi contenuto di flusso
+  • L'attributo "open" rende il contenuto visibile di default
+  • È accessibile e supportato dai lettori di schermo moderni
+
+
+RIEPILOGO: Quando usare <details>
+
+     ✅ USA <details> QUANDO:                     |  ❌ NON USARE <details> QUANDO:
+     ------------------------------------------- | -----------------------------------------
+     • Vuoi contenuto espandibile senza JS       |  • Il contenuto deve essere sempre visibile
+     • Stai creando FAQ                          |  • Serve animazione complessa personalizzata
+     • Hai informazioni opzionali                |  • Devi controllare apertura via JS avanzato
+     • Vuoi soluzione accessibile nativa         |  • È solo un contenitore stilistico (usa <div>)
+
+-->
+<!-- <summary> (elemento HTML)-->
+<!--
+<details>
+
+  <summary
+    [attributi_globali]
+    [attributi_evento]
+  >
+    [testo]
+    [elementi inline consentiti]
+  </summary>
+
+  [contenuto nascosto]
+
+</details>
+
+
+DESCRIZIONE:
+  • Etichetta visibile di <details>
+  • Sempre visibile
+  • Cliccabile
+  • Controlla apertura/chiusura
+
+CATEGORIA:
+  • Contenuto di flusso
+  • Contenuto interattivo
+  • Contenuto palpabile
+
+CONTENUTO CONSENTITO:
+  • Solo Phrasing content (elementi inline)
+
+RUOLO ARIA IMPLICITO:
+  • button
+
+REGOLE FONDAMENTALI:
+  • Deve essere figlio diretto di <details>
+  • Deve essere il primo figlio
+  • Non può contenere <section>, <article>, <div>, <header>, <footer>
+  • Non può esistere fuori da <details>
+-->
+<!-- <footer> (elemento HTML) -->
+<!--
+<footer
+[attributi_globali]
+[attributi_evento]
+>
+
+
+<h1> - <h6>    [intestazioni (se necessario)]
+<p>            [testo, copyright, note legali]
+<address>      [informazioni di contatto]
+<nav>          [link di navigazione secondari]
+<ul>/<ol>      [liste di link]
+<a>            [link a policy, termini, privacy]
+<img>          [logo, icone social]
+<small>        [testo in piccolo, note legali]
+<time>         [data di aggiornamento]
+[altri elementi HTML]
+
+</footer>
+
+ DESCRIZIONE:
+    • L'elemento <footer> rappresenta il piè di pagina di una sezione o di un documento
+    • Contiene tipicamente informazioni sul documento o sulla sezione: autore, copyright,
+      link correlati, informazioni di contatto, data di pubblicazione/aggiornamento
+    • Può essere usato più volte in una pagina (per documento principale e per sezioni)
+    • È un elemento semantico - non ha effetti visivi intrinseci
+    • Supporta attributi globali ed eventi (NON ha attributi specifici)
+    • Non può contenere un altro <footer> o <header> al suo interno
+ UTILIZZI PRINCIPALI:
+    ✓ Copyright e note legali
+    ✓ Informazioni di contatto (indirizzo, email, telefono)
+    ✓ Link a pagine importanti (Privacy Policy, Termini di servizio, Cookie Policy)
+    ✓ Icone e link ai social media
+    ✓ Mappa del sito (sitemap) semplificata
+    ✓ Crediti e attribuzioni
+    ✓ Data di ultimo aggiornamento
+    ✓ Newsletter subscription form (semplice)
+    ✓ Logo del sito (ripetuto)
+    ✓ Informazioni sull'autore (quando usato dentro un <article>)
+    CATEGORIA:
+    • Categoria: Contenuto di flusso, contenuto sezionante
+    • Contenuto consentito: Contenuto di flusso, ma senza elementi <footer> o <header> discendenti
+    • Ruolo ARIA implicito: contentinfo (se contestualizzato a livello di pagina) o generic
+      REGOLE FONDAMENTALI:
+    • Non può contenere un altro <footer> o <header> al suo interno
+    • Può essere presente più volte nella stessa pagina
+    • Se usato come piè di pagina principale, dovrebbe essere unico e contenere informazioni globali del sito
+    • Se usato dentro <article> o <section>, rappresenta il piè di pagina di quella specifica sezione
+    • Non deve contenere contenuti che fanno parte del flusso principale della sezione
+    • Può contenere intestazioni (h1-h6) se necessario (es. "Contatti" nel footer)
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ DIFFERENZE TRA I CONTESTI DI UTILIZZO DEL <footer>                                                                                │
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                                              │
+│  🌐 Footer GLOBALE (figlio di <body>)                          |  📄 Footer CONTESTUALE (in <article>/<section>/<aside>)              │
+│  ------------------------------------------------------------- | -------------------------------------------------------------       │
+│  • Ruolo ARIA: **contentinfo** (implicito)                     |  • Ruolo ARIA: **generic** (nessun ruolo specifico)                  │
+│  • Rappresenta il piè di pagina globale del sito               |  • Rappresenta il piè di pagina di quella sezione specifica          │
+│  • Contiene informazioni globali:                              |  • Contiene metadati della sezione:                                   │
+│    – Copyright e P.IVA                                         |    – Autore dell'articolo                                            │
+│    – Link istituzionali (Privacy, Cookie)                      |    – Data di pubblicazione                                           │
+│    – Informazioni sull'azienda                                 |    – Tag e categorie                                                  │
+│    – Contatti generali                                          |    – Numero commenti                                                 │
+│    – Link social media                                          |    – Fonti e riferimenti                                             │
+│    – Mappa del sito                                             |    – Link correlati alla sezione                                     │
+│  • Di solito **unico** nella pagina                            |  • Può essere **multiplo** (ogni articolo ha il suo footer)          │
+│  • Persiste in tutte le pagine del sito                        |  • Specifico per quel contenuto                                       │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    RIEPILOGO: Quando usare <footer>
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+
+     ✅ USA <footer> QUANDO:                               |  ❌ NON USARE <footer> QUANDO:
+     ------------------------------------------------------ | -------------------------------------------------------------
+     • Aggiungi copyright e note legali                     |  • Il contenuto è parte del flusso principale della pagina
+     • Includi link a policy e termini                       |  • Hai bisogno di un semplice contenitore stilistico (usa <div>)
+     • Fornisci informazioni di contatto                    |  • Vuoi creare una sidebar (usa <aside>)
+     • Aggiungi crediti e attribuzioni                      |  • Stai creando l'intestazione di una sezione (usa <header>)
+     • Mostri data di aggiornamento                         |  • Devi annidare un altro footer o header
+     • Concludi un articolo con metadati (autore, tag)      |  • Il contenuto è un articolo correlato (usa <aside>)
+     • Aggiungi link a social media                          |
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+-->
+<!-- <hgroup> (elemento HTML) -->
+<!--
+<hgroup
+[attributi_globali]
+[attributi_evento]
+>
+
+[0 o più <p> elementi]      (opzionali - es. sottotitoli, tagline, date)
+<h1> - <h6>                  (UNO e uno solo - obbligatorio)
+[0 o più <p> elementi]      (opzionali - es. sottotitoli, tagline, date)
+
+</hgroup>
+
+DESCRIZIONE:
+    • L'elemento <hgroup> rappresenta un gruppo di titoli e contenuti correlati (sottotitoli, tagline, titoli alternativi)
+    • Raggruppa UN SINGOLO elemento di intestazione (<h1>-<h6>) con zero o più elementi <p> che fungono da contenuto secondario
+    • Solo l'elemento di intestazione contribuisce alla struttura (outline) del documento
+    • È un elemento semantico - non ha effetti visivi intrinseci
+    • Supporta attributi globali ed eventi (NON ha attributi specifici)
+    • È stato rimosso dalla specifica W3C ma rimane nella specifica WHATWG (ampiamente supportato)
+
+    UTILIZZI PRINCIPALI:
+    ✓ Raggruppare un titolo principale con un sottotitolo
+    ✓ Aggiungere una tagline o slogan sotto un titolo
+    ✓ Includere una data o autore come parte dell'intestazione
+    ✓ Creare titoli alternativi o secondari
+    ✓ Strutturare intestazioni complesse in articoli e pagine
+    ✓ Mantenere la semantica corretta senza influenzare l'outline del documento
+ REGOLE FONDAMENTALI:
+    • Deve contenere UNO e UN SOLO elemento <h1>-<h6>
+    • Può contenere zero o più elementi <p> PRIMA e/o DOPO l'elemento di intestazione
+    • NON può contenere altri elementi di intestazione oltre al primo (un solo <h1>-<h6>)
+    • NON può contenere elementi di sezione (<article>, <section>, <aside>, <nav>)
+    • L'elemento <hgroup> stesso NON influisce sull'outline del documento
+    • Solo l'elemento di intestazione al suo interno contribuisce all'outline
+    • Tipicamente usato all'interno di <header> ma può essere usato ovunque
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    RIEPILOGO: Quando usare <hgroup>
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+
+     ✅ USA <hgroup> QUANDO:                                   ❌ NON USARE <hgroup> QUANDO:
+     -----------------------------------------------------     -------------------------------------------------------------
+     • Hai un titolo principale con sottotitolo                 • Hai un solo titolo (usa direttamente <h1>-<h6>)
+     • Vuoi aggiungere una tagline o slogan                     • Hai più titoli che devono creare sottosezioni (usa heading annidati)
+     • Devi includere data o autore nell'intestazione           • Il contenuto secondario richiede struttura complessa (usa <header>)
+     • Vuoi mantenere pulito l'outline del documento            • Hai bisogno di contenuti non testuali (usa <header>)
+     • Stai strutturando un articolo o una sezione              • I paragrafi non sono correlati al titolo (usa <p> separato)
+     • Vuoi raggruppare semanticamente titolo e metadati        • Sei in dubbio se usarlo (in caso di dubbio, non usarlo)
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+-->
+<!-- <div> (elemento HTML) -->
+<!--
+<div
+[attributi_globali]
+[attributi_evento]
+>
+
+[Qualsiasi contenuto HTML]
+[intestazioni]
+[testo]
+[liste]
+[link]
+[immagini]
+[tabelle]
+[form]
+[elementi strutturali]
+[altri div]
+[qualsiasi altro elemento]
+
+</div>
+DESCRIZIONE:
+    • L'elemento <div> (division) è il contenitore generico per eccellenza in HTML
+    • Non ha alcun significato semantico - è un elemento puramente stilistico
+    • Serve per raggruppare elementi a scopo di styling (CSS) o manipolazione (JavaScript)
+    • È un elemento di blocco (block-level) per impostazione predefinita
+    • Supporta attributi globali ed eventi (NON ha attributi specifici)
+    • È l'elemento più flessibile e utilizzato in HTML
+    • Dovrebbe essere usato SOLO quando nessun altro elemento semantico è appropriato
+    UTILIZZI PRINCIPALI:
+    ✓ Contenitore per layout CSS (griglie, flexbox, posizionamento)
+    ✓ Raggruppare elementi per applicare stili comuni
+    ✓ Creare sezioni per manipolazione JavaScript (DOM)
+    ✓ Wrapper per contenuti in layout complessi
+    ✓ Creare card, box, contenitori visivi
+    ✓ Suddividere la pagina in aree (quando non appropriate elementi semantici)
+    ✓ Base per componenti riutilizzabili
+    REGOLE FONDAMENTALI:
+    • NON ha significato semantico - usalo solo quando nessun elemento semantico è appropriato
+    • Preferisci elementi semantici quando possibile (header, footer, main, section, article, aside, nav)
+    • Può essere annidato (div dentro div) senza limiti
+    • Non altera la struttura del documento (outline)
+    • Di default è display: block (occupa tutta la larghezza disponibile)
+    • Può essere reso inline con CSS (display: inline-block, flex, grid, inline)
+    • Fondamentale per layout responsive e moderne tecniche CSS
+
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    RIEPILOGO: Quando usare <div>
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+
+     ✅ USA <div> QUANDO:                                      ❌ NON USARE <div> QUANDO:
+     -----------------------------------------------------     -------------------------------------------------------------
+     • Hai bisogno di un contenitore per layout CSS             • Esiste un elemento semantico appropriato (header, footer, main)
+     • Vuoi raggruppare elementi per styling                    • Il contenuto ha un significato tematico (usa <section>)
+     • Hai bisogno di un hook per JavaScript                    • Il contenuto è autonomo e indipendente (usa <article>)
+     • Stai creando componenti UI riutilizzabili                • È una sidebar o contenuto complementare (usa <aside>)
+     • Serve un wrapper per layout responsive                   • È un'intestazione (usa <header>)
+     • Nessun altro elemento HTML si adatta allo scopo          • È un piè di pagina (usa <footer>)
+     • Stai strutturando layout complessi                       • È la navigazione principale (usa <nav>)
+     • Hai bisogno di un contenitore generico                   • È il contenuto principale della pagina (usa <main>)
+     • Stai facendo prototyping o sviluppo rapido               • Puoi usare un elemento più specifico (figure, blockquote, etc.)
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+-->
+<!-- <dialog> (elemento HTML) -->
+<!--
+<dialog
+  [attributi_globali]
+  [attributi_evento]
+  open?
+  closedby="any|closerequest|none"
+>
+
+  <header>
+    <h1> - <h6> [titolo del dialog]</h1>
+    <button type="button">×</button>
+  </header>
+  [elementi semantici]
+  [intestazioni]
+  [testo]
+  [liste]
+  [link]
+  [immagini]
+  [tabelle]
+  [form]
+  [altri elementi HTML]
+ <footer>
+    <form method="dialog">
+      <button value="confirm">Conferma</button>
+      <button value="cancel">Annulla</button>
+    </form>
+  </footer>
+</dialog>
+
+DESCRIZIONE:
+    • L'elemento <dialog> rappresenta una finestra modale o non modale, come un avviso, un pannello di ispezione o un sottowindow
+    • Può essere di due tipi:
+      - Modale (.showModal()): interrompe l'interazione con il resto della pagina (contenuto inert)
+      - Non modale (.show()): permette l'interazione con il resto della pagina
+    • Ha funzionalità native: focus trapping, chiusura con Esc (per modali), backdrop integrato
+    • Supporta attributi globali ed eventi (close, cancel)
+    • L'elemento <form method="dialog"> può chiudere il dialog senza JavaScript
+╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         📌 ATTRIBUTI SPECIFICI <link> (da W3Schools)                                                  ║
+╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
+║                                                                                                                                       ║
+║ ATTRIBUTO    ║ VALORE                                    ║ DESCRIZIONE (da W3Schools)                                              ║
+╠══════════════╬════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ open         ║                                            ║ • Indica che il dialog è attivo e visibile all'utente
+                                                              • Se non presente, il dialog è nascosto (display: none)
+                                                              • ⚠️ Non raccomandato per l'uso diretto - usare .show()/.showModal() invece
+                                                              • Se usato, apre il dialog in modalità NON modale                         ║
+
+closedby                                                     Specifica come l'utente può chiudere il dialog
+                "any"                                        chiusura con click fuori, Esc, o meccanismo programmatico
+                 closerequest                                chiusura con Esc o meccanismo programmatico (default per showModal())               - :
+                 none                                        solo chiusura programmatica (default per show())
+
+ ┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    DIFFERENZA TRA MODALE E NON MODALE:
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+    MODALE (.showModal())                       |  NON MODALE (.show())
+    -------------------------------------------- | ---------------------------------------------
+    • Interrompe interazione con la pagina       |  • Permette interazione con la pagina
+    • Contenuto esterno reso inert                |  • Contenuto esterno interattivo
+    • Focus intrappolato nel dialog               |  • Focus NON intrappolato
+    • Chiusura con ESC automatica                 |  • Chiusura con ESC NON automatica
+    • Mostra backdrop (::backdrop)                |  • Nessun backdrop (di default)
+    • Ruolo ARIA implicito: dialog + modal        |  • Ruolo ARIA implicito: dialog (non modal)
+    • Caso d'uso: azioni critiche, conferme       |  • Caso d'uso: notifiche non bloccanti, menu
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    METODI JAVASCRIPT:
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+    .show()           • Apre il dialog in modalità NON modale
+                      • Non disabilita l'interazione con il resto della pagina
+                      • Non gestisce automaticamente il focus trapping
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+    .showModal()      • Apre il dialog in modalità MODALE (default per la maggior parte degli use case)
+                      • Il contenuto esterno diventa inert (non interattivo)
+                      • Focus intrappolato all'interno del dialog
+                      • Chiusura con tasto Esc abilitata di default
+                      • Mostra il backdrop (personalizzabile con ::backdrop)
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+    .close()          • Chiude il dialog
+                      • Accetta un parametro opzionale (returnValue)
+                      • Triggera l'evento 'close'
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+    .requestClose()   • Richiede la chiusura (simula richiesta utente)
+                      • Rispetta l'attributo closedby
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    PROPRIETÀ JAVASCRIPT:
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+    .returnValue      • Valore restituito dal dialog quando chiuso
+                      • Di solito impostato dal pulsante che ha chiuso il form
+                      • Stringa vuota di default
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+    .open             • Booleano che indica se il dialog è aperto
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+ REGOLE FONDAMENTALI:
+    • NON usare tabindex sul <dialog> - non è interattivo e non riceve focus
+    • Usare autofocus sull'elemento che l'utente deve interagire immediatamente dopo l'apertura
+    • Sempre fornire un meccanismo per chiudere il dialog (pulsante ×, Annulla, Chiudi)
+    • I modali devono poter essere chiusi con tasto Esc (già attivo con .showModal())
+    • Per accessibilità, aggiungere aria-labelledby (collega al titolo) e aria-describedby (collega alla descrizione)
+    • Il contenuto del dialog deve essere leggibile e con contrasto sufficiente
+ UTILIZZI PRINCIPALI:
+    ✓ Finestre modali di conferma
+    ✓ Form di login/registrazione
+    ✓ Avvisi e notifiche importanti
+    ✓ Newsletter signup
+    ✓ Gallerie immagini (lightbox)
+    ✓ Menu di navigazione mobile
+    ✓ Ricerca avanzata
+    ✓ Dettaglio prodotto rapido
+
+
+
+
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+    RIEPILOGO: Quando usare <dialog>
+├──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+
+     ✅ USA <dialog> QUANDO:                               |  ❌ NON USARE <dialog> QUANDO:
+     ------------------------------------------------------ | -------------------------------------------------------------
+     • Hai bisogno di una finestra modale                   |  • Il contenuto deve far parte del flusso normale (usa section/div)
+     • Vuoi un form di conferma o avviso                    |  • Hai bisogno di un tooltip semplice (usa CSS :hover)
+     • Devi raccogliere input utente in primo piano         |  • È una sidebar permanente (usa aside)
+     • Vuoi una lightbox per immagini                       |  • Il supporto browser legacy è critico (IE)
+     • Cerchi un menu mobile con focus trapping             |  • Vuoi un semplice dropdown (usa select o details)
+     • Vuoi notifiche non intrusive (non modali)            |  • Il contenuto deve essere sempre visibile
+     • L'accessibilità nativa è importante                   |  • Hai bisogno di animazioni complesse non supportate
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-
-    <base href="http://localhost:8080/">
-
-    <link rel="stylesheet" href="style.css">
-
+    <title>Visualizzazione Tag Semantici</title>
     <style>
-        /* CSS interno */
+        /* CSS per colorare le "scatole" e vederle bene */
+        body { font-family: sans-serif; padding: 20px; background: #f0f0f0; }
+
+        /* I Grandi Genitori */
+        header { background: #3498db; color: white; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+        main { background: #ffffff; padding: 20px; border: 2px solid #bdc3c7; border-radius: 5px; }
+        footer { background: #2c3e50; color: white; padding: 15px; margin-top: 10px; border-radius: 5px; }
+
+        /* Contenitori dentro il Main */
+        section { background: #ecf0f1; border: 1px solid #95a5a6; padding: 10px; margin-bottom: 10px; }
+        article { background: #dff9fb; border: 1px solid #130f40; padding: 10px; margin-bottom: 10px; }
+        aside { background: #ffeaa7; border: 1px dashed #fdcb6e; padding: 10px; margin-bottom: 10px; }
+
+        /* Tag di dettaglio */
+        figure { background: #fab1a0; padding: 10px; text-align: center; }
+        figcaption { font-style: italic; font-size: 0.9em; margin-top: 5px; }
+        mark { background: yellow; font-weight: bold; }
+
+        /* Footer e Header interni */
+        article header { background: #badc58; color: #333; padding: 5px; }
+        article footer { background: #6ab04c; color: white; padding: 5px; margin-top: 5px; }
     </style>
-
-    <script src="JS/schema.js"></script>
-
-    <noscript>
-        Il tuo browser non supporta JavaScript.
-    </noscript>
 </head>
+<body>
 
+<header>
+    <h1>Header del Sito</h1>
+    <nav>Menu: Home | Blog | Contatti</nav>
+</header>
 
-<body onbeforeunload="return funzione()">
-<!-- FRAMES -->
-<iframe src="https://www.w3schools.com" title="W3Schools Free Online Web Tutorials">
-</iframe>
+<main>
+    <section>
+        <h2>Sezione 1</h2>
+        <p>Qui usiamo un <mark>tag mark</mark> per evidenziare.</p>
+        <footer>Footer della sezione</footer>
+    </section>
 
-<!-- IMMAGINI -->
+    <article>
+        <header>
+            <h2>Titolo Articolo</h2>
+            <time>Pubblicato il: 18/02/2026</time>
+        </header>
+        <p>Questo è il corpo dell'articolo nel main.</p>
+        <footer>Footer dell'articolo (Autore)</footer>
+    </article>
 
-<img>
-<map>
-    <area href="https://www.google.com/">
+    <aside>
+        <h3>Aside</h3>
+        <p>Contenuti correlati o sidebar.</p>
+        <footer>Footer dell'aside (Autore)</footer>
+    </aside>
 
-</map>
-<figure>
-    <img src="pic_trulli.jpg" alt="Trulli" style="width:100%">
-    <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
-</figure>
-<picture>
-    <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
-    <source media="(min-width:465px)" srcset="img_white_flower.jpg">
-    <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
-</picture>
+    <figure>
+        <div style="background:#ccc; height:50px; line-height:50px;">[IMMAGINE]</div>
+        <figcaption>Fig.1 - Didascalia della figure</figcaption>
+    </figure>
 
-<svg width="400" height="180">
-    <rect x="50" y="20" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-    Sorry, your browser does not support inline SVG.
-</svg>
+    <details style="margin-top:10px; border:1px solid #ccc; padding:5px;">
+        <summary>Clicca per i dettagli</summary>
+        <p>Contenuto nascosto svelato!</p>
+    </details>
+</main>
 
-<!-- ELENCHI -->
-<menu>
-    <li>
-        primo elemento
-    </li>
-    <menu>
-        <li>
-            sottocategoria 1 nel primo elemento
-        </li>
-    </menu>
-    <li>
-        secondo elemento
-    </li>
-</menu>
-
-
-
-
-
-
-
+<footer>
+    <p>Footer Globale della Pagina &copy; 2026</p>
+</footer>
 
 </body>
+</html>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .page-header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+        }
+        .article-header {
+            background: #ecf0f1;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-left: 4px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+<header class="page-header">
+    <h1>Il Mio Blog</h1>
+    <nav>...</nav>
+</header>
 
+<main>
+    <article>
+        <header class="article-header">
+            <h2>Titolo Articolo</h2>
+            <p>Pubblicato: <time datetime="2024-01-15">15/01/2024</time></p>
+        </header>
+        <p>Contenuto...</p>
+    </article>
+</main>
 
-
+<footer>...</footer>
+</body>
 </html>
