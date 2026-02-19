@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Il mio form</title>
+</head>
+<style>
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 8px;
+    background-color: black;
+    color: white;
+  }
+  form {
+    padding: 50px;
+    margin: 0 auto;
+    width: 430px;
+    border: 1px solid;
+    border-radius: 25px;
+    background-color: #ccc;
+
+  }
+  .bianco{
+    color: white;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+
+  #buttone{
+      background-color: #0066cc;
+      width: 100%;
+      border-radius: 25px;
+      padding: 10px;
+      text-transform: uppercase;
+  }
+
+</style>
+<body>
+
+<form id="esercizio" class="bianco" action="ricevi.php" method="post">
+  <h1> IL MIO FORM</h1>
+  <label for="nome" >Nome: </label><br>
+  <input type="text" id="nome" name="nome"  required form="esercizio">
+  <br><br>
+
+  <label for="cognome">Cognome<br></label>
+  <input type="text"  id="cognome" name="cognome" required form="esercizio">
+  <br><br>
+
+  <label for="email">Email: </label><br>
+  <input type="email"
+         id="email"
+         name="email"
+         placeholder="exaplme@gmail.com"
+         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+         size="30"
+         required
+         >
+
+  <br><br>
+  <button type="submit">INVIA</button>
+</form>
+
+</body>
+</html>

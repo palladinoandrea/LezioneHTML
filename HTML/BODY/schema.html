@@ -1,159 +1,268 @@
-<!--<header> (elemento HTML)-->
+<!-- <header> (elemento HTML) -->
 <!--
-<header>
-    ...contenuto...
+<header
+  [attributi_globali]
+  [attributi_evento]
+>
+  [intestazioni]
+  [testo]
+  [liste]
+  [link / navigazione]
+  [immagini]
+  [tabelle]
+  [form]
+  [altri elementi HTML]
 </header>
 
-DESCRIZIONE:
-  L'elemento <header> rappresenta un contenitore introduttivo o un gruppo di ausili alla navigazione.
-  Tipicamente contiene:
-  ● Uno o più elementi di intestazione (<h1> - <h6>)
-  ● Logo o icona del sito
-  ● Informazioni sull'autore
-  ● Menu di navigazione
+• L'elemento <header> rappresenta un contenitore introduttivo o un gruppo di ausili alla navigazione
+• Può essere intestazione globale della pagina oppure intestazione di una specifica sezione/articolo
+• È un elemento semantico - non ha effetti visivi intrinseci
+• Supporta attributi globali ed eventi (NON ha attributi specifici)
+• Può contenere (tipicamente): titoli (h1-h6), logo, metadati, autore, navigazione (<nav>)
+• NON può contenere <header> o <footer> come discendenti al suo interno
+• Può essere usato più volte nella pagina (es. uno per <body> e uno per ogni <article>)
+• Dovrebbe contenere un titolo/label chiaro per dare contesto (anche se visivamente nascosto)
 
-  Contenuto consentito:
-  ● Contenuto flusso, ma senza elementi <header> o <footer> discendenti
+╔══════════════════════════════════════════════════════════════════════╗
+║                 CONTENUTO CONSENTITO DENTRO <header>                 ║
+╠══════════════════════════════════════════════════════════════════════╣
+║ Categoria: Flow content, Palpable content                            ║
+║ Contenuto consentito: Flow content                                   ║
+║ (esclusi <header> e <footer> discendenti)                            ║
+║                                                                      ║
+║ [intestazioni]  <h1>-<h6>, <hgroup>                                  ║
+║ [testo]         <p>, <time>, <address>, <blockquote>, <pre>          ║
+║ [liste]         <ul>, <ol>, <li>, <dl>, <dt>, <dd>                   ║
+║ [link]          <a>                                                   ║
+║ [navigazione]   <nav>                                                 ║
+║ [immagini]      <img>, <picture>, <figure>, <figcaption>             ║
+║ [tabelle]       <table> e relativi elementi interni                  ║
+║ [form]          <form>, <input>, <label>, <button>, <select>         ║
+║ [strutturali]   <section>, <article>, <aside>, <div>, <details>,     ║
+║                 <dialog>                                              ║
+╠══════════════════════════════════════════════════════════════════════╣
+║ UTILIZZI PRINCIPALI:                                                 ║
+║ • Intestazione globale del sito (logo + titolo + navigazione)        ║
+║ • Intestazione di <article> / <section> (titolo + metadati)          ║
+║ • Blocco introduttivo contestuale (breadcrumbs, ricerca, autore)     ║
+╚══════════════════════════════════════════════════════════════════════╝
 
 ╔══════════════════════════════════════════════════════════════════════╦══════════════════════════════════════════════════════════════════════╗
-║                    INTESTAZIONE DI PAGINA                            ║              INTESTAZIONE DI SEZIONE/ARTICOLO                         ║
+║                    INTESTAZIONE DI PAGINA                            ║              INTESTAZIONE DI SEZIONE/ARTICOLO                        ║
 ╠══════════════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════╣
 ║ <body>                                                               ║ <article>                                                             ║
-║   <header>                                                           ║   <header>                                                             ║
-║     <h1>Titolo del sito</h1>                                         ║     <h2>Titolo dell'articolo</h2>                                      ║
+║   <header                                                            ║   <header                                                             ║
+║     [attributi_globali]                                              ║     [attributi_globali]                                               ║
+║     [attributi_evento]                                               ║     [attributi_evento]                                                ║
+║   >                                                                  ║   >                                                                   ║
+║     <h1>Titolo del sito</h1>                                         ║     <h2>Titolo dell'articolo</h2>                                     ║
 ║     <nav>...</nav>                                                   ║     <p>Pubblicato il:                                                 ║
-║   </header>                                                          ║        <time datetime="2024-01-15">                                   ║
-║   ...                                                                ║         15 Gennaio 2024                                               ║
-║ </body>                                                              ║        </time>                                                         ║
-║                                                                      ║     </p>                                                             ║
-║                                                                      ║     <p>Autore: Mario Rossi</p>                                       ║
-║                                                                      ║   </header>                                                          ║
-║                                                                      ║   <p>Contenuto dell'articolo...</p>                                  ║
+║   </header>                                                          ║       <time datetime="2024-01-15">15 Gennaio 2024</time>              ║
+║   ...                                                                ║     </p>                                                              ║
+║ </body>                                                              ║     <p>Autore: Mario Rossi</p>                                        ║
+║                                                                      ║   </header>                                                           ║
+║                                                                      ║   <p>Contenuto dell'articolo...</p>                                   ║
 ║                                                                      ║ </article>                                                            ║
 ╠══════════════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════╣
 ║ Come primo figlio di <body>:                                         ║ Come primo figlio di <article>/<section>/<aside>:                     ║
 ║ • Rappresenta l'intestazione globale del sito                        ║ • Rappresenta l'intestazione di quella sezione specifica              ║
 ║ • Ha ruolo ARIA "banner" implicitamente                              ║ • Non ha ruolo ARIA "banner"                                          ║
-║ • Di solito contiene logo, titolo, navigazione principale            ║ • Di solito contiene titolo, metadati, info contestuali              ║
+║ • Di solito contiene logo, titolo, navigazione principale            ║ • Di solito contiene titolo, metadati, info contestuali               ║
 ╚══════════════════════════════════════════════════════════════════════╩══════════════════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════╦══════════════════════════════════════════════════════════════╦══════════════════════════════════════════════════════════════╗
+║           REGOLE FONDAMENTALI (Sintesi)                     ║        REGOLE FONDAMENTALI (Estese)                         ║        DIFFERENZA (header di pagina vs di sezione)           ║
+╠══════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════╣
+║ • Contiene contenuti introduttivi / navigazione              ║ • Raggruppa contenuti introduttivi o di navigazione          ║ • <header> come primo figlio di <body>:                     ║
+║ • Spesso include titoli (h1-h6) e/o <nav>                    ║ • Può apparire più volte (pagina + sezioni)                  ║   → intestazione globale, ruolo ARIA implicito "banner"      ║
+║ • NON include <header> o <footer> discendenti                ║ • Vietati discendenti <header> e <footer>                    ║                                                              ║
+║ • Può stare in <body>, <article>, <section>, <aside>         ║ • In <article>/<section> descrive quel contesto specifico     ║ • <header> dentro <article>/<section>/<aside>:              ║
+║                                                              ║ • È semantico: non dà stile di default                        ║   → intestazione locale, NON "banner"                        ║
+╚══════════════════════════════════════════════════════════════╩══════════════════════════════════════════════════════════════╩══════════════════════════════════════════════════════════════╝
 -->
-<!--<main> (elemento HTML)-->
+
+
+<!-- <main> (elemento HTML) -->
 <!--
-<main>
-  [intestazioni]
-  [testo]
-  [Liste]
-  [Link]
-  [Immagini]
-  [Tabelle]
-  [Form]
-
-    <section>
-    </section>
-
-    <article>
-        <section>
-        </section>
-    </article>
-    <aside></aside>
-    <figure>
-      <figcaption></figcaption>
-    </figure>
-    <details>
-        <summary></summary>
-    </details>
-</main>
-
-Categoria: Contenuto di flusso, contenuto sezionante
-Contenuto consentito: Contenuto di flusso
-Ruolo ARIA implicito: main
-Deve essere unico nel documento
-
-DESCRIZIONE:
-  L'elemento <main> rappresenta il contenuto principale e unico del documento.
-  Il contenuto all'interno di <main> dovrebbe essere unico al documento,
-  escludendo elementi ripetuti come header, nav, sidebar, footer.
-
-  Caratteristiche principali:
-  ● Deve essere unico per pagina
-  ● Rappresenta il contenuto centrale dell'applicazione o documento
-  ● Non può essere figlio di <article>, <aside>, <footer>, <header>, <nav>
-  ● Aiuta i lettori di schermo a saltare direttamente al contenuto principale
-
--->
-<!-- <article> (elemento HTML) -->
-<!--
-
-<article
+<main
   [attributi_globali]
   [attributi_evento]
 >
-
-  <header>
-    [intestazioni]
-    [testo]
-    [liste]
-    [link]
-    [immagini]
-    [tabelle]
-    [form]
-  </header>
+  [intestazioni]
+  [testo]
+  [liste]
+  [link]
+  [immagini]
+  [tabelle]
+  [form]
 
   <section>
-    [intestazioni]
-    [testo]
-    [liste]
-    [link]
-    [immagini]
-    [tabelle]
-    [form]
   </section>
+
+  <article>
+    <section>
+    </section>
+  </article>
+
+  <aside></aside>
 
   <figure>
     <figcaption></figcaption>
   </figure>
 
-  <footer>
-    [intestazioni]
-    [testo]
-    [liste]
-    [link]
-    [immagini]
-    [tabelle]
-    [form]
-  </footer>
+  <details>
+    <summary></summary>
+  </details>
 
-</article>
+</main>
 
-   • Il tag <article> rappresenta un contenuto autonomo e indipendente nella pagina
-   • Può essere distribuito o riutilizzato in modo indipendente (sindacabile)
-   • Esempi tipici: post di blog, articoli di giornale, commenti, post di forum, schede prodotto
-   • È un elemento semantico - non ha effetti visivi intrinseci
-   • Supporta attributi globali ed eventi (NON ha attributi specifici)
-   • Può contenere al suo interno altri elementi strutturali come <header>, <footer>, <section>
-   • Può essere annidato (es. commenti dentro un articolo)
-   • Dovrebbe sempre avere un titolo (h1-h6) per essere completo
+• L'elemento <main> rappresenta il contenuto principale e unico del documento
+• Il contenuto deve essere specifico di quella pagina (non ripetuto tra pagine)
+• Esclude elementi ricorrenti come <header>, <nav>, sidebar, <footer>
+• È un elemento semantico - non ha effetti visivi intrinseci
+• Supporta attributi globali ed eventi (NON ha attributi specifici)
+• Deve essere UNICO nel documento (massimo uno per pagina)
+• NON può essere annidato
+• Aiuta l’accessibilità permettendo ai lettori di schermo di saltare al contenuto principale
 
-   UTILIZZI PRINCIPALI:
-     • Articoli di blog o news
-     • Post in forum o commenti
-     • Schede prodotto in un e-commerce
-     • Contenuti autoconclusivi (ricette, recensioni)
-     • Widget indipendenti (meteo, calcolatrice)
-     • Commenti degli utenti
+╔══════════════════════════════════════════════════════════════════════╗
+║                    CONTENUTO CONSENTITO DENTRO <main>                ║
+╠══════════════════════════════════════════════════════════════════════╣
+║ Categoria: Flow content, Palpable content                            ║
+║ Contenuto consentito: Flow content                                   ║
+║                                                                      ║
+║ [intestazioni]  <h1>-<h6>, <hgroup>                                  ║
+║ [testo]         <p>, <time>, <address>, <blockquote>, <pre>          ║
+║ [liste]         <ul>, <ol>, <li>, <dl>, <dt>, <dd>                   ║
+║ [link]          <a>                                                   ║
+║ [navigazione]   <nav> (solo se parte del contenuto principale)       ║
+║ [immagini]      <img>, <picture>, <figure>, <figcaption>             ║
+║ [tabelle]       <table> e relativi elementi interni                  ║
+║ [form]          <form>, <input>, <label>, <button>, <select>         ║
+║ [strutturali]   <section>, <article>, <aside>, <div>, <details>,     ║
+║                 <dialog>                                              ║
+╠══════════════════════════════════════════════════════════════════════╣
+║ UTILIZZI PRINCIPALI:                                                 ║
+║ • Contenuto centrale della pagina                                    ║
+║ • Corpo principale di un'applicazione                                ║
+║ • Area principale di una SPA                                         ║
+║ • Contenuto unico di una pagina (articolo, prodotto, dashboard)     ║
+╚══════════════════════════════════════════════════════════════════════╝
 
-   REGOLE FONDAMENTALI:
-     • Il contenuto di <article> deve avere senso anche da solo
-     • Può essere annidato (es. commenti dentro un articolo)
-     • Ogni <article> dovrebbe avere un titolo (h1-h6)
-     • Può contenere <header>, <footer>, <section> per organizzare il contenuto
-     • NON può contenere un <main> al suo interno
 
-   DIFFERENZA CON <section>:
-     • <article> = contenuto autonomo (esportabile, sindacabile) - ha senso da solo
-     • <section> = parte tematica di un contenuto più grande (non necessariamente autonomo)
+╔══════════════════════════════════════════════════════════════╦══════════════════════════════════════════════════════════════╦══════════════════════════════════════════════════════════════╗
+║           REGOLE FONDAMENTALI (Sintesi)                     ║        REGOLE FONDAMENTALI (Estese)                         ║                DIFFERENZA CON <article>                     ║
+╠══════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════╣
+║ • Uno solo per documento                                    ║ • Deve essere unico nella pagina                            ║ • <main> = contenuto principale dell'intera pagina          ║
+║ • Contiene il contenuto centrale                             ║ • Non può essere figlio di:                                 ║   → Uno solo                                                 ║
+║ • NON può essere annidato                                    ║   <article>, <aside>, <footer>, <header>, <nav>            ║                                                              ║
+║                                                              ║ • Non può contenere altri <main>                            ║ • <article> = contenuto autonomo e riutilizzabile           ║
+║                                                              ║ • Ruolo ARIA implicito: "main"                              ║   → Possono essercene più di uno                            ║
+╚══════════════════════════════════════════════════════════════╩══════════════════════════════════════════════════════════════╩══════════════════════════════════════════════════════════════╝
 
- -->
+
+╔══════════════════════════════════════════════════════════════════════╦══════════════════════════════════════════════════════════════════════╗
+║                       CONTENUTO CONSENTITO                           ║                          NON CONSENTITO                               ║
+╠══════════════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════════════╣
+║ • Contenuto di flusso                                                ║ • <main> annidato                                                    ║
+║ • Strutture semantiche come <section>, <article>, <aside>           ║ • Più di un <main> nel documento                                     ║
+║ • Form, tabelle, immagini, testo                                     ║ • Figlio di <article>, <aside>, <footer>,                            ║
+║                                                                      ║   <header>, <nav>                                                    ║
+╚══════════════════════════════════════════════════════════════════════╩══════════════════════════════════════════════════════════════════════╝
+-->
+
+-->
+<!-- <article> (elemento HTML) **-->
+<!--
+<section>
+  <article
+    [attributi_globali]
+    [attributi_evento]
+  >
+
+    <header>
+      [intestazioni]
+      [testo]
+      [liste]
+      [link]
+      [immagini]
+      [tabelle]
+      [form]
+    </header>
+
+    <section>
+      [intestazioni]
+      [testo]
+      [liste]
+      [link]
+      [immagini]
+      [tabelle]
+      [form]
+    </section>
+
+    <figure>
+      <figcaption></figcaption>
+    </figure>
+
+    <footer>
+      [intestazioni]
+      [testo]
+      [liste]
+      [link]
+      [immagini]
+      [tabelle]
+      [form]
+    </footer>
+
+  </article>
+</section>
+
+
+• Il tag <article> rappresenta un contenuto autonomo e indipendente nella pagina
+• Può essere distribuito o riutilizzato in modo indipendente (sindacabile)
+• Esempi tipici: post di blog, articoli di giornale, commenti, post di forum, schede prodotto
+• È un elemento semantico - non ha effetti visivi intrinseci
+• Supporta attributi globali ed eventi (NON ha attributi specifici)
+• Può contenere al suo interno altri elementi strutturali come <header>, <footer>, <section>
+• Può essere annidato (es. commenti dentro un articolo)
+• Dovrebbe sempre avere un titolo (h1-h6) per essere completo
+
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                 CONTENUTO CONSENTITO DENTRO <article>                ║
+╠══════════════════════════════════════════════════════════════════════╣
+║ Categoria: Flow content, Sectioning content, Palpable content       ║
+║ Contenuto consentito: Flow content                                   ║
+║                                                                      ║
+║ [intestazioni]  <h1>-<h6>, <hgroup>                                  ║
+║ [testo]         <p>, <time>, <address>, <blockquote>, <pre>         ║
+║ [liste]         <ul>, <ol>, <li>, <dl>, <dt>, <dd>                   ║
+║ [link]          <a>                                                   ║
+║ [navigazione]   <nav>                                                 ║
+║ [immagini]      <img>, <picture>, <figure>, <figcaption>             ║
+║ [tabelle]       <table> e relativi elementi interni                  ║
+║ [form]          <form>, <input>, <label>, <button>, <select>         ║
+║ [strutturali]   <section>, <article>, <aside>, <div>, <details>,     ║
+║                 <dialog>                                              ║
+╠══════════════════════════════════════════════════════════════════════╣
+║ UTILIZZI PRINCIPALI:                                                 ║
+║ • Articoli di blog o news                                            ║
+║ • Post in forum                                                      ║
+║ • Schede prodotto                                                    ║
+║ • Recensioni                                                         ║
+║ • Contenuti autonomi riutilizzabili                                  ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+╔══════════════════════════════════════════════════════════════╦══════════════════════════════════════════════════════════════╦══════════════════════════════════════════════════════════════╗
+║           REGOLE FONDAMENTALI (Sintesi)                     ║        REGOLE FONDAMENTALI (Estese)                         ║              DIFFERENZA CON <section>                       ║
+╠══════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════╬══════════════════════════════════════════════════════════════╣
+║ • Deve avere senso anche isolato                             ║ • Il contenuto deve avere senso anche da solo                ║ • <article> = contenuto autonomo, esportabile, sindacabile  ║
+║ • Dovrebbe avere un titolo (h1-h6)                           ║ • Può essere annidato (es. commenti dentro un articolo)      ║   → Ha senso anche isolato                                   ║
+║ • Può contenere <header>, <footer>, <section>                ║ • Ogni <article> dovrebbe avere un titolo (h1-h6)            ║                                                              ║
+║ • NON può contenere <main>                                   ║ • Può contenere <header>, <footer>, <section>                ║ • <section> = parte tematica di un contenuto più grande     ║
+║                                                              ║ • NON può contenere un <main> al suo interno                 ║   → Non necessariamente autonomo                             ║
+╚══════════════════════════════════════════════════════════════╩══════════════════════════════════════════════════════════════╩══════════════════════════════════════════════════════════════╝
+-->
 <!-- <section> (elemento HTML) -->
 <!--
 <section
